@@ -1,9 +1,9 @@
 //
 //  Bridging.h
-//  WePlay
+//  DayDay
 //
 //  Created by Nishat Anjum on 2/26/17.
-//  Copyright © 2017 WePlay. All rights reserved.
+//  Copyright © 2017 DayDay. All rights reserved.
 //
 
 #ifndef Bridging_h

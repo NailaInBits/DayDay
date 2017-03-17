@@ -1,6 +1,6 @@
 platform :ios, '10.0'
 
-target 'WePlay' do
+target ‘DayDay’ do
   use_frameworks!
 
   # Pods for Facebook

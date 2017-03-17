@@ -1,9 +1,9 @@
 //
 //  ProfileBg.swift
-//  WePlay
+//  DayDay
 //
 //  Created by Vincent Liu on 3/11/17.
-//  Copyright © 2017 WePlay. All rights reserved.
+//  Copyright © 2017 DayDay. All rights reserved.
 //
 
 import UIKit

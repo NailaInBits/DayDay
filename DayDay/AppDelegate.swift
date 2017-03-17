@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  WePlay
+//  DayDay
 //
 //  Created by Nishat Anjum on 2/17/17.
-//  Copyright © 2017 WePlay. All rights reserved.
+//  Copyright © 2017 DayDay. All rights reserved.
 //
 
 import UIKit
