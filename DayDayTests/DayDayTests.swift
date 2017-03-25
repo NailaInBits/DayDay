@@ -7,9 +7,9 @@
 //
 
 import XCTest
-@testable import WePlay
+@testable import DayDay
 
-class WePlayTests: XCTestCase {
+class DayDayTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

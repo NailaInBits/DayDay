@@ -10,7 +10,6 @@
 		9F75BF6B09D6B6EDC785A3D3 /* Pods_DayDay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13BFCABA79A9A53B35DEB131 /* Pods_DayDay.framework */; };
 		E10EAE821E7C606000D1918E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10EAE811E7C606000D1918E /* AppDelegate.swift */; };
 		E10EAE841E7C606E00D1918E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E10EAE831E7C606E00D1918E /* Assets.xcassets */; };
-		E10EAE871E7C60B900D1918E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E10EAE861E7C60B900D1918E /* GoogleService-Info.plist */; };
 		E10EAE891E7C60BD00D1918E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E10EAE881E7C60BD00D1918E /* Info.plist */; };
 		E10EAE8B1E7C60D600D1918E /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10EAE8A1E7C60D600D1918E /* Channel.swift */; };
 		E10EAE8D1E7C60E000D1918E /* ChannelListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10EAE8C1E7C60E000D1918E /* ChannelListVC.swift */; };
@@ -27,11 +26,10 @@
 		E10EAEA31E7C657D00D1918E /* SegueFromLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10EAEA21E7C657D00D1918E /* SegueFromLeft.swift */; };
 		E10EAEA51E7C658700D1918E /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10EAEA41E7C658700D1918E /* UIImage+Gif.swift */; };
 		E10EAEA81E7C65CB00D1918E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E10EAEA71E7C65CB00D1918E /* Info.plist */; };
-		E10EAEAA1E7C65E200D1918E /* DayDayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10EAEA91E7C65E200D1918E /* DayDayTests.swift */; };
 		E10EAEAC1E7C660400D1918E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E10EAEAB1E7C660400D1918E /* Info.plist */; };
-		E10EAEAE1E7C660B00D1918E /* DayDayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10EAEAD1E7C660B00D1918E /* DayDayUITests.swift */; };
 		E10EAEB21E7C665100D1918E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E10EAEB01E7C665100D1918E /* Main.storyboard */; };
 		E10EAEB51E7C665500D1918E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E10EAEB31E7C665500D1918E /* LaunchScreen.storyboard */; };
+		E19378191E87235E009551B9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E19378181E87235E009551B9 /* GoogleService-Info.plist */; };
 		E1DAE8061E65E6BA0076E69A /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1DAE8051E65E6BA0076E69A /* AdSupport.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,7 +57,6 @@
 		E10EAE811E7C606000D1918E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = DayDay/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		E10EAE831E7C606E00D1918E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = DayDay/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		E10EAE851E7C608B00D1918E /* bg.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = bg.mp4; path = DayDay/bg.mp4; sourceTree = SOURCE_ROOT; };
-		E10EAE861E7C60B900D1918E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "DayDay/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		E10EAE881E7C60BD00D1918E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = DayDay/Info.plist; sourceTree = SOURCE_ROOT; };
 		E10EAE8A1E7C60D600D1918E /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Channel.swift; path = DayDay/Channel.swift; sourceTree = SOURCE_ROOT; };
 		E10EAE8C1E7C60E000D1918E /* ChannelListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChannelListVC.swift; path = DayDay/ChannelListVC.swift; sourceTree = SOURCE_ROOT; };
@@ -82,6 +79,7 @@
 		E10EAEAD1E7C660B00D1918E /* DayDayUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DayDayUITests.swift; path = DayDayUITests/DayDayUITests.swift; sourceTree = SOURCE_ROOT; };
 		E10EAEB11E7C665100D1918E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DayDay/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		E10EAEB41E7C665500D1918E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DayDay/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		E19378181E87235E009551B9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E1B924941E576BF100B4F272 /* DayDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DayDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1B924AC1E576BF100B4F272 /* DayDayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DayDayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1B924B71E576BF100B4F272 /* DayDayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DayDayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,7 +175,7 @@
 				E10EAEB31E7C665500D1918E /* LaunchScreen.storyboard */,
 				E10EAEA61E7C659500D1918E /* Bridging.h */,
 				E10EAE881E7C60BD00D1918E /* Info.plist */,
-				E10EAE861E7C60B900D1918E /* GoogleService-Info.plist */,
+				E19378181E87235E009551B9 /* GoogleService-Info.plist */,
 			);
 			name = DayDay;
 			path = WePlay;
@@ -383,13 +381,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E10EAE871E7C60B900D1918E /* GoogleService-Info.plist in Resources */,
 				E10EAEAC1E7C660400D1918E /* Info.plist in Resources */,
 				E10EAE891E7C60BD00D1918E /* Info.plist in Resources */,
 				E10EAEB21E7C665100D1918E /* Main.storyboard in Resources */,
 				E10EAEB51E7C665500D1918E /* LaunchScreen.storyboard in Resources */,
 				E10EAEA81E7C65CB00D1918E /* Info.plist in Resources */,
 				E10EAE841E7C606E00D1918E /* Assets.xcassets in Resources */,
+				E19378191E87235E009551B9 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,9 +471,7 @@
 				E10EAE821E7C606000D1918E /* AppDelegate.swift in Sources */,
 				E10EAE8D1E7C60E000D1918E /* ChannelListVC.swift in Sources */,
 				E10EAE951E7C653300D1918E /* LandingPgVC.swift in Sources */,
-				E10EAEAA1E7C65E200D1918E /* DayDayTests.swift in Sources */,
 				E10EAE971E7C653900D1918E /* LoginVC.swift in Sources */,
-				E10EAEAE1E7C660B00D1918E /* DayDayUITests.swift in Sources */,
 				E10EAE8F1E7C611300D1918E /* ChannelViewVC.swift in Sources */,
 				E10EAEA51E7C658700D1918E /* UIImage+Gif.swift in Sources */,
 				E10EAE911E7C612500D1918E /* CreateChannelCell.swift in Sources */,
@@ -636,7 +632,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DayDay.App;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = /Users/nishat/WePlay/WePlay/Bridging.h;
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/nishat/DayDay/DayDay/Bridging.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -655,7 +651,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DayDay.App;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = /Users/nishat/WePlay/WePlay/Bridging.h;
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/nishat/DayDay/DayDay/Bridging.h;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -672,7 +668,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = WePlay.WePlayTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WePlay.app/WePlay";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DayDay.app/DayDay";
 			};
 			name = Debug;
 		};
@@ -687,7 +683,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = WePlay.WePlayTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WePlay.app/WePlay";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DayDay.app/DayDay";
 			};
 			name = Release;
 		};
