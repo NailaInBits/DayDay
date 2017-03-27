@@ -1,14 +1,14 @@
 //
-//  WePlayUITests.swift
-//  WePlayUITests
+//  DayDayUITests.swift
+//  DayDayUITests
 //
 //  Created by Nishat Anjum on 2/17/17.
-//  Copyright © 2017 WePlay. All rights reserved.
+//  Copyright © 2017 DayDay. All rights reserved.
 //
 
 import XCTest
 
-class WePlayUITests: XCTestCase {
+class DayDayUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()
