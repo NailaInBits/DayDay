@@ -43,7 +43,6 @@ class LoginVC: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func checkForFirstTime() {
@@ -115,7 +114,7 @@ class LoginVC: UIViewController {
                 }
         
                 // Present the main view
-                if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "LandingPg") {
+                if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "Onboarding") {
                     UIApplication.shared.keyWindow?.rootViewController = viewController
                     
                     self.dismiss(animated: true, completion: nil)
