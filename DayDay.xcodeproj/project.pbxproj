@@ -29,12 +29,8 @@
 		E10EAEAC1E7C660400D1918E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E10EAEAB1E7C660400D1918E /* Info.plist */; };
 		E10EAEB21E7C665100D1918E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E10EAEB01E7C665100D1918E /* Main.storyboard */; };
 		E10EAEB51E7C665500D1918E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E10EAEB31E7C665500D1918E /* LaunchScreen.storyboard */; };
-<<<<<<< HEAD
-=======
-		E15FA8A11E88B91200B7C358 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E15FA8A01E88B91200B7C358 /* GoogleService-Info.plist */; };
 		E15FA8A31E88B92000B7C358 /* KpopGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15FA8A21E88B92000B7C358 /* KpopGroup.swift */; };
 		E15FA8A51E88B92B00B7C358 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15FA8A41E88B92B00B7C358 /* OnboardingVC.swift */; };
->>>>>>> onBoarding
 		E1DAE8061E65E6BA0076E69A /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1DAE8051E65E6BA0076E69A /* AdSupport.framework */; };
 /* End PBXBuildFile section */
 
@@ -85,12 +81,8 @@
 		E10EAEAD1E7C660B00D1918E /* DayDayUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DayDayUITests.swift; path = DayDayUITests/DayDayUITests.swift; sourceTree = SOURCE_ROOT; };
 		E10EAEB11E7C665100D1918E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DayDay/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		E10EAEB41E7C665500D1918E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DayDay/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
-<<<<<<< HEAD
-=======
-		E15FA8A01E88B91200B7C358 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "DayDay/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		E15FA8A21E88B92000B7C358 /* KpopGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KpopGroup.swift; path = DayDay/KpopGroup.swift; sourceTree = SOURCE_ROOT; };
 		E15FA8A41E88B92B00B7C358 /* OnboardingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardingVC.swift; path = DayDay/OnboardingVC.swift; sourceTree = SOURCE_ROOT; };
->>>>>>> onBoarding
 		E1B924941E576BF100B4F272 /* DayDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DayDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1B924AC1E576BF100B4F272 /* DayDayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DayDayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1B924B71E576BF100B4F272 /* DayDayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DayDayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -187,10 +179,6 @@
 				E10EAEA61E7C659500D1918E /* Bridging.h */,
 				490528A91E8864FD004195FB /* GoogleService-Info.plist */,
 				E10EAE881E7C60BD00D1918E /* Info.plist */,
-<<<<<<< HEAD
-=======
-				E15FA8A01E88B91200B7C358 /* GoogleService-Info.plist */,
->>>>>>> onBoarding
 			);
 			name = DayDay;
 			path = WePlay;
@@ -399,19 +387,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E10EAEAC1E7C660400D1918E /* Info.plist in Resources */,
-<<<<<<< HEAD
-=======
-				E15FA8A11E88B91200B7C358 /* GoogleService-Info.plist in Resources */,
-				E10EAE891E7C60BD00D1918E /* Info.plist in Resources */,
->>>>>>> onBoarding
 				E10EAEB21E7C665100D1918E /* Main.storyboard in Resources */,
 				E10EAEB51E7C665500D1918E /* LaunchScreen.storyboard in Resources */,
 				E10EAEA81E7C65CB00D1918E /* Info.plist in Resources */,
 				E10EAE841E7C606E00D1918E /* Assets.xcassets in Resources */,
-<<<<<<< HEAD
 				490528AA1E8864FD004195FB /* GoogleService-Info.plist in Resources */,
-=======
->>>>>>> onBoarding
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -658,7 +638,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DayDay.App;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/B1ackK3yz/Documents/iOS Apps/DayDay/DayDay/Bridging.h";
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/nishat/DayDay/DayDay/Bridging.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -677,7 +657,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DayDay.App;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/B1ackK3yz/Documents/iOS Apps/DayDay/DayDay/Bridging.h";
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/nishat/DayDay/DayDay/Bridging.h;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
