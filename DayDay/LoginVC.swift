@@ -21,7 +21,7 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         
         //Background Video (make sure always under 5mb)
-        let videoURL: NSURL = Bundle.main.url(forResource: "bg", withExtension: "mp4")! as NSURL
+        /*let videoURL: NSURL = Bundle.main.url(forResource: "bg", withExtension: "mp4")! as NSURL
         player = AVPlayer(url: videoURL as URL)
         player?.actionAtItemEnd = .none
         player?.isMuted = true
@@ -37,7 +37,7 @@ class LoginVC: UIViewController {
                 self.player?.seek(to: kCMTimeZero)
                 self.player?.play()
             }
-        })
+        })*/
         
     }
 
@@ -47,13 +47,13 @@ class LoginVC: UIViewController {
     }
     
     func checkForFirstTime() {
-        let ref = FIRDatabase.database().reference(fromURL: "https://weplay-1480204734004.firebaseio.com/")
+        let ref = FIRDatabase.database().reference(fromURL: "https://dayday-39e15.firebaseio.com/users")
         guard let uid = user?.uid else {
             return
         }
-        ref.queryOrdered(byChild: "email").queryEqual(toValue: uid).observeSingleEvent(of: .value, with: { (snapshot) in
-            if (snapshot.value == nil) {
-                let usersReference = ref.child("users").child(uid)
+        ref.queryOrderedByKey().queryEqual(toValue: uid).observeSingleEvent(of: .value, with: { (snapshot) in
+            if (snapshot.value == nil || snapshot.value is NSNull) {
+                let usersReference = ref.child(uid)
         
                 let graphRequest = FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, email, name"]).start{
                     (connection, result, err) in
@@ -107,7 +107,6 @@ class LoginVC: UIViewController {
                     let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                     alertController.addAction(okayAction)
                     self.present(alertController, animated: true, completion: nil)
-                    
                     return
                 } else {
                     

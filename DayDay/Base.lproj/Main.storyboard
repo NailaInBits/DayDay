@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Bj6-Gb-A0g">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Bj6-Gb-A0g">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,7 +18,7 @@
         <!--Landing PgVC-->
         <scene sceneID="NsX-3K-xpD">
             <objects>
-                <viewController storyboardIdentifier="LandingPg" id="2HO-mC-dZS" customClass="LandingPgVC" customModule="WePlay" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LandingPg" id="2HO-mC-dZS" customClass="LandingPgVC" customModule="DayDay" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="d60-u8-vPh"/>
                         <viewControllerLayoutGuide type="bottom" id="dQn-hP-kFU"/>
@@ -28,7 +28,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="landingPageBg" translatesAutoresizingMaskIntoConstraints="NO" id="6Hc-fs-8HH">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="-44" width="375" height="667"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="SF5-Z4-PM6"/>
                                     <constraint firstAttribute="height" constant="667" id="vry-9d-aR2"/>
@@ -105,8 +105,8 @@
                     <navigationItem key="navigationItem" id="OEz-T2-Cko"/>
                     <connections>
                         <outlet property="button" destination="hBl-LU-m7C" id="oUw-rR-zt7"/>
-                        <segue destination="J7v-Lp-U18" kind="custom" identifier="home2channels" customClass="CustomUnwindSegue" customModule="WePlay" customModuleProvider="target" id="45A-HP-hIo"/>
-                        <segue destination="Jry-My-kFD" kind="custom" identifier="home2magic" customClass="CustomSegue" customModule="WePlay" customModuleProvider="target" id="X2g-fv-u7d"/>
+                        <segue destination="J7v-Lp-U18" kind="custom" identifier="home2channels" customClass="CustomUnwindSegue" customModule="DayDay" customModuleProvider="target" id="45A-HP-hIo"/>
+                        <segue destination="Jry-My-kFD" kind="custom" identifier="home2magic" customClass="CustomSegue" customModule="DayDay" customModuleProvider="target" id="X2g-fv-u7d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2bF-qJ-a01" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -116,7 +116,7 @@
         <!--LoginVC-->
         <scene sceneID="oXx-r3-2PY">
             <objects>
-                <viewController storyboardIdentifier="Login" id="Bj6-Gb-A0g" customClass="LoginVC" customModule="WePlay" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login" id="Bj6-Gb-A0g" customClass="LoginVC" customModule="DayDay" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="So9-wm-e9w"/>
                         <viewControllerLayoutGuide type="bottom" id="7v7-Kz-57q"/>
@@ -175,7 +175,7 @@
         <!--ProfileVC-->
         <scene sceneID="OWk-wj-KvW">
             <objects>
-                <viewController storyboardIdentifier="ProfilePg" id="NKo-dG-RH7" customClass="ProfileVC" customModule="WePlay" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfilePg" id="NKo-dG-RH7" customClass="ProfileVC" customModule="DayDay" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0Ge-wx-IMC"/>
                         <viewControllerLayoutGuide type="bottom" id="i2E-A6-dnl"/>
@@ -184,7 +184,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KYe-z8-mFX" customClass="ProfileBg" customModule="WePlay" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KYe-z8-mFX" customClass="ProfileBg" customModule="DayDay" customModuleProvider="target">
                                 <rect key="frame" x="32" y="32" width="310" height="602"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LOu-aN-4vJ">
@@ -278,7 +278,7 @@
         <!--Magic-->
         <scene sceneID="LhQ-5E-VIn">
             <objects>
-                <viewController title="Magic" id="J1I-2E-lcv" customClass="MagicVC" customModule="WePlay" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Magic" id="J1I-2E-lcv" customClass="MagicVC" customModule="DayDay" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Zfp-qE-FnW"/>
                         <viewControllerLayoutGuide type="bottom" id="qb2-Ny-rCG"/>
@@ -402,7 +402,7 @@
         <!--Root View Controller-->
         <scene sceneID="ev2-1T-qpf">
             <objects>
-                <tableViewController storyboardIdentifier="channels" id="bKG-kJ-HtB" customClass="ChannelListVC" customModule="WePlay" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="channels" id="bKG-kJ-HtB" customClass="ChannelListVC" customModule="DayDay" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ep3-fg-psn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -444,11 +444,11 @@
                             <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewChannel" id="2Vn-Gn-kVA" customClass="CreateChannelCell" customModule="WePlay" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewChannel" id="2Vn-Gn-kVA" customClass="CreateChannelCell" customModule="DayDay" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Vn-Gn-kVA" id="bg7-pt-Nfe">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fac-aG-qzr">
@@ -477,7 +477,7 @@
                                 <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aeJ-aB-BLz" id="PfZ-d1-leO">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="auD-wC-Xcc">
@@ -528,7 +528,7 @@
         <!--ChannelViewVC-->
         <scene sceneID="5wc-ni-uII">
             <objects>
-                <viewController title="ChannelViewVC" id="eBA-kK-53C" customClass="ChannelViewVC" customModule="WePlay" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="ChannelViewVC" id="eBA-kK-53C" customClass="ChannelViewVC" customModule="DayDay" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xW5-pm-37i"/>
                         <viewControllerLayoutGuide type="bottom" id="mc6-2U-uG6"/>
