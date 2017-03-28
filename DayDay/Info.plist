@@ -33,7 +33,7 @@
 	<string>204290170059036</string>
 	<key>FacebookDisplayName</key>
 	<string>DayDay</string>
-	<key>LSApplicationCategoryType</key>
+    <key>LSApplicationCategoryType</key>
 	<string></string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
