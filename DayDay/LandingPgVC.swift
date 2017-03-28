@@ -11,9 +11,13 @@ import FirebaseAuth
 
 class LandingPgVC: UIViewController, RadialMenuDelegate {
 
+    let interactor = Interactor()
+    
     var radialMenu:RadialMenu!
     
     @IBOutlet weak var button: UIButton!
+    
+    @IBOutlet var sideMenuEdgePan: UIScreenEdgePanGestureRecognizer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,33 +26,52 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
         self.radialMenu = RadialMenu()
         self.radialMenu.delegate = self
         self.button.setBackgroundImage(self.radialMenu.getProfilePic(), for: UIControlState.normal)
+        sideMenuEdgePan.edges = .left
+        view.addGestureRecognizer(sideMenuEdgePan)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
+    // Side Menu button
+    @IBAction func openSideMenu(_ sender: AnyObject) {
+        performSegue(withIdentifier: "SideMenu", sender: nil)
+    }
+    
+    // Side Menu pan gesture present interaction
+    @IBAction func edgePanGesture(sender: UIScreenEdgePanGestureRecognizer) {
+        let translation = sender.translation(in: view)
+        
+        let progress = MenuHelper.calculateProgress(
+            translationInView: translation,
+            viewBounds: view.bounds,
+            direction: .Right
+        )
+        
+        MenuHelper.mapGestureStateToInteractor(
+            gestureState: sender.state,
+            progress: progress,
+            interactor: interactor){
+                performSegue(withIdentifier: "SideMenu", sender: nil)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destinationViewController = segue.destination as? SideMenuVC {
+            destinationViewController.transitioningDelegate = self
+            
+            destinationViewController.interactor = interactor
+        }
+    }
+    
+    // Profile page button
     @IBAction func showPopup(_ sender: AnyObject) {
         let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProfilePg") as! ProfileVC
         self.addChildViewController(popOverVC)
         popOverVC.view.frame = self.view.frame
         self.view.addSubview(popOverVC.view)
         popOverVC.didMove(toParentViewController: self)
-    }
-    
-    
-    // Logout function
-    @IBAction func logout(_ sender: AnyObject) {
-        let firebaseAuth = FIRAuth.auth()
-        do {
-            try firebaseAuth?.signOut()
-        } catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)
-        }
-        if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "Login") {
-            UIApplication.shared.keyWindow?.rootViewController = viewController
-            self.dismiss(animated: true, completion: nil)
-        }
     }
     
     //Radial Menu Buttons
@@ -146,5 +169,25 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
         let segue = CustomUnwindSegue(identifier: identifier, source: fromViewController, destination: toViewController)
         segue.animationType = .GrowScale
         return segue
+    }
+    
+}
+
+// Adds the presentation animation to Transitioning delegate
+extension LandingPgVC: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return PresentMenuAnimator()
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return DismissMenuAnimator()
+    }
+    
+    func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return interactor.hasStarted ? interactor : nil
+    }
+    
+    func interactionControllerForPresentation(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return interactor.hasStarted ? interactor : nil
     }
 }

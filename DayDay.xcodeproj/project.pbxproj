@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		490528AA1E8864FD004195FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 490528A91E8864FD004195FB /* GoogleService-Info.plist */; };
+		499DABF01E8AC71E0053370E /* GroupDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499DABEF1E8AC71E0053370E /* GroupDetails.swift */; };
+		49A43FAB1E89F76A00C152AF /* GroupProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A43FAA1E89F76A00C152AF /* GroupProfileVC.swift */; };
+		49A43FAD1E89F8CC00C152AF /* GroupProfileBg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A43FAC1E89F8CC00C152AF /* GroupProfileBg.swift */; };
+		49D2564F1E88A0A7008B7270 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D2564E1E88A0A7008B7270 /* Interactor.swift */; };
+		49D256511E88A1F8008B7270 /* MenuHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D256501E88A1F8008B7270 /* MenuHelper.swift */; };
+		49D256531E88A801008B7270 /* PresentMenuAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D256521E88A801008B7270 /* PresentMenuAnimator.swift */; };
+		49D256551E88B234008B7270 /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D256541E88B234008B7270 /* SideMenuVC.swift */; };
+		49D2565D1E88C368008B7270 /* DismissMenuAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D2565C1E88C368008B7270 /* DismissMenuAnimator.swift */; };
+		49D256611E88DC94008B7270 /* SideMenuBg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D256601E88DC94008B7270 /* SideMenuBg.swift */; };
 		9F75BF6B09D6B6EDC785A3D3 /* Pods_DayDay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13BFCABA79A9A53B35DEB131 /* Pods_DayDay.framework */; };
 		E10EAE821E7C606000D1918E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10EAE811E7C606000D1918E /* AppDelegate.swift */; };
 		E10EAE841E7C606E00D1918E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E10EAE831E7C606E00D1918E /* Assets.xcassets */; };
@@ -54,6 +63,15 @@
 /* Begin PBXFileReference section */
 		13BFCABA79A9A53B35DEB131 /* Pods_DayDay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DayDay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		490528A91E8864FD004195FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "DayDay/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		499DABEF1E8AC71E0053370E /* GroupDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupDetails.swift; path = DayDay/GroupDetails.swift; sourceTree = SOURCE_ROOT; };
+		49A43FAA1E89F76A00C152AF /* GroupProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupProfileVC.swift; path = DayDay/GroupProfileVC.swift; sourceTree = SOURCE_ROOT; };
+		49A43FAC1E89F8CC00C152AF /* GroupProfileBg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupProfileBg.swift; path = DayDay/GroupProfileBg.swift; sourceTree = SOURCE_ROOT; };
+		49D2564E1E88A0A7008B7270 /* Interactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Interactor.swift; path = DayDay/Interactor.swift; sourceTree = SOURCE_ROOT; };
+		49D256501E88A1F8008B7270 /* MenuHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuHelper.swift; path = DayDay/MenuHelper.swift; sourceTree = SOURCE_ROOT; };
+		49D256521E88A801008B7270 /* PresentMenuAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentMenuAnimator.swift; path = DayDay/PresentMenuAnimator.swift; sourceTree = SOURCE_ROOT; };
+		49D256541E88B234008B7270 /* SideMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideMenuVC.swift; path = DayDay/SideMenuVC.swift; sourceTree = SOURCE_ROOT; };
+		49D2565C1E88C368008B7270 /* DismissMenuAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DismissMenuAnimator.swift; path = DayDay/DismissMenuAnimator.swift; sourceTree = SOURCE_ROOT; };
+		49D256601E88DC94008B7270 /* SideMenuBg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideMenuBg.swift; path = DayDay/SideMenuBg.swift; sourceTree = SOURCE_ROOT; };
 		82227A6BE53548172DE1F10A /* Pods-DayDay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayDay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DayDay/Pods-DayDay.debug.xcconfig"; sourceTree = "<group>"; };
 		C10CA2E1D9E7153F2785FB7A /* Pods-DayDay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayDay.release.xcconfig"; path = "Pods/Target Support Files/Pods-DayDay/Pods-DayDay.release.xcconfig"; sourceTree = "<group>"; };
 		E10EAE811E7C606000D1918E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = DayDay/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
@@ -116,6 +134,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49A43FA91E89F73A00C152AF /* GroupProfile */ = {
+			isa = PBXGroup;
+			children = (
+				49A43FAA1E89F76A00C152AF /* GroupProfileVC.swift */,
+				49A43FAC1E89F8CC00C152AF /* GroupProfileBg.swift */,
+			);
+			name = GroupProfile;
+			sourceTree = "<group>";
+		};
+		49D2564D1E88A069008B7270 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				49D2564E1E88A0A7008B7270 /* Interactor.swift */,
+				49D256501E88A1F8008B7270 /* MenuHelper.swift */,
+				49D256521E88A801008B7270 /* PresentMenuAnimator.swift */,
+				49D256541E88B234008B7270 /* SideMenuVC.swift */,
+				49D2565C1E88C368008B7270 /* DismissMenuAnimator.swift */,
+				49D256601E88DC94008B7270 /* SideMenuBg.swift */,
+			);
+			name = SideMenu;
+			sourceTree = "<group>";
+		};
 		55FB6E22379C19DD423DCD6C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +247,7 @@
 		E1D7F0BB1E7C5BBA0022777F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				499DABEF1E8AC71E0053370E /* GroupDetails.swift */,
 				E10EAE8A1E7C60D600D1918E /* Channel.swift */,
 				E10EAE901E7C612500D1918E /* CreateChannelCell.swift */,
 				E15FA8A21E88B92000B7C358 /* KpopGroup.swift */,
@@ -217,6 +258,8 @@
 		E1D7F0BC1E7C5BC10022777F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				49A43FA91E89F73A00C152AF /* GroupProfile */,
+				49D2564D1E88A069008B7270 /* SideMenu */,
 				E1D7F0C01E7C5CF90022777F /* Login */,
 				E1D7F0BF1E7C5CCD0022777F /* LandingPage */,
 				E1D7F0BD1E7C5C540022777F /* RadialMenu */,
@@ -343,7 +386,6 @@
 				TargetAttributes = {
 					E1B924931E576BF000B4F272 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = X7JTK6KCA7;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -464,11 +506,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				499DABF01E8AC71E0053370E /* GroupDetails.swift in Sources */,
 				E10EAE931E7C613800D1918E /* CustomSegue.swift in Sources */,
+				49A43FAD1E89F8CC00C152AF /* GroupProfileBg.swift in Sources */,
 				E15FA8A51E88B92B00B7C358 /* OnboardingVC.swift in Sources */,
 				E15FA8A31E88B92000B7C358 /* KpopGroup.swift in Sources */,
 				E10EAE8B1E7C60D600D1918E /* Channel.swift in Sources */,
+				49D2564F1E88A0A7008B7270 /* Interactor.swift in Sources */,
 				E10EAE991E7C654800D1918E /* MagicVC.swift in Sources */,
+				49A43FAB1E89F76A00C152AF /* GroupProfileVC.swift in Sources */,
+				49D256611E88DC94008B7270 /* SideMenuBg.swift in Sources */,
 				E10EAE9D1E7C655F00D1918E /* ProfileVC.swift in Sources */,
 				E10EAE9B1E7C655700D1918E /* ProfileBg.swift in Sources */,
 				E10EAEA31E7C657D00D1918E /* SegueFromLeft.swift in Sources */,
@@ -477,7 +524,11 @@
 				E10EAE821E7C606000D1918E /* AppDelegate.swift in Sources */,
 				E10EAE8D1E7C60E000D1918E /* ChannelListVC.swift in Sources */,
 				E10EAE951E7C653300D1918E /* LandingPgVC.swift in Sources */,
+				49D256551E88B234008B7270 /* SideMenuVC.swift in Sources */,
+				49D256511E88A1F8008B7270 /* MenuHelper.swift in Sources */,
+				49D256531E88A801008B7270 /* PresentMenuAnimator.swift in Sources */,
 				E10EAE971E7C653900D1918E /* LoginVC.swift in Sources */,
+				49D2565D1E88C368008B7270 /* DismissMenuAnimator.swift in Sources */,
 				E10EAE8F1E7C611300D1918E /* ChannelViewVC.swift in Sources */,
 				E10EAEA51E7C658700D1918E /* UIImage+Gif.swift in Sources */,
 				E10EAE911E7C612500D1918E /* CreateChannelCell.swift in Sources */,
@@ -632,7 +683,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = X7JTK6KCA7;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/DayDay/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -651,7 +702,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = X7JTK6KCA7;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/DayDay/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
