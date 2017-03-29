@@ -29,7 +29,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="landingPageBg" translatesAutoresizingMaskIntoConstraints="NO" id="6Hc-fs-8HH">
-                                <rect key="frame" x="0.0" y="-44" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="SF5-Z4-PM6"/>
@@ -133,7 +133,6 @@
                 </screenEdgePanGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="951.20000000000005" y="-1658.3208395802101"/>
-            <point key="canvasLocation" x="-929" y="-1013"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="oXx-r3-2PY">
@@ -220,7 +219,7 @@
                                 </accessibility>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <mutableString key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                        <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="LucidaGrande"/>
                                         </attributes>
@@ -289,17 +288,11 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hz4-XM-bhh">
-                                <rect key="frame" x="0.0" y="20" width="300" height="691"/>
+                                <rect key="frame" x="0.0" y="20" width="300" height="647"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y7l-F9-t9F">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="44"/>
-                                        <items>
-                                            <navigationItem title="Choose Your Groups" id="ORS-7U-zJn"/>
-                                        </items>
-                                    </navigationBar>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XZj-Cr-8nd">
-                                        <rect key="frame" x="0.0" y="44" width="300" height="647"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="647"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="iOE-aP-Zk4"/>
@@ -323,9 +316,6 @@
                                         </connections>
                                     </tableView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="XZj-Cr-8nd" firstAttribute="top" secondItem="y7l-F9-t9F" secondAttribute="bottom" id="FTy-AM-L8N"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.80000001190000003" green="1" blue="0.40000000600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -335,7 +325,6 @@
                             <constraint firstItem="2jX-eY-6sl" firstAttribute="width" secondItem="7eR-Z1-oQU" secondAttribute="width" multiplier="0.2" id="CcY-Lw-aHN"/>
                             <constraint firstItem="2jX-eY-6sl" firstAttribute="leading" secondItem="XZj-Cr-8nd" secondAttribute="trailing" id="HwW-fR-Vkg"/>
                             <constraint firstAttribute="trailing" secondItem="2jX-eY-6sl" secondAttribute="trailing" id="Ug7-b1-3m5"/>
-                            <constraint firstItem="2jX-eY-6sl" firstAttribute="leading" secondItem="y7l-F9-t9F" secondAttribute="trailing" id="VW9-Uv-72a"/>
                             <constraint firstItem="2jX-eY-6sl" firstAttribute="leading" secondItem="XZj-Cr-8nd" secondAttribute="trailing" id="eNt-Nb-PAe"/>
                             <constraint firstItem="XZj-Cr-8nd" firstAttribute="bottom" secondItem="2jX-eY-6sl" secondAttribute="bottom" id="lJy-zX-s4F"/>
                             <constraint firstItem="Cva-59-hfb" firstAttribute="top" secondItem="2jX-eY-6sl" secondAttribute="bottom" id="pib-bJ-EZH"/>
@@ -352,8 +341,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-4" y="-1658.3208395802101"/>
-            <point key="canvasLocation" x="-1822" y="-1799"/>
+            <point key="canvasLocation" x="-122.40000000000001" y="-1658.3208395802101"/>
         </scene>
         <!--OnboardingVC-->
         <scene sceneID="uXM-sy-MOD">
@@ -450,7 +438,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dDW-8I-GfH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-994.39999999999998" y="-1800.4497751124438"/>
+            <point key="canvasLocation" x="-4" y="-2490"/>
         </scene>
         <!--ProfileVC-->
         <scene sceneID="OWk-wj-KvW">
@@ -837,6 +825,7 @@
         <!--Navigation Controller-->
         <scene sceneID="XJc-ZD-lL0">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KKS-gE-J06" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FfH-pG-YMu" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="r7E-Zi-h0K">
@@ -848,7 +837,6 @@
                         <segue destination="3eQ-R5-9t3" kind="relationship" relationship="rootViewController" id="qe0-TH-Xzr"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KKS-gE-J06" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1167" y="-1658"/>
         </scene>
@@ -874,9 +862,7 @@
         <image name="textName" width="219" height="53"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Oi3-Xg-SQZ"/>
-        <segue reference="xv6-Si-V6F"/>
-        <segue reference="md5-Yr-Blv"/>
         <segue reference="45A-HP-hIo"/>
+        <segue reference="md5-Yr-Blv"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -8,12 +8,17 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class LandingPgVC: UIViewController, RadialMenuDelegate {
 
     let interactor = Interactor()
     
     var radialMenu:RadialMenu!
+    
+    private var ref: FIRDatabaseReference!
+    private var userID = FIRAuth.auth()?.currentUser?.uid
+    private var fid: String?
     
     @IBOutlet weak var button: UIButton!
     
@@ -25,13 +30,41 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
         self.button.clipsToBounds = true
         self.radialMenu = RadialMenu()
         self.radialMenu.delegate = self
-        self.button.setBackgroundImage(self.radialMenu.getProfilePic(), for: UIControlState.normal)
+        self.retrieveUserInfo()
+        //self.button.setBackgroundImage(self.getProfilePicture(), for: UIControlState.normal)
         sideMenuEdgePan.edges = .left
         view.addGestureRecognizer(sideMenuEdgePan)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    private func retrieveUserInfo() {
+        
+        self.ref = FIRDatabase.database().reference()
+        self.ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            if !snapshot.exists() { return }
+            
+            if let value = snapshot.value as? NSDictionary {
+                self.fid = value["id"] as? String
+            }
+        })
+    }
+    
+    private func getProfilePicture() -> UIImage? {
+        
+        let imgURLString = "https://graph.facebook.com/" + self.fid! + "/picture?type=large"
+        let imgURL = URL(string: imgURLString)
+        
+        do {
+            let imageData = try Data(contentsOf: imgURL!)
+            let image = UIImage(data: imageData)
+            return image
+        } catch {
+            return nil
+        }
     }
     
     // Side Menu button
