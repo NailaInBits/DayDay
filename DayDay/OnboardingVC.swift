@@ -15,12 +15,11 @@ class OnboardingVC: UIViewController {
     
     var gradientLayer: CAGradientLayer!
     
+    private var ref: FIRDatabaseReference = FIRDatabase.database().reference().child("KpopGroups")
+    private var values = [String]()
     let userID = FIRAuth.auth()?.currentUser?.uid
-    
-    private var kpopGroupsRefHandle: FIRDatabaseHandle?
+  
     private var kpopGroups: [KpopGroup] = []
-    
-    private lazy var kpopGroupsRef: FIRDatabaseReference = FIRDatabase.database().reference().child("KpopGroups")
     
     @IBOutlet var instructionsLabel: UILabel!
     @IBOutlet var firstButton: UIButton!
@@ -32,7 +31,6 @@ class OnboardingVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        observeGroups()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,74 +73,97 @@ class OnboardingVC: UIViewController {
     }
     
     @IBAction func addGroup1(_ sender: UIButton) {
-        let name = "BTS"
-        let newKpopGroupRef = kpopGroupsRef.childByAutoId()
-        let kpopGroupItem = [
-            "KPop Group": name
-        ]
-        newKpopGroupRef.setValue(kpopGroupItem)
-    }
-    
-    @IBAction func addGroup2(_ sender: UIButton) {
-        let name = "Black Pink"
-        let newKpopGroupRef = kpopGroupsRef.childByAutoId()
-        let kpopGroupItem = [
-            "KPop Group": name
-        ]
-        newKpopGroupRef.setValue(kpopGroupItem)
-    }
-    
-    @IBAction func addGroup3(_ sender: UIButton) {
-        let name = "EXO"
-        let newKpopGroupRef = kpopGroupsRef.childByAutoId()
-        let kpopGroupItem = [
-            "KPop Group": name
-        ]
-        newKpopGroupRef.setValue(kpopGroupItem)
-    }
-    
-    @IBAction func addGroup4(_ sender: UIButton) {
-        let name = "Twice"
-        let newKpopGroupRef = kpopGroupsRef.childByAutoId()
-        let kpopGroupItem = [
-            "KPop Group": name
-        ]
-        newKpopGroupRef.setValue(kpopGroupItem)
-    }
-    
-    @IBAction func addGroup5(_ sender: UIButton) {
-        let name = "Big Bang"
-        let newKpopGroupRef = kpopGroupsRef.childByAutoId()
-        let kpopGroupItem = [
-            "KPop Group": name
-        ]
-        newKpopGroupRef.setValue(kpopGroupItem)
-    }
-    
-    @IBAction func addGroup6(_ sender: UIButton) {
-        let name = "GOT7"
-        let newKpopGroupRef = kpopGroupsRef.childByAutoId()
-        let kpopGroupItem = [
-            "KPop Group": name
-        ]
-        newKpopGroupRef.setValue(kpopGroupItem)
-    }
-    
-    private func observeGroups() {
-        
-        /* When the user presses a button, that kpop group needs to
-         be added to an array associated with their user id */
-        kpopGroupsRefHandle = kpopGroupsRef.observe(.childAdded, with: { (snapshot) -> Void in
-            let kpopGroupsData = snapshot.value as! Dictionary<String, AnyObject>
+        self.ref.observe(.childAdded, with: { (snapshot) -> Void in
+            let kpopGroup = snapshot.value as! Dictionary<String, AnyObject>
             let id = snapshot.key
-            if let name = kpopGroupsData["name"] as! String!, name.characters.count > 0 {
-                self.kpopGroups.append(KpopGroup(id: id, name: name))
+            if let name = kpopGroup["name"] as! String!, name.characters.count > 0 {
+                self.values.append(kpopGroup["name"] as! String)
             } else {
-                print("Error! Could not add kpop group to user id")
+                print("Error! Could not decode group data")
             }
         })
     }
     
+    @IBAction func addGroup2(_ sender: UIButton) {
+        ref = FIRDatabase.database().reference()
+        
+        let kpopGroupRef = ref.child(byAppendingPath:"users/(userID)/kpopGroups")
+        
+        ref.child("kpopGroups").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let value = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                for child in value {
+                    let kpopGroup = child.key
+                    if(kpopGroup == "-KgCx8cRgj4qca_K4aBR"){
+                        //self.ref.child("users").child(userKey).child("kpopGroups").setValue(KpopGroup.self)
+                        kpopGroupRef.setValue(kpopGroup)
+                    }
+                }
+            } else {
+                print("Error! Could not decode group data")
+            }
+        })
+    }
+    
+    @IBAction func addGroup3(_ sender: UIButton) {
+        ref = FIRDatabase.database().reference()
+        
+        ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let result = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                for child in result {
+                    let userKey = child.key
+                    if(userKey == "-KgCx9jdmLA78msqYnV-"){
+                        self.ref.child("users").child(userKey).child("kpopGroups").setValue(KpopGroup.self)
+                    }
+                }
+            }
+        })
+    }
+    
+    @IBAction func addGroup4(_ sender: UIButton) {
+        ref = FIRDatabase.database().reference()
+        
+        ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let result = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                for child in result {
+                    let userKey = child.key
+                    if(userKey == "-KgH9pgaNoBpu_wYqV8o"){
+                        self.ref.child("users").child(userKey).child("kpopGroups").setValue(KpopGroup.self)
+                    }
+                }
+            }
+        })
+    }
+    
+    @IBAction func addGroup5(_ sender: UIButton) {
+        ref = FIRDatabase.database().reference()
+        
+        ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let result = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                for child in result {
+                    let userKey = child.key
+                    if(userKey == "-KgH9qIca2Wgw-Dhs4JS"){
+                        self.ref.child("users").child(userKey).child("kpopGroups").setValue(KpopGroup.self)
+                    }
+                }
+            }
+        })
+    }
+    
+    @IBAction func addGroup6(_ sender: UIButton) {
+        ref = FIRDatabase.database().reference()
+        
+        ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let result = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                for child in result {
+                    let userKey = child.key
+                    if(userKey == "-KgH9qbONq9hzFQcagPJ"){
+                        self.ref.child("users").child(userKey).child("kpopGroups").setValue(KpopGroup.self)
+                    }
+                }
+            }
+        })
+    }
+ 
     func createGradientLayer() {
         gradientLayer = CAGradientLayer()
         gradientLayer.frame = self.view.bounds
@@ -155,23 +176,3 @@ class OnboardingVC: UIViewController {
     }
     
 }
-
-  /*func addGroups() {
- 
-     let key = ref.child("KPopGroups").childByAutoId().key
-     
-     let kpopGroupsArray = [ "name" : addGroups!.name! ]
-     
-     var kpopGroups = [String: AnyObject]()
-     
-     for (index, element) in hide.vertices.enumerate() {
-     kpopGroupsArray[String(index)] =  HiddenLatlng(lat: element.latitude, lng: element.longitude).toDictionery()
-     }
-     
-     kpopGroups["eventLatLngList"] = kpopGroupsArray as AnyObject?
-     
-     //Takes user id and adds a group to the kpopgroups array to id.
-     self.ref.child("users").child(userID!).child("kpopGroup").updateChildValues(kpopGroups) { (error: NSError?, reference: FIRDatabaseReference) in
-     Collection(error)
-     }
-     } */

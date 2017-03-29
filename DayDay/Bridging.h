@@ -9,4 +9,7 @@
 #ifndef Bridging_h
 #define Bridging_h
 
+#import "JSQMessagesViewController/JSQMessages.h"
+#import "JSQMessagesViewController/JSQMessageData.h"
+
 #endif /* Bridging_h */
