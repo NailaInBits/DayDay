@@ -73,29 +73,40 @@ class OnboardingVC: UIViewController {
     }
     
     @IBAction func addGroup1(_ sender: UIButton) {
-        self.ref.observe(.childAdded, with: { (snapshot) -> Void in
-            let kpopGroup = snapshot.value as! Dictionary<String, AnyObject>
-            let id = snapshot.key
-            if let name = kpopGroup["name"] as! String!, name.characters.count > 0 {
-                self.values.append(kpopGroup["name"] as! String)
+        ref = FIRDatabase.database().reference()
+        
+        let kpopGroupRef = ref.child("users/" + userID! + "/kpopGroups")
+        
+        ref.child("KpopGroups").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let value = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                
+                for child in value {
+                    let kpopGroup = child.key
+                    
+                    if(kpopGroup == "-KgCx7qeem3u2dlMDr0i"){
+                        kpopGroupRef.child("bts").setValue(kpopGroup)
+                    }
+                }
             } else {
                 print("Error! Could not decode group data")
             }
         })
+
     }
     
     @IBAction func addGroup2(_ sender: UIButton) {
         ref = FIRDatabase.database().reference()
         
-        let kpopGroupRef = ref.child(byAppendingPath:"users/(userID)/kpopGroups")
+        let kpopGroupRef = ref.child("users/" + userID! + "/kpopGroups")
         
-        ref.child("kpopGroups").observeSingleEvent(of: .value, with: { (snapshot) in
+        ref.child("KpopGroups").observeSingleEvent(of: .value, with: { (snapshot) in
             if let value = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                
                 for child in value {
                     let kpopGroup = child.key
+                    
                     if(kpopGroup == "-KgCx8cRgj4qca_K4aBR"){
-                        //self.ref.child("users").child(userKey).child("kpopGroups").setValue(KpopGroup.self)
-                        kpopGroupRef.setValue(kpopGroup)
+                        kpopGroupRef.child("blackPink").setValue(kpopGroup)
                     }
                 }
             } else {
@@ -107,14 +118,20 @@ class OnboardingVC: UIViewController {
     @IBAction func addGroup3(_ sender: UIButton) {
         ref = FIRDatabase.database().reference()
         
-        ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
-            if let result = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                for child in result {
-                    let userKey = child.key
-                    if(userKey == "-KgCx9jdmLA78msqYnV-"){
-                        self.ref.child("users").child(userKey).child("kpopGroups").setValue(KpopGroup.self)
+        let kpopGroupRef = ref.child("users/" + userID! + "/kpopGroups")
+        
+        ref.child("KpopGroups").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let value = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                
+                for child in value {
+                    let kpopGroup = child.key
+                    
+                    if(kpopGroup == "-KgCx9jdmLA78msqYnV-"){
+                        kpopGroupRef.child("exo").setValue(kpopGroup)
                     }
                 }
+            } else {
+                print("Error! Could not decode group data")
             }
         })
     }
@@ -122,14 +139,20 @@ class OnboardingVC: UIViewController {
     @IBAction func addGroup4(_ sender: UIButton) {
         ref = FIRDatabase.database().reference()
         
-        ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
-            if let result = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                for child in result {
-                    let userKey = child.key
-                    if(userKey == "-KgH9pgaNoBpu_wYqV8o"){
-                        self.ref.child("users").child(userKey).child("kpopGroups").setValue(KpopGroup.self)
+        let kpopGroupRef = ref.child("users/" + userID! + "/kpopGroups")
+        
+        ref.child("KpopGroups").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let value = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                
+                for child in value {
+                    let kpopGroup = child.key
+                    
+                    if(kpopGroup == "-KgH9pgaNoBpu_wYqV8o"){
+                        kpopGroupRef.child("twice").setValue(kpopGroup)
                     }
                 }
+            } else {
+                print("Error! Could not decode group data")
             }
         })
     }
@@ -137,14 +160,20 @@ class OnboardingVC: UIViewController {
     @IBAction func addGroup5(_ sender: UIButton) {
         ref = FIRDatabase.database().reference()
         
-        ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
-            if let result = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                for child in result {
-                    let userKey = child.key
-                    if(userKey == "-KgH9qIca2Wgw-Dhs4JS"){
-                        self.ref.child("users").child(userKey).child("kpopGroups").setValue(KpopGroup.self)
+        let kpopGroupRef = ref.child("users/" + userID! + "/kpopGroups")
+        
+        ref.child("KpopGroups").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let value = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                
+                for child in value {
+                    let kpopGroup = child.key
+                    
+                    if(kpopGroup == "-KgH9qIca2Wgw-Dhs4JS"){
+                        kpopGroupRef.child("bigBang").setValue(kpopGroup)
                     }
                 }
+            } else {
+                print("Error! Could not decode group data")
             }
         })
     }
@@ -152,14 +181,20 @@ class OnboardingVC: UIViewController {
     @IBAction func addGroup6(_ sender: UIButton) {
         ref = FIRDatabase.database().reference()
         
-        ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
-            if let result = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                for child in result {
-                    let userKey = child.key
-                    if(userKey == "-KgH9qbONq9hzFQcagPJ"){
-                        self.ref.child("users").child(userKey).child("kpopGroups").setValue(KpopGroup.self)
+        let kpopGroupRef = ref.child("users/" + userID! + "/kpopGroups")
+        
+        ref.child("KpopGroups").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let value = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                
+                for child in value {
+                    let kpopGroup = child.key
+                    
+                    if(kpopGroup == "-KgH9qbONq9hzFQcagPJ"){
+                        kpopGroupRef.child("got7").setValue(kpopGroup)
                     }
                 }
+            } else {
+                print("Error! Could not decode group data")
             }
         })
     }
