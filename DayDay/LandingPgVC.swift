@@ -12,6 +12,7 @@ import FirebaseAuth
 class LandingPgVC: UIViewController, RadialMenuDelegate {
 
     var radialMenu:RadialMenu!
+    var gradientLayer: CAGradientLayer!
     
     @IBOutlet weak var button: UIButton!
     
@@ -26,6 +27,12 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        createGradientLayer()
     }
     
     @IBAction func showPopup(_ sender: AnyObject) {
@@ -75,6 +82,7 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
         self.button.layer.cornerRadius = self.button.frame.size.width / 2;
         self.button.clipsToBounds = true;
 
+        //Add in child image url
         if index == 1 {
             button.setImage(UIImage(named: "nearMe"), for:UIControlState())
         } else if index == 2 {
@@ -146,5 +154,13 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
         let segue = CustomUnwindSegue(identifier: identifier, source: fromViewController, destination: toViewController)
         segue.animationType = .GrowScale
         return segue
+    }
+    
+    //Gradient Background
+    func createGradientLayer() {
+        gradientLayer = CAGradientLayer()
+        gradientLayer.frame = self.view.bounds
+        gradientLayer.colors = [UIColor(red:0.67, green:0.43, blue:1.00, alpha:1.0).cgColor, UIColor(red:0.46, green:0.73, blue:0.96, alpha:1.0).cgColor]
+        self.view.layer.insertSublayer(gradientLayer, at: 0)
     }
 }
