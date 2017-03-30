@@ -21,7 +21,7 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         
         //Background Video (make sure always under 5mb)
-        /*let videoURL: NSURL = Bundle.main.url(forResource: "bg", withExtension: "mp4")! as NSURL
+        let videoURL: NSURL = Bundle.main.url(forResource: "bg", withExtension: "mp4")! as NSURL
         player = AVPlayer(url: videoURL as URL)
         player?.actionAtItemEnd = .none
         player?.isMuted = true
@@ -37,7 +37,7 @@ class LoginVC: UIViewController {
                 self.player?.seek(to: kCMTimeZero)
                 self.player?.play()
             }
-        })*/
+        })
         
     }
 

@@ -7,11 +7,6 @@
 		<key>DayDay.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>10</integer>
-		</dict>
-		<key>WePlay.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
 	</dict>

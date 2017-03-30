@@ -30,7 +30,7 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         self.retrieveGroupDetail()
         groupTableView.backgroundColor = UIColor.clear
-        groupTableView.rowHeight = groupTableView.frame.size.height / 5.3
+        groupTableView.rowHeight = groupTableView.frame.size.height / 5.23
     }
     
     override func didReceiveMemoryWarning() {
