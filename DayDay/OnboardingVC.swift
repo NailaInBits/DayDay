@@ -84,8 +84,7 @@ class OnboardingVC: UIViewController {
                     let kpopGroup = child.key
                     
                     if(kpopGroup == "-KgCx7qeem3u2dlMDr0i"){
-                        let dict: Dictionary = ["blackPink": kpopGroup]
-                        kpopGroupRef.setValue(dict)
+                        kpopGroupRef.child("bts").setValue(kpopGroup)
                     }
                 }
             } else {
@@ -107,8 +106,7 @@ class OnboardingVC: UIViewController {
                     let kpopGroup = child.key
                     
                     if(kpopGroup == "-KgCx8cRgj4qca_K4aBR"){
-                        let dict: Dictionary = ["blackPink": kpopGroup]
-                        kpopGroupRef.setValue(dict)
+                        kpopGroupRef.child("blackPink").setValue(kpopGroup)
                     }
                 }
             } else {
@@ -130,8 +128,7 @@ class OnboardingVC: UIViewController {
                     let kpopGroup = child.key
                     
                     if(kpopGroup == "-KgCx9jdmLA78msqYnV-"){
-                        let dict: Dictionary = ["blackPink": kpopGroup]
-                        kpopGroupRef.setValue(dict)
+                        kpopGroupRef.child("exo").setValue(kpopGroup)
                     }
                 }
             } else {
@@ -152,8 +149,7 @@ class OnboardingVC: UIViewController {
                     let kpopGroup = child.key
                     
                     if(kpopGroup == "-KgH9pgaNoBpu_wYqV8o"){
-                        let dict: Dictionary = ["blackPink": kpopGroup]
-                        kpopGroupRef.setValue(dict)
+                        kpopGroupRef.child("twice").setValue(kpopGroup)
                     }
                 }
             } else {
@@ -174,8 +170,7 @@ class OnboardingVC: UIViewController {
                     let kpopGroup = child.key
                     
                     if(kpopGroup == "-KgH9qIca2Wgw-Dhs4JS"){
-                        let dict: Dictionary = ["blackPink": kpopGroup]
-                        kpopGroupRef.setValue(dict)
+                        kpopGroupRef.child("bigBang").setValue(kpopGroup)
                     }
                 }
             } else {
@@ -196,8 +191,7 @@ class OnboardingVC: UIViewController {
                     let kpopGroup = child.key
                     
                     if(kpopGroup == "-KgH9qbONq9hzFQcagPJ"){
-                        let dict: Dictionary = ["blackPink": kpopGroup]
-                        kpopGroupRef.setValue(dict)
+                        kpopGroupRef.child("got7").setValue(kpopGroup)
                     }
                 }
             } else {

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
+<<<<<<< HEAD
+   LastUpgradeVersion = "0830"
+=======
    LastUpgradeVersion = "0700"
+>>>>>>> master
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -60,6 +64,18 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+<<<<<<< HEAD
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "36E4EEF54A3D698FE35D318DB2E8E51B"
+            BuildableName = "Pods_DayDay.framework"
+            BlueprintName = "Pods-DayDay"
+            ReferencedContainer = "container:Pods.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
+=======
+>>>>>>> master
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
