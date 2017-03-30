@@ -47,7 +47,7 @@ class LoginVC: UIViewController {
     
     func checkForFirstTime() {
         let ref = FIRDatabase.database().reference(fromURL: "https://dayday-39e15.firebaseio.com/users")
-        guard let uid = user?.uid else {
+        guard let uid = FIRAuth.auth()?.currentUser?.uid else {
             return
         }
         ref.queryOrderedByKey().queryEqual(toValue: uid).observeSingleEvent(of: .value, with: { (snapshot) in
@@ -86,11 +86,14 @@ class LoginVC: UIViewController {
     @IBAction func facebookLogin(sender: UIButton) {
         let fbLoginManager = FBSDKLoginManager()
         fbLoginManager.logIn(withReadPermissions: ["public_profile", "email"], from: self) { (result, error) in
-            if let error = error {
-                print("Failed to login: \(error.localizedDescription)")
+            if (error != nil) {
+                print("Failed to login: \(error?.localizedDescription)")
+                return
+            } else if (result?.isCancelled)! {
+                print("Login is cancelled")
                 return
             }
-        
+            
             guard let accessToken = FBSDKAccessToken.current() else {
                 print("Failed to get access token")
                 return
@@ -100,7 +103,7 @@ class LoginVC: UIViewController {
             
             // Perform login by calling Firebase APIs
             FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
-                if ((error) != nil) {
+                if (error != nil) {
                     print("Login error: \(error?.localizedDescription)")
                     let alertController = UIAlertController(title: "Login Error", message: error?.localizedDescription, preferredStyle: .alert)
                     let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -108,7 +111,6 @@ class LoginVC: UIViewController {
                     self.present(alertController, animated: true, completion: nil)
                     return
                 } else {
-                    
                     self.checkForFirstTime()
                 }
         
