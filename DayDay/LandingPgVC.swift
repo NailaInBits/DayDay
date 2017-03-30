@@ -41,14 +41,12 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
         super.didReceiveMemoryWarning()
     }
     
-<<<<<<< HEAD
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         createGradientLayer()
     }
     
-=======
     private func retrieveUserInfo() {
         
         self.ref = FIRDatabase.database().reference()
@@ -108,7 +106,6 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
     }
     
     // Profile page button
->>>>>>> 83d381e6b2256082401f79668c68f8e31fda0d37
     @IBAction func showPopup(_ sender: AnyObject) {
         let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProfilePg") as! ProfileVC
         self.addChildViewController(popOverVC)
@@ -215,14 +212,12 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
         return segue
     }
     
-<<<<<<< HEAD
     //Gradient Background
     func createGradientLayer() {
         gradientLayer = CAGradientLayer()
         gradientLayer.frame = self.view.bounds
         gradientLayer.colors = [UIColor(red:0.67, green:0.43, blue:1.00, alpha:1.0).cgColor, UIColor(red:0.46, green:0.73, blue:0.96, alpha:1.0).cgColor]
         self.view.layer.insertSublayer(gradientLayer, at: 0)
-=======
 }
 
 // Adds the presentation animation to Transitioning delegate
@@ -241,6 +236,5 @@ extension LandingPgVC: UIViewControllerTransitioningDelegate {
     
     func interactionControllerForPresentation(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
         return interactor.hasStarted ? interactor : nil
->>>>>>> 83d381e6b2256082401f79668c68f8e31fda0d37
     }
 }

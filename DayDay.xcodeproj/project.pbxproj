@@ -251,15 +251,10 @@
 		E1D7F0BB1E7C5BBA0022777F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
 				E142F29B1E8C5DF000FFAC90 /* Conversation.swift */,
 				E142F2A31E8C5E3700FFAC90 /* User.swift */,
 				E142F2A51E8C5E4100FFAC90 /* Message.swift */,
-=======
 				499DABEF1E8AC71E0053370E /* GroupDetails.swift */,
-				E10EAE8A1E7C60D600D1918E /* Channel.swift */,
-				E10EAE901E7C612500D1918E /* CreateChannelCell.swift */,
->>>>>>> 83d381e6b2256082401f79668c68f8e31fda0d37
 				E15FA8A21E88B92000B7C358 /* KpopGroup.swift */,
 			);
 			name = Models;
@@ -492,7 +487,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		CD0D25479E9EB801F08E0320 /* [CP] Embed Pods Frameworks */ = {
@@ -517,20 +512,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
 				E142F2A21E8C5E2C00FFAC90 /* Support.swift in Sources */,
-=======
 				499DABF01E8AC71E0053370E /* GroupDetails.swift in Sources */,
->>>>>>> 83d381e6b2256082401f79668c68f8e31fda0d37
 				E10EAE931E7C613800D1918E /* CustomSegue.swift in Sources */,
 				49A43FAD1E89F8CC00C152AF /* GroupProfileBg.swift in Sources */,
 				E15FA8A51E88B92B00B7C358 /* OnboardingVC.swift in Sources */,
 				E15FA8A31E88B92000B7C358 /* KpopGroup.swift in Sources */,
-<<<<<<< HEAD
-=======
-				E10EAE8B1E7C60D600D1918E /* Channel.swift in Sources */,
 				49D2564F1E88A0A7008B7270 /* Interactor.swift in Sources */,
->>>>>>> 83d381e6b2256082401f79668c68f8e31fda0d37
 				E10EAE991E7C654800D1918E /* MagicVC.swift in Sources */,
 				49A43FAB1E89F76A00C152AF /* GroupProfileVC.swift in Sources */,
 				49D256611E88DC94008B7270 /* SideMenuBg.swift in Sources */,
@@ -551,13 +539,7 @@
 				49D256511E88A1F8008B7270 /* MenuHelper.swift in Sources */,
 				49D256531E88A801008B7270 /* PresentMenuAnimator.swift in Sources */,
 				E10EAE971E7C653900D1918E /* LoginVC.swift in Sources */,
-<<<<<<< HEAD
-=======
 				49D2565D1E88C368008B7270 /* DismissMenuAnimator.swift in Sources */,
-				E10EAE8F1E7C611300D1918E /* ChannelViewVC.swift in Sources */,
-				E10EAEA51E7C658700D1918E /* UIImage+Gif.swift in Sources */,
-				E10EAE911E7C612500D1918E /* CreateChannelCell.swift in Sources */,
->>>>>>> 83d381e6b2256082401f79668c68f8e31fda0d37
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

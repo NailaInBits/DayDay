@@ -1,10 +1,6 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Bj6-Gb-A0g">
-=======
-<?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Bj6-Gb-A0g">
->>>>>>> 83d381e6b2256082401f79668c68f8e31fda0d37
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -33,8 +29,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-<<<<<<< HEAD
-=======
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="landingPageBg" translatesAutoresizingMaskIntoConstraints="NO" id="6Hc-fs-8HH">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <gestureRecognizers/>
@@ -46,7 +40,6 @@
                                     <outletCollection property="gestureRecognizers" destination="ijR-fr-5RA" appends="YES" id="OrE-Oc-6ep"/>
                                 </connections>
                             </imageView>
->>>>>>> 83d381e6b2256082401f79668c68f8e31fda0d37
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIp-R8-2U9">
                                 <rect key="frame" x="309" y="28" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -117,11 +110,8 @@
                     </view>
                     <connections>
                         <outlet property="button" destination="hBl-LU-m7C" id="oUw-rR-zt7"/>
-<<<<<<< HEAD
-=======
-                        <outlet property="sideMenuEdgePan" destination="ijR-fr-5RA" id="cOU-zX-2qu"/>
+              <outlet property="sideMenuEdgePan" destination="ijR-fr-5RA" id="cOU-zX-2qu"/>
                         <segue destination="J7v-Lp-U18" kind="custom" identifier="home2channels" customClass="CustomUnwindSegue" customModule="DayDay" customModuleProvider="target" id="45A-HP-hIo"/>
->>>>>>> 83d381e6b2256082401f79668c68f8e31fda0d37
                         <segue destination="Jry-My-kFD" kind="custom" identifier="home2magic" customClass="CustomSegue" customModule="DayDay" customModuleProvider="target" id="X2g-fv-u7d"/>
                         <segue destination="9On-Nl-peK" kind="presentation" identifier="SideMenu" id="9PX-1C-QwD"/>
                     </connections>
@@ -852,11 +842,8 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Az5-Rb-g0b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-<<<<<<< HEAD
             <point key="canvasLocation" x="-135" y="-1800"/>
-=======
             <point key="canvasLocation" x="1807.2" y="-1658.3208395802101"/>
->>>>>>> 83d381e6b2256082401f79668c68f8e31fda0d37
         </scene>
         <!--Magic-->
         <scene sceneID="LhQ-5E-VIn">
@@ -977,9 +964,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hAB-dX-fnH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-<<<<<<< HEAD
             <point key="canvasLocation" x="-135" y="-485"/>
-=======
             <point key="canvasLocation" x="-234" y="-485"/>
         </scene>
         <!--Root View Controller-->
@@ -1091,7 +1076,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W69-8j-wTi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2721" y="-485"/>
->>>>>>> 83d381e6b2256082401f79668c68f8e31fda0d37
         </scene>
         <!--View Controller-->
         <scene sceneID="r3k-rC-m31">
@@ -1130,12 +1114,9 @@
         </scene>
     </scenes>
     <resources>
-<<<<<<< HEAD
         <image name="Cat Profile Filled-50" width="50" height="50"/>
-=======
         <image name="channels" width="32" height="32"/>
         <image name="chat" width="64" height="64"/>
->>>>>>> 83d381e6b2256082401f79668c68f8e31fda0d37
         <image name="easter-bunny" width="64" height="64"/>
         <image name="exampleprof" width="300" height="300"/>
         <image name="g1" width="286" height="292"/>
@@ -1147,11 +1128,8 @@
         <image name="icon" width="64" height="64"/>
         <image name="loginLogo" width="256" height="256"/>
         <image name="magicBG" width="640" height="640"/>
-<<<<<<< HEAD
         <image name="more" width="32" height="25"/>
-=======
         <image name="pastEvents" width="64" height="64"/>
->>>>>>> 83d381e6b2256082401f79668c68f8e31fda0d37
         <image name="pencil" width="32" height="32"/>
         <image name="power-button-outline" width="64" height="64"/>
         <image name="selectCamera" width="32" height="25"/>
@@ -1162,11 +1140,9 @@
         <image name="textName" width="219" height="53"/>
     </resources>
     <inferredMetricsTieBreakers>
-<<<<<<< HEAD
         <segue reference="J0L-7X-OEJ"/>
-=======
         <segue reference="45A-HP-hIo"/>
         <segue reference="md5-Yr-Blv"/>
->>>>>>> 83d381e6b2256082401f79668c68f8e31fda0d37
     </inferredMetricsTieBreakers>
+</document>
 </document>
