@@ -218,6 +218,7 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
         gradientLayer.frame = self.view.bounds
         gradientLayer.colors = [UIColor(red:0.67, green:0.43, blue:1.00, alpha:1.0).cgColor, UIColor(red:0.46, green:0.73, blue:0.96, alpha:1.0).cgColor]
         self.view.layer.insertSublayer(gradientLayer, at: 0)
+    }
 }
 
 // Adds the presentation animation to Transitioning delegate
@@ -238,3 +239,4 @@ extension LandingPgVC: UIViewControllerTransitioningDelegate {
         return interactor.hasStarted ? interactor : nil
     }
 }
+
