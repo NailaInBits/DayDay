@@ -18,8 +18,9 @@ class OnboardingVC: UIViewController {
     private var ref: FIRDatabaseReference = FIRDatabase.database().reference().child("KpopGroups")
     private var values = [String]()
     let userID = FIRAuth.auth()?.currentUser?.uid
-  
     private var kpopGroups: [KpopGroup] = []
+    private var userRef: FIRDatabaseReference = FIRDatabase.database().reference().child("users")
+
     
     @IBOutlet var instructionsLabel: UILabel!
     @IBOutlet var firstButton: UIButton!
@@ -51,7 +52,6 @@ class OnboardingVC: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
         //Button Animation:
         //Animates the Instructions
         UIView.animate(withDuration: 2.0, animations: {
@@ -113,6 +113,7 @@ class OnboardingVC: UIViewController {
                 print("Error! Could not decode group data")
             }
         })
+
     }
     
     @IBAction func addGroup3(_ sender: UIButton) {
