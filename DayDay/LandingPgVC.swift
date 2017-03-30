@@ -8,13 +8,22 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class LandingPgVC: UIViewController, RadialMenuDelegate {
 
+    let interactor = Interactor()
+    
     var radialMenu:RadialMenu!
     var gradientLayer: CAGradientLayer!
     
+    private var ref: FIRDatabaseReference!
+    private var userID = FIRAuth.auth()?.currentUser?.uid
+    private var fid: String?
+    
     @IBOutlet weak var button: UIButton!
+    
+    @IBOutlet var sideMenuEdgePan: UIScreenEdgePanGestureRecognizer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,40 +31,90 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
         self.button.clipsToBounds = true
         self.radialMenu = RadialMenu()
         self.radialMenu.delegate = self
-        self.button.setBackgroundImage(self.radialMenu.getProfilePic(), for: UIControlState.normal)
+        self.retrieveUserInfo()
+        //self.button.setBackgroundImage(self.getProfilePicture(), for: UIControlState.normal)
+        sideMenuEdgePan.edges = .left
+        view.addGestureRecognizer(sideMenuEdgePan)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
+<<<<<<< HEAD
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         createGradientLayer()
     }
     
+=======
+    private func retrieveUserInfo() {
+        
+        self.ref = FIRDatabase.database().reference()
+        self.ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            if !snapshot.exists() { return }
+            
+            if let value = snapshot.value as? NSDictionary {
+                self.fid = value["id"] as? String
+            }
+        })
+    }
+    
+    private func getProfilePicture() -> UIImage? {
+        
+        let imgURLString = "https://graph.facebook.com/" + self.fid! + "/picture?type=large"
+        let imgURL = URL(string: imgURLString)
+        
+        do {
+            let imageData = try Data(contentsOf: imgURL!)
+            let image = UIImage(data: imageData)
+            return image
+        } catch {
+            return nil
+        }
+    }
+    
+    // Side Menu button
+    @IBAction func openSideMenu(_ sender: AnyObject) {
+        performSegue(withIdentifier: "SideMenu", sender: nil)
+    }
+    
+    // Side Menu pan gesture present interaction
+    @IBAction func edgePanGesture(sender: UIScreenEdgePanGestureRecognizer) {
+        let translation = sender.translation(in: view)
+        
+        let progress = MenuHelper.calculateProgress(
+            translationInView: translation,
+            viewBounds: view.bounds,
+            direction: .Right
+        )
+        
+        MenuHelper.mapGestureStateToInteractor(
+            gestureState: sender.state,
+            progress: progress,
+            interactor: interactor){
+                performSegue(withIdentifier: "SideMenu", sender: nil)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destinationViewController = segue.destination as? SideMenuVC {
+            destinationViewController.transitioningDelegate = self
+            
+            destinationViewController.interactor = interactor
+        }
+    }
+    
+    // Profile page button
+>>>>>>> 83d381e6b2256082401f79668c68f8e31fda0d37
     @IBAction func showPopup(_ sender: AnyObject) {
         let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProfilePg") as! ProfileVC
         self.addChildViewController(popOverVC)
         popOverVC.view.frame = self.view.frame
         self.view.addSubview(popOverVC.view)
         popOverVC.didMove(toParentViewController: self)
-    }
-    
-    
-    // Logout function
-    @IBAction func logout(_ sender: AnyObject) {
-        let firebaseAuth = FIRAuth.auth()
-        do {
-            try firebaseAuth?.signOut()
-        } catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)
-        }
-        if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "Login") {
-            UIApplication.shared.keyWindow?.rootViewController = viewController
-            self.dismiss(animated: true, completion: nil)
-        }
     }
     
     //Radial Menu Buttons
@@ -156,11 +215,32 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
         return segue
     }
     
+<<<<<<< HEAD
     //Gradient Background
     func createGradientLayer() {
         gradientLayer = CAGradientLayer()
         gradientLayer.frame = self.view.bounds
         gradientLayer.colors = [UIColor(red:0.67, green:0.43, blue:1.00, alpha:1.0).cgColor, UIColor(red:0.46, green:0.73, blue:0.96, alpha:1.0).cgColor]
         self.view.layer.insertSublayer(gradientLayer, at: 0)
+=======
+}
+
+// Adds the presentation animation to Transitioning delegate
+extension LandingPgVC: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return PresentMenuAnimator()
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return DismissMenuAnimator()
+    }
+    
+    func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return interactor.hasStarted ? interactor : nil
+    }
+    
+    func interactionControllerForPresentation(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return interactor.hasStarted ? interactor : nil
+>>>>>>> 83d381e6b2256082401f79668c68f8e31fda0d37
     }
 }

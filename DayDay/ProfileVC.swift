@@ -13,7 +13,10 @@ import FirebaseDatabase
 
 class ProfileVC: UIViewController {
     
-    var ref: FIRDatabaseReference!
+    private var ref: FIRDatabaseReference!
+    private var userID = FIRAuth.auth()?.currentUser?.uid
+    private var fid: String?
+    
     var editTextFieldToggle: Bool = false
     
     @IBOutlet weak var ProfilePageView: UIView!
@@ -39,9 +42,11 @@ class ProfileVC: UIViewController {
         super.viewDidLoad()
         
         self.retrieveUserInfo()
-        self.fieldLayout()
         
-        self.showAnimate()
+        fieldLayout()
+        
+        showAnimate()
+        
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         // Do any additional setup after loading the view.
     }
@@ -52,64 +57,46 @@ class ProfileVC: UIViewController {
     }
     
     func fieldLayout() {
-        self.ProfilePic.image = self.getProfilePic()
-        self.ProfilePic.layer.cornerRadius = self.ProfilePic.frame.width / 2
-        self.ProfilePic.layer.borderWidth = 3.0
-        self.ProfilePic.clipsToBounds = true
+        //ProfilePic.image = self.getProfilePicture()
+        ProfilePic.layer.cornerRadius = ProfilePic.frame.width / 2
+        ProfilePic.layer.borderWidth = 3.0
+        ProfilePic.clipsToBounds = true
         
-        self.Email.layer.cornerRadius = 15.0
-        self.Email.layer.borderWidth = 2.0
-        self.Email.clipsToBounds = true
+        Email.layer.cornerRadius = 15.0
+        Email.layer.borderWidth = 2.0
+        Email.clipsToBounds = true
         
-        self.Username.layer.cornerRadius = 15.0
-        self.Username.layer.borderWidth = 2.0
-        self.Username.clipsToBounds = true
+        Username.layer.cornerRadius = 15.0
+        Username.layer.borderWidth = 2.0
+        Username.clipsToBounds = true
     }
     
-    func updateUsername() {
+    private func updateUsername() {
         
-        let userID = FIRAuth.auth()?.currentUser?.uid
+        self.ref = FIRDatabase.database().reference().child("users").child(userID!)
         
-        ref = FIRDatabase.database().reference().child("users").child(userID!)
-        
-        ref.updateChildValues(["name": self.Username.text!])
+        self.ref.updateChildValues(["name": self.Username.text!])
 
     }
     
-    func retrieveUserInfo() {
+    private func retrieveUserInfo() {
         
-        ref = FIRDatabase.database().reference()
-        
-        let userID = FIRAuth.auth()?.currentUser?.uid
-        
-        ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+        self.ref = FIRDatabase.database().reference()
+        self.ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
             
             if !snapshot.exists() { return }
             
             if let value = snapshot.value as? NSDictionary {
                 self.Email.text = value["email"] as? String
                 self.Username.text = value["name"] as? String
+                self.fid = value["id"] as? String
             }
-            
         })
-        
-        /* if let user = FIRAuth.auth()?.currentUser {
-            for profile in user.providerData {
-                providerId = profile.providerID
-                fid = profile.uid
-                name = profile.displayName!
-                email = profile.email!
-                photoURL = profile.photoURL!
-                
-                Email.text = email
-                Username.text = name
-            }
-        }*/
     }
     
-    func getProfilePic() -> UIImage? {
+    private func getProfilePicture() -> UIImage? {
         
-        let imgURLString = "https://graph.facebook.com/" + "621159167" + "/picture?type=large"
+        let imgURLString = "https://graph.facebook.com/" + self.fid! + "/picture?type=large"
         let imgURL = URL(string: imgURLString)
         
         do {
