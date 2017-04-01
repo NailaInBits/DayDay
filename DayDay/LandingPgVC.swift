@@ -32,7 +32,6 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
         self.radialMenu = RadialMenu()
         self.radialMenu.delegate = self
         self.retrieveUserInfo()
-        //self.button.setBackgroundImage(self.getProfilePicture(), for: UIControlState.normal)
         sideMenuEdgePan.edges = .left
         view.addGestureRecognizer(sideMenuEdgePan)
     }
@@ -56,11 +55,13 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
             
             if let value = snapshot.value as? NSDictionary {
                 self.fid = value["id"] as? String
+                
+                //self.button.setBackgroundImage(self.getProfilePicture(fid: self.fid), for: UIControlState.normal)
             }
         })
     }
     
-    private func getProfilePicture() -> UIImage? {
+    private func getProfilePicture(fid: String?) -> UIImage? {
         
         let imgURLString = "https://graph.facebook.com/" + self.fid! + "/picture?type=large"
         let imgURL = URL(string: imgURLString)

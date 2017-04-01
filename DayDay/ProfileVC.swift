@@ -57,7 +57,6 @@ class ProfileVC: UIViewController {
     }
     
     func fieldLayout() {
-        //ProfilePic.image = self.getProfilePicture()
         ProfilePic.layer.cornerRadius = ProfilePic.frame.width / 2
         ProfilePic.layer.borderWidth = 3.0
         ProfilePic.clipsToBounds = true
@@ -90,11 +89,13 @@ class ProfileVC: UIViewController {
                 self.Email.text = value["email"] as? String
                 self.Username.text = value["name"] as? String
                 self.fid = value["id"] as? String
+                
+                self.ProfilePic.image = self.getProfilePicture(fid: self.fid)
             }
         })
     }
     
-    private func getProfilePicture() -> UIImage? {
+    private func getProfilePicture(fid: String?) -> UIImage? {
         
         let imgURLString = "https://graph.facebook.com/" + self.fid! + "/picture?type=large"
         let imgURL = URL(string: imgURLString)
