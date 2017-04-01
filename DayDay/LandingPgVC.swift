@@ -183,11 +183,11 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
         progressLine.add(animateStrokeEnd, forKey: "animate stroke end animation") */
         
         if index == 1 {
-            performSegue(withIdentifier: "toMap", sender: self)
+           // performSegue(withIdentifier: "toMap", sender: self)
         } else if index == 2 {
-            performSegue(withIdentifier: "toCurrent", sender: self)
+           // performSegue(withIdentifier: "toCurrent", sender: self)
         } else if index == 3 {
-           performSegue(withIdentifier: "toCurrent", sender: self)
+          // performSegue(withIdentifier: "toCurrent", sender: self)
         }
     }
     
@@ -195,9 +195,7 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
         performSegue(withIdentifier: "home2magic", sender: nil)
     }
     
-    @IBAction func toChannels(_ sender: Any) {
-        performSegue(withIdentifier: "home2channels", sender: nil)
-    }
+
     
     
     func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
