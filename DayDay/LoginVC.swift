@@ -16,6 +16,7 @@ import FirebaseAuth
 class LoginVC: UIViewController {
     
     var player: AVPlayer?
+    var audio: AVAudioSession = AVAudioSession.sharedInstance()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,14 @@ class LoginVC: UIViewController {
         player = AVPlayer(url: videoURL as URL)
         player?.actionAtItemEnd = .none
         player?.isMuted = true
+        
+        do {
+            try audio.setCategory(AVAudioSessionCategoryAmbient)
+            try audio.setActive(true)
+        } catch let error as NSError {
+            print(error)
+        }
+        
         
         let playerLayer = AVPlayerLayer(player: player)
         playerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
@@ -85,6 +94,9 @@ class LoginVC: UIViewController {
     // Facebook Login
     @IBAction func facebookLogin(sender: UIButton) {
         let fbLoginManager = FBSDKLoginManager()
+        
+        fbLoginManager.logOut()
+        
         fbLoginManager.logIn(withReadPermissions: ["public_profile", "email"], from: self) { (result, error) in
             if (error != nil) {
                 print("Failed to login: \(error?.localizedDescription)")
