@@ -85,6 +85,9 @@ class LoginVC: UIViewController {
     // Facebook Login
     @IBAction func facebookLogin(sender: UIButton) {
         let fbLoginManager = FBSDKLoginManager()
+        
+        fbLoginManager.logOut()
+        
         fbLoginManager.logIn(withReadPermissions: ["public_profile", "email"], from: self) { (result, error) in
             if (error != nil) {
                 print("Failed to login: \(error?.localizedDescription)")
