@@ -83,6 +83,13 @@ class LoginVC: UIViewController {
                         // no error
                         print("Save the user successfully into Firebase database")
                         })
+                        
+                        // Present the onboarding view
+                        if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "Onboarding") {
+                            UIApplication.shared.keyWindow?.rootViewController = viewController
+                            
+                            self.dismiss(animated: true, completion: nil)
+                        }
                     }
                 }
             } else {
@@ -125,9 +132,9 @@ class LoginVC: UIViewController {
                 } else {
                     self.checkForFirstTime()
                 }
-        
+                
                 // Present the main view
-                if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "Onboarding") {
+                if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "LandingPg") {
                     UIApplication.shared.keyWindow?.rootViewController = viewController
                     
                     self.dismiss(animated: true, completion: nil)

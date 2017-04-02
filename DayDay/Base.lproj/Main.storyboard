@@ -397,7 +397,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="jRt-nd-Tt0" kind="show" id="CBl-GU-pjk"/>
+                                    <action selector="addGroups:" destination="sHQ-ua-8xL" eventType="touchUpInside" id="NSg-lr-SlO"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -411,6 +411,7 @@
                         <outlet property="secondButton" destination="tB0-Ez-hAK" id="tDf-Lh-P99"/>
                         <outlet property="sixthButton" destination="MMd-ac-iqy" id="xIs-fn-AJw"/>
                         <outlet property="thirdButton" destination="zjz-YI-7Y0" id="2HI-JB-Byx"/>
+                        <segue destination="jRt-nd-Tt0" kind="show" identifier="showLanding" id="QP2-sD-cj8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JN9-B3-lqB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -678,6 +679,6 @@
         <image name="textName" width="219" height="53"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="iWX-rv-rWj"/>
+        <segue reference="QP2-sD-cj8"/>
     </inferredMetricsTieBreakers>
 </document>
