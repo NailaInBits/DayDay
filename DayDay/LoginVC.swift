@@ -63,13 +63,13 @@ class LoginVC: UIViewController {
             if (snapshot.value == nil || snapshot.value is NSNull) {
                 let usersReference = ref.child(uid)
         
-                let graphRequest = FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, email, name"]).start{
+                _ = FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, email, name"]).start{
                     (connection, result, err) in
         
                     if ((err) != nil) {
-                        print("Error: \(err)")
+                        print("Error: \(String(describing: err))")
                     } else {
-                        print("fetched user: \(result)")
+                        print("fetched user: \(String(describing: result))")
         
                         let values: [String:AnyObject] = result as! [String : AnyObject]
         
@@ -77,7 +77,7 @@ class LoginVC: UIViewController {
                         usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
                         // if there's an error in saving to our firebase database
                         if err != nil {
-                            print(err)
+                            print(err!)
                             return
                         }
                         // no error
@@ -99,7 +99,7 @@ class LoginVC: UIViewController {
         
         fbLoginManager.logIn(withReadPermissions: ["public_profile", "email"], from: self) { (result, error) in
             if (error != nil) {
-                print("Failed to login: \(error?.localizedDescription)")
+                print("Failed to login: \(String(describing: error?.localizedDescription))")
                 return
             } else if (result?.isCancelled)! {
                 print("Login is cancelled")
@@ -116,7 +116,7 @@ class LoginVC: UIViewController {
             // Perform login by calling Firebase APIs
             FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
                 if (error != nil) {
-                    print("Login error: \(error?.localizedDescription)")
+                    print("Login error: \(String(describing: error?.localizedDescription))")
                     let alertController = UIAlertController(title: "Login Error", message: error?.localizedDescription, preferredStyle: .alert)
                     let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                     alertController.addAction(okayAction)

@@ -22,12 +22,12 @@ class RadialButton: UIButton {
     
     func willAppear () {
         
-        self.imageView?.transform = CGAffineTransform.identity.rotated(by: 180/180 * CGFloat(M_PI))
+        self.imageView?.transform = CGAffineTransform.identity.rotated(by: 180/180 * CGFloat(Double.pi))
         self.alpha                = 1.0
         
         UIView.animate(withDuration: 0.25, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: { () -> Void in
             self.center               = self.bouncePoint
-            self.imageView?.transform = CGAffineTransform.identity.rotated(by: 0/180 * CGFloat(M_PI))
+            self.imageView?.transform = CGAffineTransform.identity.rotated(by: 0/180 * CGFloat(Double.pi))
         }) { (finished:Bool) -> Void in
             UIView.animate(withDuration: 0.15, animations: { () -> Void in
                 self.center = self.centerPoint
@@ -39,7 +39,7 @@ class RadialButton: UIButton {
         
         UIView.animate(withDuration: 0.15, delay: 0.0, options: UIViewAnimationOptions.curveLinear, animations: { () -> Void in
             if let imageView = self.imageView {
-                imageView.transform = CGAffineTransform.identity.rotated(by: -180/180 * CGFloat(M_PI))
+                imageView.transform = CGAffineTransform.identity.rotated(by: -180/180 * CGFloat(Double.pi))
             }
             
         })  { (finished:Bool) -> Void in
