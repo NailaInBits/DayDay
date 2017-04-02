@@ -16,15 +16,24 @@ import FirebaseAuth
 class LoginVC: UIViewController {
     
     var player: AVPlayer?
+    var audio: AVAudioSession = AVAudioSession.sharedInstance()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //Background Video (make sure always under 5mb)
-        /*let videoURL: NSURL = Bundle.main.url(forResource: "bg", withExtension: "mp4")! as NSURL
+        let videoURL: NSURL = Bundle.main.url(forResource: "bg", withExtension: "mp4")! as NSURL
         player = AVPlayer(url: videoURL as URL)
         player?.actionAtItemEnd = .none
         player?.isMuted = true
+        
+        do {
+            try audio.setCategory(AVAudioSessionCategoryAmbient)
+            try audio.setActive(true)
+        } catch let error as NSError {
+            print(error)
+        }
+        
         
         let playerLayer = AVPlayerLayer(player: player)
         playerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
@@ -37,7 +46,7 @@ class LoginVC: UIViewController {
                 self.player?.seek(to: kCMTimeZero)
                 self.player?.play()
             }
-        })*/
+        })
         
     }
 
@@ -54,13 +63,13 @@ class LoginVC: UIViewController {
             if (snapshot.value == nil || snapshot.value is NSNull) {
                 let usersReference = ref.child(uid)
         
-                let graphRequest = FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, email, name"]).start{
+                _ = FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, email, name"]).start{
                     (connection, result, err) in
         
                     if ((err) != nil) {
-                        print("Error: \(err)")
+                        print("Error: \(String(describing: err))")
                     } else {
-                        print("fetched user: \(result)")
+                        print("fetched user: \(String(describing: result))")
         
                         let values: [String:AnyObject] = result as! [String : AnyObject]
         
@@ -68,12 +77,19 @@ class LoginVC: UIViewController {
                         usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
                         // if there's an error in saving to our firebase database
                         if err != nil {
-                            print(err)
+                            print(err!)
                             return
                         }
                         // no error
                         print("Save the user successfully into Firebase database")
                         })
+                        
+                        // Present the onboarding view
+                        if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "Onboarding") {
+                            UIApplication.shared.keyWindow?.rootViewController = viewController
+                            
+                            self.dismiss(animated: true, completion: nil)
+                        }
                     }
                 }
             } else {
@@ -85,9 +101,12 @@ class LoginVC: UIViewController {
     // Facebook Login
     @IBAction func facebookLogin(sender: UIButton) {
         let fbLoginManager = FBSDKLoginManager()
+        
+        fbLoginManager.logOut()
+        
         fbLoginManager.logIn(withReadPermissions: ["public_profile", "email"], from: self) { (result, error) in
             if (error != nil) {
-                print("Failed to login: \(error?.localizedDescription)")
+                print("Failed to login: \(String(describing: error?.localizedDescription))")
                 return
             } else if (result?.isCancelled)! {
                 print("Login is cancelled")
@@ -104,7 +123,7 @@ class LoginVC: UIViewController {
             // Perform login by calling Firebase APIs
             FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
                 if (error != nil) {
-                    print("Login error: \(error?.localizedDescription)")
+                    print("Login error: \(String(describing: error?.localizedDescription))")
                     let alertController = UIAlertController(title: "Login Error", message: error?.localizedDescription, preferredStyle: .alert)
                     let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                     alertController.addAction(okayAction)
@@ -113,9 +132,9 @@ class LoginVC: UIViewController {
                 } else {
                     self.checkForFirstTime()
                 }
-        
+                
                 // Present the main view
-                if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "Onboarding") {
+                if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "LandingPg") {
                     UIApplication.shared.keyWindow?.rootViewController = viewController
                     
                     self.dismiss(animated: true, completion: nil)

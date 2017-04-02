@@ -11,7 +11,7 @@ import UIKit
 class ProfileBg: UIView {
     
     var c1 = UIColor(red:0.99, green:0.45, blue:0.42, alpha:1.0)
-    var c2 = UIColor(red:1.00, green:0.56, blue:0.41, alpha:1.0)
+    var c2 = UIColor(red:1.00, green:0.76, blue:0.63, alpha:1.0)
 
 
     override func draw(_ rect: CGRect) {

@@ -57,7 +57,6 @@ class ProfileVC: UIViewController {
     }
     
     func fieldLayout() {
-        //ProfilePic.image = self.getProfilePicture()
         ProfilePic.layer.cornerRadius = ProfilePic.frame.width / 2
         ProfilePic.layer.borderWidth = 3.0
         ProfilePic.clipsToBounds = true
@@ -82,7 +81,7 @@ class ProfileVC: UIViewController {
     private func retrieveUserInfo() {
         
         self.ref = FIRDatabase.database().reference()
-        self.ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+        self.ref.child("users").child(userID!).observe(FIRDataEventType.value, with: { (snapshot) in
             
             if !snapshot.exists() { return }
             
@@ -90,22 +89,28 @@ class ProfileVC: UIViewController {
                 self.Email.text = value["email"] as? String
                 self.Username.text = value["name"] as? String
                 self.fid = value["id"] as? String
+                
+                self.ProfilePic.image = self.getProfilePicture(fid: self.fid)
             }
         })
     }
     
-    private func getProfilePicture() -> UIImage? {
+    private func getProfilePicture(fid: String?) -> UIImage? {
         
-        let imgURLString = "https://graph.facebook.com/" + self.fid! + "/picture?type=large"
-        let imgURL = URL(string: imgURLString)
-        
-        do {
-            let imageData = try Data(contentsOf: imgURL!)
-            let image = UIImage(data: imageData)
-            return image
-        } catch {
-            return nil
+        if let uid = fid {
+            let imgURLString = "https://graph.facebook.com/" + uid + "/picture?type=large"
+            let imgURL = URL(string: imgURLString)
+            
+            do {
+                let imageData = try Data(contentsOf: imgURL!)
+                let image = UIImage(data: imageData)
+                return image
+            } catch {
+                return nil
+            }
         }
+        
+        return nil
     }
     
     @IBAction func closePopup(_ Sender: AnyObject) {

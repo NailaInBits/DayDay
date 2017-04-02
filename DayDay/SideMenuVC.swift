@@ -30,7 +30,7 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         self.retrieveGroupDetail()
         groupTableView.backgroundColor = UIColor.clear
-        groupTableView.rowHeight = groupTableView.frame.size.height / 5.3
+        groupTableView.rowHeight = groupTableView.frame.size.height / 5.23
     }
     
     override func didReceiveMemoryWarning() {
@@ -52,7 +52,7 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     private func retrieveGroupDetail() {
         self.ref.observe(.childAdded, with: { (snapshot) -> Void in
             let groupData = snapshot.value as! Dictionary<String, AnyObject>
-            let id = snapshot.key
+            _ = snapshot.key
             if let name = groupData["name"] as! String!, name.characters.count > 0 {
                 self.group.append(groupData["description"] as! String)
             } else {

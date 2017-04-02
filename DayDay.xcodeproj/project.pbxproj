@@ -11,6 +11,8 @@
 		499DABF01E8AC71E0053370E /* GroupDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499DABEF1E8AC71E0053370E /* GroupDetails.swift */; };
 		49A43FAB1E89F76A00C152AF /* GroupProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A43FAA1E89F76A00C152AF /* GroupProfileVC.swift */; };
 		49A43FAD1E89F8CC00C152AF /* GroupProfileBg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A43FAC1E89F8CC00C152AF /* GroupProfileBg.swift */; };
+		49ABBEAA1E90D1F300F48E8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49ABBEA91E90D1F300F48E8D /* Assets.xcassets */; };
+		49C2AF2D1E8CD32000A560F0 /* bg.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 49C2AF2C1E8CD32000A560F0 /* bg.mp4 */; };
 		49D2564F1E88A0A7008B7270 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D2564E1E88A0A7008B7270 /* Interactor.swift */; };
 		49D256511E88A1F8008B7270 /* MenuHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D256501E88A1F8008B7270 /* MenuHelper.swift */; };
 		49D256531E88A801008B7270 /* PresentMenuAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D256521E88A801008B7270 /* PresentMenuAnimator.swift */; };
@@ -19,7 +21,6 @@
 		49D256611E88DC94008B7270 /* SideMenuBg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D256601E88DC94008B7270 /* SideMenuBg.swift */; };
 		9F75BF6B09D6B6EDC785A3D3 /* Pods_DayDay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13BFCABA79A9A53B35DEB131 /* Pods_DayDay.framework */; };
 		E10EAE821E7C606000D1918E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10EAE811E7C606000D1918E /* AppDelegate.swift */; };
-		E10EAE841E7C606E00D1918E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E10EAE831E7C606E00D1918E /* Assets.xcassets */; };
 		E10EAE931E7C613800D1918E /* CustomSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10EAE921E7C613800D1918E /* CustomSegue.swift */; };
 		E10EAE951E7C653300D1918E /* LandingPgVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10EAE941E7C653300D1918E /* LandingPgVC.swift */; };
 		E10EAE971E7C653900D1918E /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10EAE961E7C653900D1918E /* LoginVC.swift */; };
@@ -68,6 +69,8 @@
 		499DABEF1E8AC71E0053370E /* GroupDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupDetails.swift; path = DayDay/GroupDetails.swift; sourceTree = SOURCE_ROOT; };
 		49A43FAA1E89F76A00C152AF /* GroupProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupProfileVC.swift; path = DayDay/GroupProfileVC.swift; sourceTree = SOURCE_ROOT; };
 		49A43FAC1E89F8CC00C152AF /* GroupProfileBg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupProfileBg.swift; path = DayDay/GroupProfileBg.swift; sourceTree = SOURCE_ROOT; };
+		49ABBEA91E90D1F300F48E8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = DayDay/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		49C2AF2C1E8CD32000A560F0 /* bg.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bg.mp4; sourceTree = SOURCE_ROOT; };
 		49D2564E1E88A0A7008B7270 /* Interactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Interactor.swift; path = DayDay/Interactor.swift; sourceTree = SOURCE_ROOT; };
 		49D256501E88A1F8008B7270 /* MenuHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuHelper.swift; path = DayDay/MenuHelper.swift; sourceTree = SOURCE_ROOT; };
 		49D256521E88A801008B7270 /* PresentMenuAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentMenuAnimator.swift; path = DayDay/PresentMenuAnimator.swift; sourceTree = SOURCE_ROOT; };
@@ -77,8 +80,6 @@
 		82227A6BE53548172DE1F10A /* Pods-DayDay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayDay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DayDay/Pods-DayDay.debug.xcconfig"; sourceTree = "<group>"; };
 		C10CA2E1D9E7153F2785FB7A /* Pods-DayDay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayDay.release.xcconfig"; path = "Pods/Target Support Files/Pods-DayDay/Pods-DayDay.release.xcconfig"; sourceTree = "<group>"; };
 		E10EAE811E7C606000D1918E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = DayDay/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
-		E10EAE831E7C606E00D1918E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = DayDay/Assets.xcassets; sourceTree = SOURCE_ROOT; };
-		E10EAE851E7C608B00D1918E /* bg.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = bg.mp4; path = DayDay/bg.mp4; sourceTree = SOURCE_ROOT; };
 		E10EAE881E7C60BD00D1918E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = DayDay/Info.plist; sourceTree = SOURCE_ROOT; };
 		E10EAE921E7C613800D1918E /* CustomSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomSegue.swift; path = DayDay/CustomSegue.swift; sourceTree = SOURCE_ROOT; };
 		E10EAE941E7C653300D1918E /* LandingPgVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LandingPgVC.swift; path = DayDay/LandingPgVC.swift; sourceTree = SOURCE_ROOT; };
@@ -218,8 +219,8 @@
 				E1D7F0BC1E7C5BC10022777F /* ViewControllers */,
 				E1D7F0BB1E7C5BBA0022777F /* Models */,
 				E1D7F0C11E7C5D1B0022777F /* Resources */,
-				E10EAE831E7C606E00D1918E /* Assets.xcassets */,
 				E10EAEB31E7C665500D1918E /* LaunchScreen.storyboard */,
+				49ABBEA91E90D1F300F48E8D /* Assets.xcassets */,
 				E10EAEA61E7C659500D1918E /* Bridging.h */,
 				490528A91E8864FD004195FB /* GoogleService-Info.plist */,
 				E10EAE881E7C60BD00D1918E /* Info.plist */,
@@ -305,7 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				E10EAE961E7C653900D1918E /* LoginVC.swift */,
-				E10EAE851E7C608B00D1918E /* bg.mp4 */,
+				49C2AF2C1E8CD32000A560F0 /* bg.mp4 */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -392,6 +393,7 @@
 				TargetAttributes = {
 					E1B924931E576BF000B4F272 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = X7JTK6KCA7;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -438,8 +440,9 @@
 				E10EAEB21E7C665100D1918E /* Main.storyboard in Resources */,
 				E10EAEB51E7C665500D1918E /* LaunchScreen.storyboard in Resources */,
 				E10EAEA81E7C65CB00D1918E /* Info.plist in Resources */,
-				E10EAE841E7C606E00D1918E /* Assets.xcassets in Resources */,
+				49ABBEAA1E90D1F300F48E8D /* Assets.xcassets in Resources */,
 				490528AA1E8864FD004195FB /* GoogleService-Info.plist in Resources */,
+				49C2AF2D1E8CD32000A560F0 /* bg.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -635,6 +638,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -678,6 +682,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -691,13 +696,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = X7JTK6KCA7;
 				INFOPLIST_FILE = "$(SRCROOT)/DayDay/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DayDay.App;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/B1ackK3yz/Documents/iOS Apps/DayDay/DayDay/Bridging.h";
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/B1ackK3yz/Documents/iOSApps/DayDay/DayDay/Bridging.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -710,13 +715,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = X7JTK6KCA7;
 				INFOPLIST_FILE = "$(SRCROOT)/DayDay/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DayDay.App;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/B1ackK3yz/Documents/iOS Apps/DayDay/DayDay/Bridging.h";
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/B1ackK3yz/Documents/iOSApps/DayDay/DayDay/Bridging.h;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

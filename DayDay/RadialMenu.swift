@@ -94,7 +94,7 @@ class RadialMenu: UIView,RadialButtonDelegate{
         
         while currentItem <= itemCount {
             
-            let radians = (angle * (CGFloat(currentItem) - 2.0) + CGFloat(start)) * (CGFloat(M_PI)/CGFloat(180))
+            let radians = (angle * (CGFloat(currentItem) - 2.0) + CGFloat(start)) * (CGFloat(Double.pi)/CGFloat(180))
             
             let x      = round (centerX + CGFloat(radius) * cos(CGFloat(radians)));
             let y      = round (centerY + CGFloat(radius) * sin(CGFloat(radians)));
