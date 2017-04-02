@@ -49,30 +49,38 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
     private func retrieveUserInfo() {
         
         self.ref = FIRDatabase.database().reference()
-        self.ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+        
+        self.ref.child("users").child(userID!).observe(FIRDataEventType.value, with: { (snapshot) in
             
             if !snapshot.exists() { return }
             
             if let value = snapshot.value as? NSDictionary {
                 self.fid = value["id"] as? String
                 
-                //self.button.setBackgroundImage(self.getProfilePicture(fid: self.fid), for: UIControlState.normal)
+                //self.button.setImage(self.getProfilePicture(fid: self.fid), for: UIControlState.normal)
+
+                let tint = UIColor(red:0.23, green:0.38, blue:0.53, alpha:0.2)
+                self.button.setBackgroundImage(self.getProfilePicture(fid: self.fid)?.tintedImage(with: tint), for: UIControlState.normal)
             }
         })
     }
     
     private func getProfilePicture(fid: String?) -> UIImage? {
         
-        let imgURLString = "https://graph.facebook.com/" + self.fid! + "/picture?type=large"
-        let imgURL = URL(string: imgURLString)
-        
-        do {
-            let imageData = try Data(contentsOf: imgURL!)
-            let image = UIImage(data: imageData)
-            return image
-        } catch {
-            return nil
+        if let uid = fid {
+            let imgURLString = "https://graph.facebook.com/" + uid + "/picture?type=large"
+            let imgURL = URL(string: imgURLString)
+            
+            do {
+                let imageData = try Data(contentsOf: imgURL!)
+                let image = UIImage(data: imageData)
+                return image
+            } catch {
+                return nil
+            }
         }
+        
+        return nil
     }
     
     // Side Menu button
@@ -236,6 +244,44 @@ extension LandingPgVC: UIViewControllerTransitioningDelegate {
     
     func interactionControllerForPresentation(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
         return interactor.hasStarted ? interactor : nil
+    }
+}
+
+extension UIImage {
+    // Tint an image with specified color
+    func tintedImage(with tintColor: UIColor) -> UIImage {
+        
+        UIGraphicsBeginImageContextWithOptions(self.size, false, UIScreen.main.scale)
+        
+        let context: CGContext? = UIGraphicsGetCurrentContext()
+        
+        context?.translateBy(x: 0, y: self.size.height)
+        context?.scaleBy(x: 1.0, y: -1.0)
+        
+        let rect = CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height)
+        
+        // draw black background - workaround to preserve color of partially transparent pixels
+        context?.setBlendMode(.normal)
+        UIColor.black.setFill()
+        context?.fill(rect)
+        
+        // draw original image
+        context?.setBlendMode(.normal)
+        context?.draw(self.cgImage!, in: rect)
+        
+        // draw tint color, preserving alpha values of original image
+        context?.setBlendMode(.color)
+        tintColor.setFill()
+        context?.fill(rect)
+        
+        // mask by alpha values of original iamge
+        context?.setBlendMode(.destinationIn)
+        context?.draw(self.cgImage!, in: rect)
+        
+        let coloredImage: UIImage? = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return coloredImage!
     }
 }
 
