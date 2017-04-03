@@ -20,7 +20,8 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
     private var ref: FIRDatabaseReference!
     private var userID = FIRAuth.auth()?.currentUser?.uid
     private var fid: String?
-    
+    private lazy var channelRef: FIRDatabaseReference = FIRDatabase.database().reference().child("channels")
+
     @IBOutlet weak var button: UIButton!
     
     @IBOutlet var sideMenuEdgePan: UIScreenEdgePanGestureRecognizer!
@@ -192,11 +193,12 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
         progressLine.add(animateStrokeEnd, forKey: "animate stroke end animation") */
         
         if index == 1 {
-           // performSegue(withIdentifier: "toMap", sender: self)
+            
+            performSegue(withIdentifier: "showChat", sender: self)
         } else if index == 2 {
-           // performSegue(withIdentifier: "toCurrent", sender: self)
+            performSegue(withIdentifier: "showChat", sender: self)
         } else if index == 3 {
-          // performSegue(withIdentifier: "toCurrent", sender: self)
+           performSegue(withIdentifier: "showChat", sender: self)
         }
     }
     
