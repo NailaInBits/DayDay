@@ -34,13 +34,9 @@
 		E10EAEAC1E7C660400D1918E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E10EAEAB1E7C660400D1918E /* Info.plist */; };
 		E10EAEB21E7C665100D1918E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E10EAEB01E7C665100D1918E /* Main.storyboard */; };
 		E10EAEB51E7C665500D1918E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E10EAEB31E7C665500D1918E /* LaunchScreen.storyboard */; };
-		E142F29A1E8C5DE400FFAC90 /* VCCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = E142F2991E8C5DE400FFAC90 /* VCCells.swift */; };
-		E142F29C1E8C5DF000FFAC90 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E142F29B1E8C5DF000FFAC90 /* Conversation.swift */; };
-		E142F29E1E8C5DF800FFAC90 /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E142F29D1E8C5DF800FFAC90 /* ChannelVC.swift */; };
-		E142F2A01E8C5E1400FFAC90 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E142F29F1E8C5E1400FFAC90 /* ChatVC.swift */; };
-		E142F2A21E8C5E2C00FFAC90 /* Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = E142F2A11E8C5E2C00FFAC90 /* Support.swift */; };
-		E142F2A41E8C5E3700FFAC90 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E142F2A31E8C5E3700FFAC90 /* User.swift */; };
-		E142F2A61E8C5E4100FFAC90 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E142F2A51E8C5E4100FFAC90 /* Message.swift */; };
+		E14B0CEE1E91C7BF0062572C /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14B0CED1E91C7BF0062572C /* ChatVC.swift */; };
+		E14B0CF41E91E32C0062572C /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14B0CF31E91E32C0062572C /* Channel.swift */; };
+		E14B0CF61E91E44E0062572C /* ImageSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14B0CF51E91E44E0062572C /* ImageSupport.swift */; };
 		E15FA8A31E88B92000B7C358 /* KpopGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15FA8A21E88B92000B7C358 /* KpopGroup.swift */; };
 		E15FA8A51E88B92B00B7C358 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15FA8A41E88B92B00B7C358 /* OnboardingVC.swift */; };
 		E1DAE8061E65E6BA0076E69A /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1DAE8051E65E6BA0076E69A /* AdSupport.framework */; };
@@ -97,13 +93,9 @@
 		E10EAEAD1E7C660B00D1918E /* DayDayUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DayDayUITests.swift; path = DayDayUITests/DayDayUITests.swift; sourceTree = SOURCE_ROOT; };
 		E10EAEB11E7C665100D1918E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DayDay/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		E10EAEB41E7C665500D1918E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DayDay/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
-		E142F2991E8C5DE400FFAC90 /* VCCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VCCells.swift; path = DayDay/VCCells.swift; sourceTree = SOURCE_ROOT; };
-		E142F29B1E8C5DF000FFAC90 /* Conversation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Conversation.swift; path = DayDay/Conversation.swift; sourceTree = SOURCE_ROOT; };
-		E142F29D1E8C5DF800FFAC90 /* ChannelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChannelVC.swift; path = DayDay/ChannelVC.swift; sourceTree = SOURCE_ROOT; };
-		E142F29F1E8C5E1400FFAC90 /* ChatVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatVC.swift; path = DayDay/ChatVC.swift; sourceTree = SOURCE_ROOT; };
-		E142F2A11E8C5E2C00FFAC90 /* Support.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Support.swift; path = DayDay/Support.swift; sourceTree = SOURCE_ROOT; };
-		E142F2A31E8C5E3700FFAC90 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = DayDay/User.swift; sourceTree = SOURCE_ROOT; };
-		E142F2A51E8C5E4100FFAC90 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Message.swift; path = DayDay/Message.swift; sourceTree = SOURCE_ROOT; };
+		E14B0CED1E91C7BF0062572C /* ChatVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = SOURCE_ROOT; };
+		E14B0CF31E91E32C0062572C /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = SOURCE_ROOT; };
+		E14B0CF51E91E44E0062572C /* ImageSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSupport.swift; sourceTree = SOURCE_ROOT; };
 		E15FA8A21E88B92000B7C358 /* KpopGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KpopGroup.swift; path = DayDay/KpopGroup.swift; sourceTree = SOURCE_ROOT; };
 		E15FA8A41E88B92B00B7C358 /* OnboardingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardingVC.swift; path = DayDay/OnboardingVC.swift; sourceTree = SOURCE_ROOT; };
 		E1B924941E576BF100B4F272 /* DayDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DayDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,14 +171,12 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		E13E11F31E745E5B0042C372 /* Channels */ = {
+		E14B0CEC1E91C79C0062572C /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				E142F2991E8C5DE400FFAC90 /* VCCells.swift */,
-				E142F29F1E8C5E1400FFAC90 /* ChatVC.swift */,
-				E142F29D1E8C5DF800FFAC90 /* ChannelVC.swift */,
+				E14B0CED1E91C7BF0062572C /* ChatVC.swift */,
 			);
-			name = Channels;
+			name = Chat;
 			sourceTree = "<group>";
 		};
 		E1B9248B1E576BF000B4F272 = {
@@ -252,9 +242,7 @@
 		E1D7F0BB1E7C5BBA0022777F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E142F29B1E8C5DF000FFAC90 /* Conversation.swift */,
-				E142F2A31E8C5E3700FFAC90 /* User.swift */,
-				E142F2A51E8C5E4100FFAC90 /* Message.swift */,
+				E14B0CF31E91E32C0062572C /* Channel.swift */,
 				499DABEF1E8AC71E0053370E /* GroupDetails.swift */,
 				E15FA8A21E88B92000B7C358 /* KpopGroup.swift */,
 			);
@@ -264,13 +252,13 @@
 		E1D7F0BC1E7C5BC10022777F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E14B0CEC1E91C79C0062572C /* Chat */,
 				49A43FA91E89F73A00C152AF /* GroupProfile */,
 				49D2564D1E88A069008B7270 /* SideMenu */,
 				E1D7F0C01E7C5CF90022777F /* Login */,
 				E15FA8A41E88B92B00B7C358 /* OnboardingVC.swift */,
 				E1D7F0BF1E7C5CCD0022777F /* LandingPage */,
 				E1D7F0BD1E7C5C540022777F /* RadialMenu */,
-				E13E11F31E745E5B0042C372 /* Channels */,
 				E10EAE981E7C654800D1918E /* MagicVC.swift */,
 			);
 			name = ViewControllers;
@@ -314,7 +302,7 @@
 		E1D7F0C11E7C5D1B0022777F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E142F2A11E8C5E2C00FFAC90 /* Support.swift */,
+				E14B0CF51E91E44E0062572C /* ImageSupport.swift */,
 				E10EAE921E7C613800D1918E /* CustomSegue.swift */,
 				E10EAE9E1E7C656C00D1918E /* RadialButton.swift */,
 				E10EAEA21E7C657D00D1918E /* SegueFromLeft.swift */,
@@ -515,28 +503,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E142F2A21E8C5E2C00FFAC90 /* Support.swift in Sources */,
 				499DABF01E8AC71E0053370E /* GroupDetails.swift in Sources */,
+				E14B0CF41E91E32C0062572C /* Channel.swift in Sources */,
 				E10EAE931E7C613800D1918E /* CustomSegue.swift in Sources */,
 				49A43FAD1E89F8CC00C152AF /* GroupProfileBg.swift in Sources */,
 				E15FA8A51E88B92B00B7C358 /* OnboardingVC.swift in Sources */,
+				E14B0CF61E91E44E0062572C /* ImageSupport.swift in Sources */,
 				E15FA8A31E88B92000B7C358 /* KpopGroup.swift in Sources */,
 				49D2564F1E88A0A7008B7270 /* Interactor.swift in Sources */,
 				E10EAE991E7C654800D1918E /* MagicVC.swift in Sources */,
 				49A43FAB1E89F76A00C152AF /* GroupProfileVC.swift in Sources */,
 				49D256611E88DC94008B7270 /* SideMenuBg.swift in Sources */,
 				E10EAE9D1E7C655F00D1918E /* ProfileVC.swift in Sources */,
+				E14B0CEE1E91C7BF0062572C /* ChatVC.swift in Sources */,
 				E10EAE9B1E7C655700D1918E /* ProfileBg.swift in Sources */,
-				E142F2A41E8C5E3700FFAC90 /* User.swift in Sources */,
-				E142F2A01E8C5E1400FFAC90 /* ChatVC.swift in Sources */,
 				E10EAEA31E7C657D00D1918E /* SegueFromLeft.swift in Sources */,
-				E142F29A1E8C5DE400FFAC90 /* VCCells.swift in Sources */,
-				E142F29E1E8C5DF800FFAC90 /* ChannelVC.swift in Sources */,
 				E10EAEA11E7C657000D1918E /* RadialMenu.swift in Sources */,
 				E10EAE9F1E7C656C00D1918E /* RadialButton.swift in Sources */,
 				E10EAE821E7C606000D1918E /* AppDelegate.swift in Sources */,
-				E142F29C1E8C5DF000FFAC90 /* Conversation.swift in Sources */,
-				E142F2A61E8C5E4100FFAC90 /* Message.swift in Sources */,
 				E10EAE951E7C653300D1918E /* LandingPgVC.swift in Sources */,
 				49D256551E88B234008B7270 /* SideMenuVC.swift in Sources */,
 				49D256511E88A1F8008B7270 /* MenuHelper.swift in Sources */,

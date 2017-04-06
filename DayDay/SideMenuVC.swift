@@ -40,8 +40,8 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowGroupDetail" {
-            if let navControler = segue.destination as? UINavigationController {
-                if let childVC = navControler.topViewController as? GroupProfileVC {
+            if let navController = segue.destination as? UINavigationController {
+                if let childVC = navController.topViewController as? GroupProfileVC {
                     childVC.image = self.groupImages[(groupTableView.indexPathForSelectedRow?.section)!]
                     childVC.detail = self.group[(groupTableView.indexPathForSelectedRow?.section)!]
                 }
