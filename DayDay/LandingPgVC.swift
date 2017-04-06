@@ -17,9 +17,13 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
     var radialMenu:RadialMenu!
     var gradientLayer: CAGradientLayer!
     
+    private var groupId: String?
+    
     private var ref: FIRDatabaseReference!
     private var userID = FIRAuth.auth()?.currentUser?.uid
     private var fid: String?
+    private var userName: String?
+    
     private lazy var channelRef: FIRDatabaseReference = FIRDatabase.database().reference().child("channels")
 
     @IBOutlet weak var button: UIButton!
@@ -57,6 +61,7 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
             
             if let value = snapshot.value as? NSDictionary {
                 self.fid = value["id"] as? String
+                self.userName = value["name"] as? String
                 
                 //self.button.setImage(self.getProfilePicture(fid: self.fid), for: UIControlState.normal)
 
@@ -108,10 +113,21 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destinationViewController = segue.destination as? SideMenuVC {
-            destinationViewController.transitioningDelegate = self
-            
-            destinationViewController.interactor = interactor
+        if segue.identifier == "SideMenu" {
+            if let destinationViewController = segue.destination as? SideMenuVC {
+                destinationViewController.transitioningDelegate = self
+                destinationViewController.interactor = interactor
+            }
+        }
+        
+        if segue.identifier == "showChat" {
+            if let navController = segue.destination as? UINavigationController {
+                if let childVC = navController.topViewController as? ChatVC {
+                    childVC.groupId = self.groupId!
+                    childVC.senderDisplayName = self.userName!
+                    self.prepareForSegue(segue: segue, sender: self)
+                }
+            }
         }
     }
     
@@ -151,6 +167,7 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
         //Add in child image url
         if index == 1 {
             button.setImage(UIImage(named: "nearMe"), for:UIControlState())
+            self.groupId = "-KgCx7qeem3u2dlMDr0i"
         } else if index == 2 {
             button.setImage(UIImage(named: "pastEvents"), for:UIControlState())
         }
@@ -193,7 +210,6 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
         progressLine.add(animateStrokeEnd, forKey: "animate stroke end animation") */
         
         if index == 1 {
-            
             performSegue(withIdentifier: "showChat", sender: self)
         } else if index == 2 {
             performSegue(withIdentifier: "showChat", sender: self)
@@ -205,9 +221,6 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
     @IBAction func toMagic(_ sender: Any) {
         performSegue(withIdentifier: "home2magic", sender: nil)
     }
-    
-
-    
     
     func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue is CustomSegue {

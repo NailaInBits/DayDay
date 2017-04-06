@@ -15,8 +15,11 @@ class ChatVC: JSQMessagesViewController {
     
     private let imageURLNotSetKey = "NOTSET"
     
-    var channelRef: FIRDatabaseReference?
-    var messageRef: FIRDatabaseReference?
+    var groupId: String = ""
+    
+    private var channelRef: FIRDatabaseReference?
+    private var messageRef: FIRDatabaseReference?
+    private var userRef: FIRDatabaseReference?
     
     fileprivate lazy var storageRef: FIRStorageReference = FIRStorage.storage().reference(forURL: "gs://dayday-39e15.appspot.com/")
     private lazy var userIsTypingRef: FIRDatabaseReference = self.channelRef!.child("typingIndicator").child(self.senderId)
@@ -50,6 +53,7 @@ class ChatVC: JSQMessagesViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.channelRef = FIRDatabase.database().reference().child("KpopGroups").child(self.groupId)
         self.senderId = FIRAuth.auth()?.currentUser?.uid
         observeMessages()
         
@@ -69,6 +73,10 @@ class ChatVC: JSQMessagesViewController {
         if let refHandle = updatedMessageRefHandle {
             messageRef?.removeObserver(withHandle: refHandle)
         }
+    }
+    
+    @IBAction func dismissChat(_ sender: AnyObject) {
+        dismiss(animated: true, completion: nil)
     }
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageDataForItemAt indexPath: IndexPath!) -> JSQMessageData! {
@@ -126,7 +134,7 @@ class ChatVC: JSQMessagesViewController {
     
     private func observeMessages() {
         //var messageRef: FIRDatabaseReference = self.channelRef!.child("messages")
-
+        
         if let channelRef = channelRef {
             messageRef = channelRef.child("messages")
         }
@@ -136,7 +144,7 @@ class ChatVC: JSQMessagesViewController {
         newMessageRefHandle = messageQuery?.observe(.childAdded, with: { (snapshot) -> Void in
             let messageData = snapshot.value as! Dictionary<String, String>
             
-            if let id = messageData["senderId"] as String!, let name = messageData["senderName"] as String!, let text = messageData["text"] as String!, text.characters.count > 0 {
+            if let id = messageData["senderId"] as String!, let name = messageData["name"] as String!, let text = messageData["text"] as String!, text.characters.count > 0 {
                 self.addMessage(withId: id, name: name, text: text)
                 self.finishReceivingMessage()
             } else if let id = messageData["senderId"] as String!, let photoURL = messageData["photoURL"] as String! {
@@ -306,7 +314,7 @@ extension ChatVC: UIImagePickerControllerDelegate, UINavigationControllerDelegat
             if let key = sendPhotoMessage() {
                 asset?.requestContentEditingInput(with: nil, completionHandler: { (contentEditingInput, info) in
                     let imageFileURL = contentEditingInput?.fullSizeImageURL
-                    let path = "\(FIRAuth.auth()?.currentUser?.uid)/\(Int(Date.timeIntervalSinceReferenceDate * 1000))/\(photoReferenceUrl.lastPathComponent)"
+                    let path = "\(String(describing: FIRAuth.auth()?.currentUser?.uid))/\(Int(Date.timeIntervalSinceReferenceDate * 1000))/\(photoReferenceUrl.lastPathComponent)"
                     self.storageRef.child(path).putFile(imageFileURL!, metadata: nil) { (metadata, error) in
                         if let error = error {
                             print("Error uploading photo: \(error.localizedDescription)")
