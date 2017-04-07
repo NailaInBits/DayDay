@@ -252,7 +252,6 @@
 		E1D7F0BC1E7C5BC10022777F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				E14B0CEC1E91C79C0062572C /* Chat */,
 				49A43FA91E89F73A00C152AF /* GroupProfile */,
 				49D2564D1E88A069008B7270 /* SideMenu */,
 				E1D7F0C01E7C5CF90022777F /* Login */,
@@ -260,6 +259,7 @@
 				E1D7F0BF1E7C5CCD0022777F /* LandingPage */,
 				E1D7F0BD1E7C5C540022777F /* RadialMenu */,
 				E10EAE981E7C654800D1918E /* MagicVC.swift */,
+				E14B0CEC1E91C79C0062572C /* Chat */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -686,7 +686,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DayDay.App;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = /Users/B1ackK3yz/Documents/iOSApps/DayDay/DayDay/Bridging.h;
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/nishat/DayDay/DayDay/Bridging.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -705,7 +705,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DayDay.App;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = /Users/B1ackK3yz/Documents/iOSApps/DayDay/DayDay/Bridging.h;
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/nishat/DayDay/DayDay/Bridging.h;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
