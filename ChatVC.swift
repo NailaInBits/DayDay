@@ -104,7 +104,7 @@ class ChatVC: JSQMessagesViewController {
         if message.senderId == senderId {
             cell.textView?.textColor = UIColor.white
         } else {
-            cell.textView?.textColor = UIColor.black
+            cell.textView?.textColor = UIColor.white
         }
         
         return cell
@@ -257,15 +257,17 @@ class ChatVC: JSQMessagesViewController {
     
     private func setupOutgoingBubble() -> JSQMessagesBubbleImage {
         let bubbleImageFactory = JSQMessagesBubbleImageFactory()
-        return bubbleImageFactory!.outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleBlue())
+        return bubbleImageFactory!.outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleLightGray())
     }
 
     private func setupIncomingBubble() -> JSQMessagesBubbleImage {
         let bubbleImageFactory = JSQMessagesBubbleImageFactory()
-        return bubbleImageFactory!.incomingMessagesBubbleImage(with: UIColor.jsq_messageBubbleLightGray())
+        return bubbleImageFactory!.incomingMessagesBubbleImage(with: UIColor(red:0.66, green:0.44, blue:1.00, alpha:1.0))
     }
     
     override func didPressAccessoryButton(_ sender: UIButton) {
+        self.inputToolbar.contentView!.textView!.resignFirstResponder()
+        self.inputToolbar.backgroundColor = UIColor.clear
         let picker = UIImagePickerController()
         picker.delegate = self
         if (UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)) {

@@ -146,7 +146,8 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
     }
     
     func numberOfItemsInRadialMenu (_ radialMenu:RadialMenu)->NSInteger {
-        return 3
+        return 6
+        //get number of user's kpop groups from firebase --> total # of vals in dict?
     }
     
     func arcSizeInRadialMenu (_ radialMenu:RadialMenu)->NSInteger {
@@ -166,14 +167,26 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
 
         //Add in child image url
         if index == 1 {
+            //get kpop group's id and image from firebase dict[1]
             button.setImage(UIImage(named: "nearMe"), for:UIControlState())
             self.groupId = "-KgCx7qeem3u2dlMDr0i"
         } else if index == 2 {
             button.setImage(UIImage(named: "pastEvents"), for:UIControlState())
+            self.groupId = "-KgCx8cRgj4qca_K4aBR"
         }
         if index == 3 {
             button.setImage(UIImage(named: "currentEvent"), for:UIControlState())
-        } 
+            self.groupId = "-KgCx9jdmLA78msqYnV-"
+        } else if index == 4 {
+            button.setImage(UIImage(named: "nearMe"), for:UIControlState())
+            self.groupId = "-KgH9pgaNoBpu_wYqV8o"
+        } else if index == 5 {
+            button.setImage(UIImage(named: "pastEvents"), for:UIControlState())
+            self.groupId = "-KgH9qIca2Wgw-Dhs4JS"
+        } else if index == 2 {
+            button.setImage(UIImage(named: "currentEvent"), for:UIControlState())
+            self.groupId = "-KgH9qbONq9hzFQcagPJ"
+        }
         
         return button
     }
@@ -215,6 +228,12 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
             performSegue(withIdentifier: "showChat", sender: self)
         } else if index == 3 {
            performSegue(withIdentifier: "showChat", sender: self)
+        } else if index == 4 {
+            performSegue(withIdentifier: "showChat", sender: self)
+        } else if index == 5 {
+            performSegue(withIdentifier: "showChat", sender: self)
+        } else if index == 6 {
+            performSegue(withIdentifier: "showChat", sender: self)
         }
     }
     
