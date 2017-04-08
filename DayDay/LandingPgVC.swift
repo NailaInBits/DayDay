@@ -146,7 +146,7 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
     }
     
     func numberOfItemsInRadialMenu (_ radialMenu:RadialMenu)->NSInteger {
-        return 6
+        return 3
         //get number of user's kpop groups from firebase --> total # of vals in dict?
     }
     
@@ -177,7 +177,7 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
         if index == 3 {
             button.setImage(UIImage(named: "currentEvent"), for:UIControlState())
             self.groupId = "-KgCx9jdmLA78msqYnV-"
-        } else if index == 4 {
+        } /*else if index == 4 {
             button.setImage(UIImage(named: "nearMe"), for:UIControlState())
             self.groupId = "-KgH9pgaNoBpu_wYqV8o"
         } else if index == 5 {
@@ -186,7 +186,7 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
         } else if index == 2 {
             button.setImage(UIImage(named: "currentEvent"), for:UIControlState())
             self.groupId = "-KgH9qbONq9hzFQcagPJ"
-        }
+        } */
         
         return button
     }
@@ -228,13 +228,13 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
             performSegue(withIdentifier: "showChat", sender: self)
         } else if index == 3 {
            performSegue(withIdentifier: "showChat", sender: self)
-        } else if index == 4 {
+        } /*else if index == 4 {
             performSegue(withIdentifier: "showChat", sender: self)
         } else if index == 5 {
             performSegue(withIdentifier: "showChat", sender: self)
         } else if index == 6 {
             performSegue(withIdentifier: "showChat", sender: self)
-        }
+        } */
     }
     
     @IBAction func toMagic(_ sender: Any) {

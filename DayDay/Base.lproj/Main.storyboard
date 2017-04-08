@@ -125,10 +125,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="pe8-3W-qkt">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="ih2-W1-xcq">
                                 <rect key="frame" x="16" y="597" width="343" height="50"/>
                                 <subviews>
@@ -155,12 +151,15 @@
                                 </subviews>
                                 <rect key="contentStretch" x="0.050000000000000003" y="0.0" width="1" height="1"/>
                             </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loginLogo" translatesAutoresizingMaskIntoConstraints="NO" id="r6f-IC-wdD">
+                                <rect key="frame" x="-42" y="68" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="textName" translatesAutoresizingMaskIntoConstraints="NO" id="jsu-Te-hPM">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="182"/>
+                                <rect key="frame" x="111" y="61" width="300" height="142"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ih2-W1-xcq" firstAttribute="top" secondItem="Cef-2y-vQU" secondAttribute="topMargin" constant="597" id="32K-An-WhI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ih2-W1-xcq" secondAttribute="trailing" id="7Z6-8A-gan"/>
@@ -608,7 +607,7 @@
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="8Qy-Si-pTb">
-                            <color key="tintColor" red="0.73919813339999996" green="0.97945182880000004" blue="0.97027970330000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.1215686277" green="0.1294117719" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="saveAction:" destination="AUB-Eq-pg7" id="RFp-Jt-ZkT"/>
                             </connections>
@@ -690,7 +689,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2SN-qS-kcD" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="EML-T2-Wc7">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EML-T2-Wc7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.62837335907850667" green="0.8682501651105432" blue="0.95819310897435894" alpha="1" colorSpace="calibratedRGB"/>
@@ -709,7 +708,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bg" width="621" height="1104"/>
         <image name="chat" width="64" height="64"/>
         <image name="close" width="16" height="16"/>
         <image name="easter-bunny" width="64" height="64"/>
@@ -722,11 +720,12 @@
         <image name="g4" width="303" height="261"/>
         <image name="g5" width="292" height="228"/>
         <image name="g6" width="311" height="241"/>
+        <image name="loginLogo" width="307" height="313"/>
         <image name="magicBG" width="640" height="640"/>
         <image name="pastEvents" width="64" height="64"/>
         <image name="textName" width="219" height="53"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QP2-sD-cj8"/>
+        <segue reference="iWX-rv-rWj"/>
     </inferredMetricsTieBreakers>
 </document>
