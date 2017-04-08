@@ -15,9 +15,14 @@ import FirebaseAuth
 
 class LoginVC: UIViewController {
     
+    var gradientLayer: CAGradientLayer!
     var player: AVPlayer?
     var audio: AVAudioSession = AVAudioSession.sharedInstance()
 
+    override func viewWillAppear(_ animated: Bool) {
+        //Gradient Background:
+        createGradientLayer()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,6 +57,15 @@ class LoginVC: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    //Gradient Background:
+    func createGradientLayer() {
+        gradientLayer = CAGradientLayer()
+        gradientLayer.frame = self.view.bounds
+        gradientLayer.colors = [UIColor(red:1.00, green:0.73, blue:0.76, alpha:1.0).cgColor,
+                                UIColor(red:0.71, green:0.84, blue:0.80, alpha:1.0).cgColor]
+        self.view.layer.insertSublayer(gradientLayer, at: 0)
     }
     
     func checkForFirstTime() {
