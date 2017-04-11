@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gL5-Ja-be8">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gL5-Ja-be8">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -151,19 +151,30 @@
                                 </subviews>
                                 <rect key="contentStretch" x="0.050000000000000003" y="0.0" width="1" height="1"/>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loginLogo" translatesAutoresizingMaskIntoConstraints="NO" id="r6f-IC-wdD">
-                                <rect key="frame" x="-42" y="68" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginLogo" translatesAutoresizingMaskIntoConstraints="NO" id="r6f-IC-wdD">
+                                <rect key="frame" x="14" y="68" width="128" height="128"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="textName" translatesAutoresizingMaskIntoConstraints="NO" id="jsu-Te-hPM">
-                                <rect key="frame" x="111" y="61" width="300" height="142"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appName" translatesAutoresizingMaskIntoConstraints="NO" id="jsu-Te-hPM">
+                                <rect key="frame" x="149" y="61" width="210" height="142"/>
                             </imageView>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="r6f-IC-wdD" firstAttribute="leading" secondItem="Cef-2y-vQU" secondAttribute="leadingMargin" constant="-2" id="0By-W6-FSO"/>
                             <constraint firstItem="ih2-W1-xcq" firstAttribute="top" secondItem="Cef-2y-vQU" secondAttribute="topMargin" constant="597" id="32K-An-WhI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ih2-W1-xcq" secondAttribute="trailing" id="7Z6-8A-gan"/>
                             <constraint firstItem="ih2-W1-xcq" firstAttribute="leading" secondItem="Cef-2y-vQU" secondAttribute="leadingMargin" id="Cit-dQ-67N"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yuC-3X-gaA" secondAttribute="trailing" id="DKr-za-HcI"/>
+                            <constraint firstItem="jsu-Te-hPM" firstAttribute="leading" secondItem="Cef-2y-vQU" secondAttribute="leadingMargin" constant="133" id="Db7-gj-05J"/>
+                            <constraint firstItem="6oK-s7-FL3" firstAttribute="top" secondItem="jsu-Te-hPM" secondAttribute="bottom" constant="464" id="LN2-hh-iVq"/>
+                            <constraint firstItem="6oK-s7-FL3" firstAttribute="top" secondItem="r6f-IC-wdD" secondAttribute="bottom" constant="471" id="Mij-af-Kht"/>
+                            <constraint firstItem="yuC-3X-gaA" firstAttribute="top" secondItem="rj2-dE-3jo" secondAttribute="bottom" constant="577" id="Y66-SB-BPh"/>
+                            <constraint firstItem="r6f-IC-wdD" firstAttribute="top" secondItem="rj2-dE-3jo" secondAttribute="bottom" constant="48" id="Zcn-fu-Aq3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="r6f-IC-wdD" secondAttribute="trailing" constant="217" id="dbK-Cy-u6p"/>
+                            <constraint firstItem="6oK-s7-FL3" firstAttribute="top" secondItem="yuC-3X-gaA" secondAttribute="bottom" constant="20" id="gof-Kq-MNh"/>
+                            <constraint firstItem="jsu-Te-hPM" firstAttribute="top" secondItem="rj2-dE-3jo" secondAttribute="bottom" constant="41" id="ljK-OW-UzF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jsu-Te-hPM" secondAttribute="trailing" id="ls7-b7-YLZ"/>
+                            <constraint firstItem="r6f-IC-wdD" firstAttribute="leading" secondItem="Cef-2y-vQU" secondAttribute="leadingMargin" constant="-2" id="o3R-60-bdH"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="yuC-3X-gaA" secondAttribute="leading" id="yq8-QU-aoK"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -708,6 +719,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="appName" width="163" height="52"/>
         <image name="chat" width="64" height="64"/>
         <image name="close" width="16" height="16"/>
         <image name="easter-bunny" width="64" height="64"/>
@@ -723,7 +735,6 @@
         <image name="loginLogo" width="307" height="313"/>
         <image name="magicBG" width="640" height="640"/>
         <image name="pastEvents" width="64" height="64"/>
-        <image name="textName" width="219" height="53"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="iWX-rv-rWj"/>

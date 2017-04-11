@@ -18,16 +18,12 @@ class LoginVC: UIViewController {
     var gradientLayer: CAGradientLayer!
     var player: AVPlayer?
     var audio: AVAudioSession = AVAudioSession.sharedInstance()
-
-    override func viewWillAppear(_ animated: Bool) {
-        //Gradient Background:
-        createGradientLayer()
-    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        createGradientLayer()
         //Background Video (make sure always under 5mb)
-        let videoURL: NSURL = Bundle.main.url(forResource: "bg", withExtension: "mp4")! as NSURL
+        /*let videoURL: NSURL = Bundle.main.url(forResource: "bg", withExtension: "mp4")! as NSURL
         player = AVPlayer(url: videoURL as URL)
         player?.actionAtItemEnd = .none
         player?.isMuted = true
@@ -51,7 +47,7 @@ class LoginVC: UIViewController {
                 self.player?.seek(to: kCMTimeZero)
                 self.player?.play()
             }
-        })
+        })*/
         
     }
 
