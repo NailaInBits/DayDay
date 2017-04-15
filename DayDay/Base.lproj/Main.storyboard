@@ -401,7 +401,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TEI-9D-pKn">
-                                <rect key="frame" x="148" y="610" width="79" height="30"/>
+                                <rect key="frame" x="69" y="607" width="79" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.6588235294" green="0.86274509799999999" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Done!">
@@ -409,6 +409,17 @@
                                 </state>
                                 <connections>
                                     <action selector="addGroups:" destination="sHQ-ua-8xL" eventType="touchUpInside" id="NSg-lr-SlO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1WX-la-sxH">
+                                <rect key="frame" x="226" y="607" width="79" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.73228624131944442" blue="0.71978081597222221" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Skip!">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addGroups:" destination="sHQ-ua-8xL" eventType="touchUpInside" id="tZl-qz-pI7"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -737,6 +748,6 @@
         <image name="pastEvents" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="iWX-rv-rWj"/>
+        <segue reference="QP2-sD-cj8"/>
     </inferredMetricsTieBreakers>
 </document>
