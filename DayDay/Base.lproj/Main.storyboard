@@ -250,6 +250,7 @@
                     <connections>
                         <outlet property="groupDescription" destination="Mhx-6g-cbl" id="gqT-ro-ohN"/>
                         <outlet property="groupImage" destination="nzq-GW-rtE" id="90R-RK-koi"/>
+                        <segue destination="2SN-qS-kcD" kind="show" identifier="showChat" customClass="CustomSegue" customModule="DayDay" customModuleProvider="target" id="gfJ-Vr-7Jl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p8d-vi-me2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -704,7 +705,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QqO-l9-AXl" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-420" y="-503.29835082458777"/>
+            <point key="canvasLocation" x="-393" y="-485"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wxd-qE-WTS">
@@ -726,7 +727,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="af2-64-3iz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1359.2" y="-503.29835082458777"/>
+            <point key="canvasLocation" x="-1465" y="-485"/>
         </scene>
     </scenes>
     <resources>
@@ -749,5 +750,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="QP2-sD-cj8"/>
+        <segue reference="gfJ-Vr-7Jl"/>
     </inferredMetricsTieBreakers>
 </document>

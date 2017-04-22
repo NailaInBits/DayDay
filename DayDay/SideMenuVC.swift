@@ -13,7 +13,7 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     private var ref: FIRDatabaseReference =
                      FIRDatabase.database().reference().child("KpopGroups")
-    private var group = [String]()
+    private var group = [[String]]()
     
     var interactor:Interactor? = nil
     var groupImages: [UIImage] = [UIImage.init(imageLiteralResourceName: "1"),
@@ -42,8 +42,11 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         if segue.identifier == "ShowGroupDetail" {
             if let navController = segue.destination as? UINavigationController {
                 if let childVC = navController.topViewController as? GroupProfileVC {
-                    childVC.image = self.groupImages[(groupTableView.indexPathForSelectedRow?.section)!]
-                    childVC.detail = self.group[(groupTableView.indexPathForSelectedRow?.section)!]
+                    let groupIndex = (groupTableView.indexPathForSelectedRow?.section)!
+                    childVC.image = self.groupImages[groupIndex]
+                    childVC.id = self.group[groupIndex][0]
+                    childVC.name = self.group[groupIndex][1]
+                    childVC.detail = self.group[groupIndex][2]
                 }
             }
         }
@@ -52,9 +55,13 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     private func retrieveGroupDetail() {
         self.ref.observe(.childAdded, with: { (snapshot) -> Void in
             let groupData = snapshot.value as! Dictionary<String, AnyObject>
-            _ = snapshot.key
+            let id = snapshot.key
             if let name = groupData["name"] as! String!, name.characters.count > 0 {
-                self.group.append(groupData["description"] as! String)
+                var row = [String]()
+                row.append(id)
+                row.append(name)
+                row.append(groupData["description"] as! String)
+                self.group.append(row)
             } else {
                 print("Error! Could not decode group data")
             }
