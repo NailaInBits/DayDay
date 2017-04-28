@@ -275,6 +275,10 @@ class OnboardingVC: UIViewController {
         }
         self.performSegue(withIdentifier: "showLanding", sender: UIButton.self)
     }
+    
+    @IBAction func skipGroups(_ sender: Any) {
+        self.performSegue(withIdentifier: "showLanding", sender: UIButton.self)
+    }
  
     func createGradientLayer() {
         gradientLayer = CAGradientLayer()
