@@ -28,8 +28,8 @@ class GroupProfileVC: UIViewController {
     
     private func fieldLayout() {
         groupImage.image = image
-        groupImage.layer.cornerRadius = 15
-        groupImage.layer.borderWidth = 2.0
+        //groupImage.layer.cornerRadius = 15
+        //groupImage.layer.borderWidth = 2.0
         groupImage.clipsToBounds = true
         
         groupDescription.text = detail

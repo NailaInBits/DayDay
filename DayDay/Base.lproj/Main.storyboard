@@ -223,54 +223,82 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nzq-GW-rtE">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gbM-xN-RL9">
                                 <rect key="frame" x="35" y="115" width="305" height="163"/>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="N0i-Gy-bmp">
+                                <rect key="frame" x="43" y="325" width="288" height="132"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mhx-6g-cbl">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="132"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                        </accessibility>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Mhx-6g-cbl" secondAttribute="height" multiplier="24:11" id="1AN-9z-ORu"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment>
+                                                <mutableString key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                                <attributes>
+                                                    <font key="NSFont" size="16" name="HelveticaNeue"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nzq-GW-rtE">
+                                <rect key="frame" x="0.0" y="64" width="375" height="202"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
                                 </accessibility>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mhx-6g-cbl">
-                                <rect key="frame" x="43" y="325" width="288" height="132"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
-                                </accessibility>
-                                <attributedString key="attributedText">
-                                    <fragment>
-                                        <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <attributes>
-                                            <font key="NSFont" size="14" name="LucidaGrande"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTe-3J-Vy8">
-                                <rect key="frame" x="155" y="502" width="64" height="64"/>
-                                <state key="normal" title="Join The Chat" image="chat"/>
-                                <connections>
-                                    <action selector="joinChat:" destination="8Qa-f2-V1o" eventType="touchUpInside" id="SJQ-pd-UxF"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TUu-lw-02I">
+                                <rect key="frame" x="0.0" y="605" width="375" height="65"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yv-K7-dpt">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                                        <color key="backgroundColor" red="0.36470588235294116" green="0.32156862745098042" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="65" id="2fZ-03-D1u"/>
+                                            <constraint firstAttribute="width" constant="375" id="f9h-ct-au6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                        <state key="normal" title="Join The Chat">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="joinChat:" destination="8Qa-f2-V1o" eventType="touchUpInside" id="QpE-mp-pEe"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="r00-ND-xg9" firstAttribute="top" secondItem="Mhx-6g-cbl" secondAttribute="bottom" constant="210" id="0om-6g-jdn"/>
-                            <constraint firstItem="nzq-GW-rtE" firstAttribute="top" secondItem="hAI-Cu-Fhf" secondAttribute="bottom" constant="51" id="1iH-Wk-Bg2"/>
-                            <constraint firstItem="aTe-3J-Vy8" firstAttribute="top" secondItem="hAI-Cu-Fhf" secondAttribute="bottom" constant="438" id="2Ri-Nt-Fgh"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="aTe-3J-Vy8" secondAttribute="trailing" constant="140" id="80U-S6-60I"/>
-                            <constraint firstItem="aTe-3J-Vy8" firstAttribute="leading" secondItem="JVG-Gy-16v" secondAttribute="leadingMargin" constant="139" id="9Ed-aj-W6a"/>
-                            <constraint firstItem="Mhx-6g-cbl" firstAttribute="leading" secondItem="JVG-Gy-16v" secondAttribute="leadingMargin" constant="27" id="AcB-jw-jLD"/>
-                            <constraint firstItem="r00-ND-xg9" firstAttribute="top" secondItem="aTe-3J-Vy8" secondAttribute="bottom" constant="101" id="dzi-t1-wp5"/>
-                            <constraint firstItem="nzq-GW-rtE" firstAttribute="leading" secondItem="JVG-Gy-16v" secondAttribute="leadingMargin" constant="19" id="e3q-jV-hSt"/>
-                            <constraint firstItem="r00-ND-xg9" firstAttribute="top" secondItem="nzq-GW-rtE" secondAttribute="bottom" constant="389" id="gwF-ht-c2W"/>
-                            <constraint firstItem="Mhx-6g-cbl" firstAttribute="top" secondItem="hAI-Cu-Fhf" secondAttribute="bottom" constant="261" id="jti-Xw-1B8"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Mhx-6g-cbl" secondAttribute="trailing" constant="28" id="of9-iQ-EhS"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="nzq-GW-rtE" secondAttribute="trailing" constant="19" id="soR-rQ-xOf"/>
+                            <constraint firstItem="N0i-Gy-bmp" firstAttribute="top" secondItem="JVG-Gy-16v" secondAttribute="top" constant="325" id="Euk-Ds-QAq"/>
+                            <constraint firstItem="nzq-GW-rtE" firstAttribute="top" secondItem="hAI-Cu-Fhf" secondAttribute="bottom" id="Ft9-Sm-83y"/>
+                            <constraint firstItem="N0i-Gy-bmp" firstAttribute="top" secondItem="gbM-xN-RL9" secondAttribute="bottom" constant="47" id="I9P-Vc-3pN"/>
+                            <constraint firstItem="gbM-xN-RL9" firstAttribute="leading" secondItem="JVG-Gy-16v" secondAttribute="leadingMargin" constant="19" id="Vuf-BF-Wbz"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="TUu-lw-02I" secondAttribute="bottom" constant="-3" id="W1f-JS-AB9"/>
+                            <constraint firstItem="gbM-xN-RL9" firstAttribute="centerX" secondItem="JVG-Gy-16v" secondAttribute="centerX" id="YQ1-CL-M2v"/>
+                            <constraint firstItem="N0i-Gy-bmp" firstAttribute="top" secondItem="nzq-GW-rtE" secondAttribute="bottom" constant="59" id="a9W-BJ-Ir4"/>
+                            <constraint firstItem="N0i-Gy-bmp" firstAttribute="centerX" secondItem="TUu-lw-02I" secondAttribute="centerX" id="dWN-eP-qo9"/>
+                            <constraint firstItem="gbM-xN-RL9" firstAttribute="top" secondItem="hAI-Cu-Fhf" secondAttribute="bottom" constant="51" id="iGq-hf-fvb"/>
+                            <constraint firstAttribute="bottom" secondItem="gbM-xN-RL9" secondAttribute="bottom" constant="389" id="qF6-3T-AXb"/>
+                            <constraint firstAttribute="bottom" secondItem="N0i-Gy-bmp" secondAttribute="bottom" constant="210" id="r7i-Ck-Kpl"/>
+                            <constraint firstItem="N0i-Gy-bmp" firstAttribute="leading" secondItem="JVG-Gy-16v" secondAttribute="leadingMargin" constant="27" id="veo-UD-4SZ"/>
+                            <constraint firstItem="nzq-GW-rtE" firstAttribute="leading" secondItem="TUu-lw-02I" secondAttribute="leading" id="xJz-jx-o8R"/>
+                            <constraint firstItem="N0i-Gy-bmp" firstAttribute="centerX" secondItem="gbM-xN-RL9" secondAttribute="centerX" id="yTi-CB-Se8"/>
+                            <constraint firstItem="nzq-GW-rtE" firstAttribute="trailing" secondItem="TUu-lw-02I" secondAttribute="trailing" id="zyy-Qc-bJS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Group Details" id="LI8-JG-wiw">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="cnB-Vn-cdu">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="closeGroup:" destination="8Qa-f2-V1o" id="kaK-RQ-wNL"/>
                             </connections>
@@ -425,7 +453,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose your favorite                             kpop groups" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3wr-hH-Rzw">
                                 <rect key="frame" x="53" y="20" width="269" height="85"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" red="0.73919813339999996" green="0.97945182880000004" blue="0.97027970330000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -694,9 +722,15 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qvl-Cp-Hyj" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1qa-Ue-lDg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="1qa-Ue-lDg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.36470588240000001" green="0.32156862749999998" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.36470588240000001" green="0.32156862749999998" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -757,7 +791,6 @@
     </scenes>
     <resources>
         <image name="appName" width="163" height="52"/>
-        <image name="chat" width="64" height="64"/>
         <image name="close" width="16" height="16"/>
         <image name="easter-bunny" width="64" height="64"/>
         <image name="exampleprof" width="300" height="300"/>
