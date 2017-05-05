@@ -111,11 +111,11 @@ class CustomSegue: UIStoryboardSegue {
         fromViewController.view.layer.position = CGPoint.zero
         
         let containerView: UIView? = fromViewController.view.superview
-        toViewController.view.transform = CGAffineTransform(rotationAngle: CGFloat(-M_PI_2))
+        toViewController.view.transform = CGAffineTransform(rotationAngle: CGFloat(-Double.pi / 2))
         containerView?.addSubview(toViewController.view)
         
         UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.8, options: [], animations: {
-            fromViewController.view.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI_2))
+            fromViewController.view.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi / 2))
             toViewController.view.transform = CGAffineTransform.identity
         }, completion: { finished in
             let fromVC: UIViewController = self.source
@@ -214,7 +214,7 @@ class CustomUnwindSegue: UIStoryboardSegue {
         containerView?.addSubview(toViewController.view)
         
         UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.8, options: [], animations: {
-            fromViewController.view.transform = CGAffineTransform(rotationAngle: CGFloat(-M_PI_2))
+            fromViewController.view.transform = CGAffineTransform(rotationAngle: CGFloat(-Double.pi / 2))
             toViewController.view.transform = CGAffineTransform.identity
         }, completion: { finished in
             let fromVC = self.source

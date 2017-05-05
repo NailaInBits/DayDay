@@ -6,9 +6,7 @@
 //  Copyright © 2017 DayDay. All rights reserved.
 //
 import UIKit
-import FirebaseAuth
 
-var user = FIRAuth.auth()?.currentUser
 
 fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
     switch (lhs, rhs) {
@@ -96,7 +94,7 @@ class RadialMenu: UIView,RadialButtonDelegate{
         
         while currentItem <= itemCount {
             
-            let radians = (angle * (CGFloat(currentItem) - 2.0) + CGFloat(start)) * (CGFloat(M_PI)/CGFloat(180))
+            let radians = (angle * (CGFloat(currentItem) - 2.0) + CGFloat(start)) * (CGFloat(Double.pi)/CGFloat(180))
             
             let x      = round (centerX + CGFloat(radius) * cos(CGFloat(radians)));
             let y      = round (centerY + CGFloat(radius) * sin(CGFloat(radians)));
@@ -244,19 +242,6 @@ class RadialMenu: UIView,RadialButtonDelegate{
         }
     }
     
-    func getProfilePic() -> UIImage? {
-        
-        let imgURLString = "https://graph.facebook.com/" + "621159167" + "/picture?type=large"
-        let imgURL = URL(string: imgURLString)
-        
-        do {
-            let imageData = try Data(contentsOf: imgURL!)
-            let image = UIImage(data: imageData)
-            return image
-        } catch {
-            return nil
-        }
-    }
 }
 
 
