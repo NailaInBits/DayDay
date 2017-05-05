@@ -24,6 +24,8 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
     private var fid: String?
     private var userName: String?
     
+    private var numOfUserGroups: NSInteger!
+    
     private lazy var channelRef: FIRDatabaseReference = FIRDatabase.database().reference().child("channels")
 
     @IBOutlet weak var button: UIButton!
@@ -62,6 +64,9 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
             if let value = snapshot.value as? NSDictionary {
                 self.fid = value["id"] as? String
                 self.userName = value["name"] as? String
+                if let nums = value["kpopGroups"] as? NSDictionary {
+                    self.numOfUserGroups = nums.count
+                }
                 
                 //self.button.setImage(self.getProfilePicture(fid: self.fid), for: UIControlState.normal)
 
@@ -146,7 +151,7 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
     }
     
     func numberOfItemsInRadialMenu (_ radialMenu:RadialMenu)->NSInteger {
-        return 3
+        return self.numOfUserGroups
         //get number of user's kpop groups from firebase --> total # of vals in dict?
     }
     
