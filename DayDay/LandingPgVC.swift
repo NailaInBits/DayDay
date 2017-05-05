@@ -237,9 +237,9 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
         } */
     }
     
-    @IBAction func toMagic(_ sender: Any) {
+    /*@IBAction func toMagic(_ sender: Any) {
         performSegue(withIdentifier: "home2magic", sender: nil)
-    }
+    } */
     
     func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue is CustomSegue {
