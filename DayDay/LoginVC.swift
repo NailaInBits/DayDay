@@ -13,15 +13,33 @@ import FBSDKCoreKit
 import Firebase
 import FirebaseAuth
 
-class LoginVC: UIViewController {
+class LoginVC: UIViewController, UIScrollViewDelegate {
     
     var gradientLayer: CAGradientLayer!
     var player: AVPlayer?
     var audio: AVAudioSession = AVAudioSession.sharedInstance()
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var pageControl: UIPageControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         createGradientLayer()
+        
+        self.scrollView.frame = CGRect(x:0, y:0, width:self.view.frame.width, height:self.view.frame.height)
+        let scrollViewWidth:CGFloat = self.scrollView.frame.width
+        let scrollViewHeight:CGFloat = self.scrollView.frame.height
+
+        textView.textAlignment = .center
+        textView.text = "Rain drop, drop top, get on DayDay kpop."
+
+        self.scrollView.contentSize = CGSize(width:self.scrollView.frame.width * 4, height:self.scrollView.frame.height)
+        self.scrollView.delegate = self
+        self.pageControl.currentPage = 0
+        
+        Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(moveToNextPage), userInfo: nil, repeats: true)
+        
         //Background Video (make sure always under 5mb)
         /*let videoURL: NSURL = Bundle.main.url(forResource: "bg", withExtension: "mp4")! as NSURL
         player = AVPlayer(url: videoURL as URL)
@@ -154,5 +172,38 @@ class LoginVC: UIViewController {
             
         }   
     }
+    
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        // Test the offset and calculate the current page after scrolling ends
+        let pageWidth:CGFloat = scrollView.frame.width
+        let currentPage:CGFloat = floor((scrollView.contentOffset.x-pageWidth/2)/pageWidth)+1
+        // Change the indicator
+        self.pageControl.currentPage = Int(currentPage);
+        // Change the text accordingly
+        if Int(currentPage) == 0{
+            textView.text = "Chat and connect with other kpop fans."
+        }else if Int(currentPage) == 1{
+            textView.text = "Livestream with up and coming kpop artists and personnel."
+        }else if Int(currentPage) == 2{
+            textView.text = "Buy and sell your kpop merchandise."
+        }else{
+            textView.text = "Rain drop, drop top, get on DayDay kpop."
+        }
+    }
+    
+    func moveToNextPage (){
+        
+        let pageWidth:CGFloat = self.scrollView.frame.width
+        let maxWidth:CGFloat = pageWidth * 4
+        let contentOffset:CGFloat = self.scrollView.contentOffset.x
+        
+        var slideToX = contentOffset + pageWidth
+        
+        if  contentOffset + pageWidth == maxWidth {
+            slideToX = 0
+        }
+        self.scrollView.scrollRectToVisible(CGRect(x:slideToX, y:0, width:pageWidth, height:self.scrollView.frame.height), animated: true)
+    }
+
     
 }
