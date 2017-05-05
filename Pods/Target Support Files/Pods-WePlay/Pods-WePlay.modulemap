@@ -1,6 +1,0 @@
-framework module Pods_WePlay {
-  umbrella header "Pods-WePlay-umbrella.h"
-
-  export *
-  module * { export * }
-}
