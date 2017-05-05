@@ -47,7 +47,7 @@ class ProfileVC: UIViewController {
         
         showAnimate()
         
-        self.view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        self.view.backgroundColor = UIColor.white.withAlphaComponent(0.5)
         // Do any additional setup after loading the view.
     }
 
