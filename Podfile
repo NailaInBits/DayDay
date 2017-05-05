@@ -1,6 +1,6 @@
 platform :ios, '10.0'
 
-target 'WePlay' do
+target ‘DayDay’ do
   use_frameworks!
 
   # Pods for Facebook
@@ -15,7 +15,6 @@ target 'WePlay' do
   pod 'Firebase/Database'
   pod 'Firebase/RemoteConfig'
   pod 'JSQMessagesViewController'
-  
-  #Pods for Aesthetics
-  pod 'SwiftGifOrigin'
+
 end
+
