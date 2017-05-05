@@ -4,7 +4,7 @@
 //
 //  Created by Nishat Anjum on 3/6/17.
 //  Copyright © 2017 DayDay. All rights reserved.
-//
+/*
 
 import UIKit
 import MobileCoreServices
@@ -235,4 +235,4 @@ class MagicVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, U
         self.present(myAlertVC, animated: true, completion: nil)
     }
     
-}
+} */
