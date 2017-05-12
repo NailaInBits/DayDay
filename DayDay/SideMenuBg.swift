@@ -6,7 +6,7 @@
 //  Copyright © 2017 WePlay. All rights reserved.
 //
 
-import UIKit
+/* import UIKit
 
 class SideMenuBg: UIView {
     
@@ -48,4 +48,4 @@ class SideMenuBg: UIView {
     }
     */
 
-}
+} */
