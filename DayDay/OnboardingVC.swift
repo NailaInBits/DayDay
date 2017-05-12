@@ -87,34 +87,17 @@ class OnboardingVC: UIViewController {
         }, completion: nil)
     }
     
+    // Six group buttons
     @IBAction func addGroup1(_ sender: UIButton) {
         if buttonSelected["bts"]! {
             firstButton.setBackgroundImage(#imageLiteral(resourceName: "g1"), for: UIControlState.normal)
             buttonSelected["bts"] = false
         } else {
+            // Toggles when selected
             firstButton.setBackgroundImage(#imageLiteral(resourceName: "check"), for: UIControlState.normal)
             firstButton.backgroundColor = UIColor.clear
             buttonSelected["bts"] = true
         }
-        /*ref = FIRDatabase.database().reference()
-        
-        let kpopGroupRef = ref.child("users/" + userID! + "/kpopGroups")
-        
-        ref.child("KpopGroups").observeSingleEvent(of: .value, with: { (snapshot) in
-            if let value = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                
-                for child in value {
-                    let kpopGroup = child.key
-                    
-                    if(kpopGroup == "-KgCx7qeem3u2dlMDr0i"){
-                        kpopGroupRef.child("bts").setValue(kpopGroup)
-                    }
-                }
-            } else {
-                print("Error! Could not decode group data")
-            }
-        })*/
-
     }
     
     @IBAction func addGroup2(_ sender: UIButton) {
@@ -126,25 +109,6 @@ class OnboardingVC: UIViewController {
             secondButton.backgroundColor = UIColor.clear
             buttonSelected["blackPink"] = true
         }
-        /*ref = FIRDatabase.database().reference()
-        
-        let kpopGroupRef = ref.child("users/" + userID! + "/kpopGroups")
-        
-        ref.child("KpopGroups").observeSingleEvent(of: .value, with: { (snapshot) in
-            if let value = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                
-                for child in value {
-                    let kpopGroup = child.key
-                    
-                    if(kpopGroup == "-KgCx8cRgj4qca_K4aBR"){
-                        kpopGroupRef.child("blackPink").setValue(kpopGroup)
-                    }
-                }
-            } else {
-                print("Error! Could not decode group data")
-            }
-        })*/
-
     }
     
     @IBAction func addGroup3(_ sender: UIButton) {
@@ -156,24 +120,6 @@ class OnboardingVC: UIViewController {
             thirdButton.backgroundColor = UIColor.clear
             buttonSelected["exo"] = true
         }
-        /*ref = FIRDatabase.database().reference()
-        
-        let kpopGroupRef = ref.child("users/" + userID! + "/kpopGroups")
-        
-        ref.child("KpopGroups").observeSingleEvent(of: .value, with: { (snapshot) in
-            if let value = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                
-                for child in value {
-                    let kpopGroup = child.key
-                    
-                    if(kpopGroup == "-KgCx9jdmLA78msqYnV-"){
-                        kpopGroupRef.child("exo").setValue(kpopGroup)
-                    }
-                }
-            } else {
-                print("Error! Could not decode group data")
-            }
-        })*/
     }
     
     @IBAction func addGroup4(_ sender: UIButton) {
@@ -185,24 +131,6 @@ class OnboardingVC: UIViewController {
             fourthButton.backgroundColor = UIColor.clear
             buttonSelected["twice"] = true
         }
-        /*ref = FIRDatabase.database().reference()
-        
-        let kpopGroupRef = ref.child("users/" + userID! + "/kpopGroups")
-        
-        ref.child("KpopGroups").observeSingleEvent(of: .value, with: { (snapshot) in
-            if let value = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                
-                for child in value {
-                    let kpopGroup = child.key
-                    
-                    if(kpopGroup == "-KgH9pgaNoBpu_wYqV8o"){
-                        kpopGroupRef.child("twice").setValue(kpopGroup)
-                    }
-                }
-            } else {
-                print("Error! Could not decode group data")
-            }
-        })*/
     }
     
     @IBAction func addGroup5(_ sender: UIButton) {
@@ -214,24 +142,6 @@ class OnboardingVC: UIViewController {
             fifthButton.backgroundColor = UIColor.clear
             buttonSelected["bigBang"] = true
         }
-        /*ref = FIRDatabase.database().reference()
-        
-        let kpopGroupRef = ref.child("users/" + userID! + "/kpopGroups")
-        
-        ref.child("KpopGroups").observeSingleEvent(of: .value, with: { (snapshot) in
-            if let value = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                
-                for child in value {
-                    let kpopGroup = child.key
-                    
-                    if(kpopGroup == "-KgH9qIca2Wgw-Dhs4JS"){
-                        kpopGroupRef.child("bigBang").setValue(kpopGroup)
-                    }
-                }
-            } else {
-                print("Error! Could not decode group data")
-            }
-        })*/
     }
     
     @IBAction func addGroup6(_ sender: UIButton) {
@@ -243,26 +153,9 @@ class OnboardingVC: UIViewController {
             sixthButton.backgroundColor = UIColor.clear
             buttonSelected["got7"] = true
         }
-        /*ref = FIRDatabase.database().reference()
-        
-        let kpopGroupRef = ref.child("users/" + userID! + "/kpopGroups")
-        
-        ref.child("KpopGroups").observeSingleEvent(of: .value, with: { (snapshot) in
-            if let value = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                
-                for child in value {
-                    let kpopGroup = child.key
-                    
-                    if(kpopGroup == "-KgH9qbONq9hzFQcagPJ"){
-                        kpopGroupRef.child("got7").setValue(kpopGroup)
-                    }
-                }
-            } else {
-                print("Error! Could not decode group data")
-            }
-        })*/
     }
     
+    // Performs query to add each group values to user's record
     @IBAction func addGroups(_ sender: Any) {
         let kpopGroupRef = self.userRef.child(userID! + "/kpopGroups")
         
@@ -276,10 +169,12 @@ class OnboardingVC: UIViewController {
         self.performSegue(withIdentifier: "showLanding", sender: UIButton.self)
     }
     
+    // Skips onboarding process
     @IBAction func skipGroups(_ sender: Any) {
         self.performSegue(withIdentifier: "showLanding", sender: UIButton.self)
     }
  
+    // Gradient background
     func createGradientLayer() {
         gradientLayer = CAGradientLayer()
         gradientLayer.frame = self.view.bounds
@@ -288,6 +183,7 @@ class OnboardingVC: UIViewController {
         self.view.layer.insertSublayer(gradientLayer, at: 0)
     }
     
+    // Ignore this
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
