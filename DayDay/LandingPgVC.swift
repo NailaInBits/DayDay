@@ -25,7 +25,7 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
     
     private var ref: FIRDatabaseReference!
     private var userID = FIRAuth.auth()?.currentUser?.uid
-    private var fid: String?
+    private var fid: String? // Facebook ID
     private var userName: String?
     
     private lazy var channelRef: FIRDatabaseReference = FIRDatabase.database().reference().child("channels")
@@ -34,10 +34,14 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Radial menu button properties
         self.button.layer.cornerRadius = self.button.frame.size.width / 2
         self.button.clipsToBounds = true
+        
         self.radialMenu = RadialMenu()
         self.radialMenu.delegate = self
+        
         self.retrieveUserInfo()
         
         // SIDE MENU STUFF T.T
@@ -46,34 +50,37 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
         //view.addGestureRecognizer(sideMenuEdgePan)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         createGradientLayer()
     }
     
+    // Performs query to retrieve user record in Firebase
     private func retrieveUserInfo() {
         
         self.ref = FIRDatabase.database().reference()
         
         self.ref.child("users").child(userID!).observe(FIRDataEventType.value, with: { (snapshot) in
             
-            if !snapshot.exists() { return }
+            // Invalid query
+            if !snapshot.exists() {
+                print("No user record is found")
+                return
+            }
             
             if let value = snapshot.value as? NSDictionary {
                 self.fid = value["id"] as? String
                 self.userName = value["name"] as? String
-
+                
+                // Tints the radial menu image
                 let tint = UIColor(red:0.23, green:0.38, blue:0.53, alpha:0.2)
                 self.button.setBackgroundImage(self.getProfilePicture(fid: self.fid)?.tintedImage(with: tint), for: UIControlState.normal)
             }
-        })
+        }) // end query
     }
     
+    // Facebook graph API call to retrieve user's FB Profile Picture
     private func getProfilePicture(fid: String?) -> UIImage? {
         
         if let uid = fid {
@@ -140,9 +147,10 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
         if segue.identifier == "showGroup" {
             if let navController = segue.destination as? UINavigationController {
                 if let childVC = navController.topViewController as? GroupProfileVC {
-                    print("GroupID: \(self.groupId!) and \(self.groupImage!)")
+                    // Provides group ID and group image to the GroupProfileVC
                     childVC.groupId = self.groupId!
                     childVC.image = self.groupImage!
+                    
                     self.prepareForSegue(segue: segue, sender: self)
                 }
             }
@@ -158,7 +166,7 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
         popOverVC.didMove(toParentViewController: self)
     }
     
-    //Radial Menu Buttons
+    // Radial Menu Buttons
     @IBAction func buttonPressed(_ sender: AnyObject) {
         self.radialMenu.buttonsWillAnimateFromButton(sender as! UIButton, frame: self.button.frame, view: self.view)
     }
@@ -181,7 +189,6 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
 
         //Add in child image url
         if index == 1 {
-            //get kpop group's id and image from firebase dict[1]
             button.setImage(UIImage(named: "g1"), for:UIControlState())
         } else if index == 2 {
             button.setImage(UIImage(named: "g2"), for:UIControlState())
@@ -198,6 +205,7 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
         return button
     }
     
+    // When radial button is selected, prepares group ID and image for segue
     func radialMenudidSelectItemAtIndex(_ radialMenu:RadialMenu,index:NSInteger) {
         
         /************ SEGUES NEED TO BE UPDATED AS MORE VCs ARE ADDED **************/
@@ -260,25 +268,33 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
         performSegue(withIdentifier: "home2magic", sender: nil)
     } */
     
+    // Custom segue animation
     func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue is CustomSegue {
             (segue as! CustomSegue).animationType = .GrowScale
         }
     }
     
+    // Custom segue unwind animation
     func segueForUnwinding(to toViewController: UIViewController, from fromViewController: UINavigationController, identifier: String?) -> UIStoryboardSegue {
         let segue = CustomUnwindSegue(identifier: identifier, source: fromViewController, destination: toViewController)
         segue.animationType = .GrowScale
         return segue
     }
     
-    //Gradient Background
+    // Gradient Background
     func createGradientLayer() {
         gradientLayer = CAGradientLayer()
         gradientLayer.frame = self.view.bounds
         gradientLayer.colors = [UIColor(red:0.67, green:0.43, blue:1.00, alpha:1.0).cgColor, UIColor(red:0.46, green:0.73, blue:0.96, alpha:1.0).cgColor]
         self.view.layer.insertSublayer(gradientLayer, at: 0)
     }
+    
+    // Ignore this
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
 }
 
 // SIDE MENU STUFF T.T
