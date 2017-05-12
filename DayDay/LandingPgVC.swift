@@ -12,25 +12,25 @@ import FirebaseDatabase
 
 class LandingPgVC: UIViewController, RadialMenuDelegate {
 
-    let interactor = Interactor()
+    // SIDE MENU STUFF T.T
+    
+    //let interactor = Interactor()
+    //@IBOutlet var sideMenuEdgePan: UIScreenEdgePanGestureRecognizer!
     
     var radialMenu:RadialMenu!
     var gradientLayer: CAGradientLayer!
     
     private var groupId: String?
+    private var groupImage: UIImage?
     
     private var ref: FIRDatabaseReference!
     private var userID = FIRAuth.auth()?.currentUser?.uid
     private var fid: String?
     private var userName: String?
     
-    private var numOfUserGroups: NSInteger!
-    
     private lazy var channelRef: FIRDatabaseReference = FIRDatabase.database().reference().child("channels")
 
     @IBOutlet weak var button: UIButton!
-    
-    @IBOutlet var sideMenuEdgePan: UIScreenEdgePanGestureRecognizer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,8 +39,11 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
         self.radialMenu = RadialMenu()
         self.radialMenu.delegate = self
         self.retrieveUserInfo()
-        sideMenuEdgePan.edges = .left
-        view.addGestureRecognizer(sideMenuEdgePan)
+        
+        // SIDE MENU STUFF T.T
+        
+        //sideMenuEdgePan.edges = .left
+        //view.addGestureRecognizer(sideMenuEdgePan)
     }
     
     override func didReceiveMemoryWarning() {
@@ -64,11 +67,6 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
             if let value = snapshot.value as? NSDictionary {
                 self.fid = value["id"] as? String
                 self.userName = value["name"] as? String
-                if let nums = value["kpopGroups"] as? NSDictionary {
-                    self.numOfUserGroups = nums.count
-                }
-                
-                //self.button.setImage(self.getProfilePicture(fid: self.fid), for: UIControlState.normal)
 
                 let tint = UIColor(red:0.23, green:0.38, blue:0.53, alpha:0.2)
                 self.button.setBackgroundImage(self.getProfilePicture(fid: self.fid)?.tintedImage(with: tint), for: UIControlState.normal)
@@ -94,8 +92,10 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
         return nil
     }
     
+    // SIDE MENU STUFF T.T
+    
     // Side Menu button
-    @IBAction func openSideMenu(_ sender: AnyObject) {
+    /* @IBAction func openSideMenu(_ sender: AnyObject) {
         performSegue(withIdentifier: "SideMenu", sender: nil)
     }
     
@@ -115,21 +115,34 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
             interactor: interactor){
                 performSegue(withIdentifier: "SideMenu", sender: nil)
         }
-    }
+    } */
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "SideMenu" {
+        // SIDE MENU STUFF T.T
+        
+        /* if segue.identifier == "SideMenu" {
             if let destinationViewController = segue.destination as? SideMenuVC {
                 destinationViewController.transitioningDelegate = self
                 destinationViewController.interactor = interactor
             }
-        }
+        } */
         
-        if segue.identifier == "showChat" {
+        /* if segue.identifier == "showChat" {
             if let navController = segue.destination as? UINavigationController {
                 if let childVC = navController.topViewController as? ChatVC {
                     childVC.groupId = self.groupId!
                     childVC.senderDisplayName = self.userName!
+                    self.prepareForSegue(segue: segue, sender: self)
+                }
+            }
+        } */
+        
+        if segue.identifier == "showGroup" {
+            if let navController = segue.destination as? UINavigationController {
+                if let childVC = navController.topViewController as? GroupProfileVC {
+                    print("GroupID: \(self.groupId!) and \(self.groupImage!)")
+                    childVC.groupId = self.groupId!
+                    childVC.image = self.groupImage!
                     self.prepareForSegue(segue: segue, sender: self)
                 }
             }
@@ -151,8 +164,7 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
     }
     
     func numberOfItemsInRadialMenu (_ radialMenu:RadialMenu)->NSInteger {
-        return self.numOfUserGroups
-        //get number of user's kpop groups from firebase --> total # of vals in dict?
+        return 6
     }
     
     func arcSizeInRadialMenu (_ radialMenu:RadialMenu)->NSInteger {
@@ -166,32 +178,22 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
     func radialMenubuttonForIndex(_ radialMenu:RadialMenu,index:NSInteger)->RadialButton {
         
         let button:RadialButton = RadialButton()
-        
-        self.button.layer.cornerRadius = self.button.frame.size.width / 2;
-        self.button.clipsToBounds = true;
 
         //Add in child image url
         if index == 1 {
             //get kpop group's id and image from firebase dict[1]
-            button.setImage(UIImage(named: "nearMe"), for:UIControlState())
-            self.groupId = "-KgCx7qeem3u2dlMDr0i"
+            button.setImage(UIImage(named: "g1"), for:UIControlState())
         } else if index == 2 {
-            button.setImage(UIImage(named: "pastEvents"), for:UIControlState())
-            self.groupId = "-KgCx8cRgj4qca_K4aBR"
-        }
-        if index == 3 {
-            button.setImage(UIImage(named: "currentEvent"), for:UIControlState())
-            self.groupId = "-KgCx9jdmLA78msqYnV-"
-        } /*else if index == 4 {
-            button.setImage(UIImage(named: "nearMe"), for:UIControlState())
-            self.groupId = "-KgH9pgaNoBpu_wYqV8o"
+            button.setImage(UIImage(named: "g2"), for:UIControlState())
+        } else if index == 3 {
+            button.setImage(UIImage(named: "g3"), for:UIControlState())
+        } else if index == 4 {
+            button.setImage(UIImage(named: "g4"), for:UIControlState())
         } else if index == 5 {
-            button.setImage(UIImage(named: "pastEvents"), for:UIControlState())
-            self.groupId = "-KgH9qIca2Wgw-Dhs4JS"
-        } else if index == 2 {
-            button.setImage(UIImage(named: "currentEvent"), for:UIControlState())
-            self.groupId = "-KgH9qbONq9hzFQcagPJ"
-        } */
+            button.setImage(UIImage(named: "g5"), for:UIControlState())
+        } else if index == 6 {
+            button.setImage(UIImage(named: "g6"), for:UIControlState())
+        }
         
         return button
     }
@@ -228,18 +230,30 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
         progressLine.add(animateStrokeEnd, forKey: "animate stroke end animation") */
         
         if index == 1 {
-            performSegue(withIdentifier: "showChat", sender: self)
+            self.groupId = "-KgCx7qeem3u2dlMDr0i"
+            self.groupImage = UIImage(named: "g1")
+            performSegue(withIdentifier: "showGroup", sender: self)
         } else if index == 2 {
-            performSegue(withIdentifier: "showChat", sender: self)
+            self.groupId = "-KgCx8cRgj4qca_K4aBR"
+            self.groupImage = UIImage(named: "g2")
+            performSegue(withIdentifier: "showGroup", sender: self)
         } else if index == 3 {
-           performSegue(withIdentifier: "showChat", sender: self)
-        } /*else if index == 4 {
-            performSegue(withIdentifier: "showChat", sender: self)
+            self.groupId = "-KgCx9jdmLA78msqYnV-"
+            self.groupImage = UIImage(named: "g3")
+            performSegue(withIdentifier: "showGroup", sender: self)
+        } else if index == 4 {
+            self.groupId = "-KgH9pgaNoBpu_wYqV8o"
+            self.groupImage = UIImage(named: "g4")
+            performSegue(withIdentifier: "showGroup", sender: self)
         } else if index == 5 {
-            performSegue(withIdentifier: "showChat", sender: self)
+            self.groupId = "-KgH9qIca2Wgw-Dhs4JS"
+            self.groupImage = UIImage(named: "g5")
+            performSegue(withIdentifier: "showGroup", sender: self)
         } else if index == 6 {
-            performSegue(withIdentifier: "showChat", sender: self)
-        } */
+            self.groupId = "-KgH9qbONq9hzFQcagPJ"
+            self.groupImage = UIImage(named: "g6")
+            performSegue(withIdentifier: "showGroup", sender: self)
+        }
     }
     
     /*@IBAction func toMagic(_ sender: Any) {
@@ -267,8 +281,10 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
     }
 }
 
+// SIDE MENU STUFF T.T
+
 // Adds the presentation animation to Transitioning delegate
-extension LandingPgVC: UIViewControllerTransitioningDelegate {
+/* extension LandingPgVC: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return PresentMenuAnimator()
     }
@@ -284,7 +300,7 @@ extension LandingPgVC: UIViewControllerTransitioningDelegate {
     func interactionControllerForPresentation(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
         return interactor.hasStarted ? interactor : nil
     }
-}
+} */
 
 extension UIImage {
     // Tint an image with specified color

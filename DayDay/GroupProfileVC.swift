@@ -7,35 +7,48 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class GroupProfileVC: UIViewController {
 
     @IBOutlet weak var groupImage: UIImageView!
     @IBOutlet weak var groupDescription: UITextView!
     
-    var image: UIImage?
-    var detail: String?
+    @IBOutlet var navBar: UINavigationItem!
+    
+    var groupId: String!
+    var image: UIImage!
+    private var ref: FIRDatabaseReference =
+        FIRDatabase.database().reference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        fieldLayout()
+        groupDetail()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    private func fieldLayout() {
-        groupImage.image = image
-        //groupImage.layer.cornerRadius = 15
-        //groupImage.layer.borderWidth = 2.0
-        groupImage.clipsToBounds = true
+    private func groupDetail() {
+        self.groupImage.image = image
         
-        groupDescription.text = detail
-        groupDescription.clipsToBounds = true
-        groupDescription.backgroundColor = UIColor.clear
-        groupDescription.textAlignment = .justified
+        let groupRef = self.ref.child("KpopGroups").child(self.groupId)
+        
+        groupRef.observe(FIRDataEventType.value, with: { (snapshot) in
+            
+            if !snapshot.exists() { return }
+            
+            if let value = snapshot.value as? NSDictionary {
+                self.groupDescription.text = value["description"] as! String
+                self.groupDescription.clipsToBounds = true
+                self.groupDescription.backgroundColor = UIColor.clear
+                self.groupDescription.textAlignment = .justified
+                
+                self.navBar.title = value["name"] as? String
+            }
+        })
     }
     
     @IBAction func joinChat(_ sender: Any) {
