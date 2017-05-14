@@ -24,6 +24,7 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var ProfilePic: UIImageView!
     @IBOutlet weak var Username: UITextField!
     
+    // Username text field writability toggle
     @IBAction func textFieldToggle(_ Sender: AnyObject) {
         editTextFieldToggle = !editTextFieldToggle
         
@@ -38,24 +39,19 @@ class ProfileVC: UIViewController {
             Username.backgroundColor = UIColor.clear
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.retrieveUserInfo()
-        
         fieldLayout()
-        
         showAnimate()
         
+        // Creates white opacity
         self.view.backgroundColor = UIColor.white.withAlphaComponent(0.5)
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
+    // Layout of the text fields and image
     func fieldLayout() {
         ProfilePic.layer.cornerRadius = ProfilePic.frame.width / 2
         ProfilePic.layer.borderWidth = 3.0
@@ -70,6 +66,7 @@ class ProfileVC: UIViewController {
         Username.clipsToBounds = true
     }
     
+    // Performs a query to update username in Firebase
     private func updateUsername() {
         
         self.ref = FIRDatabase.database().reference().child("users").child(userID!)
@@ -78,12 +75,17 @@ class ProfileVC: UIViewController {
 
     }
     
+    // Performs a query to retrieve user record in Firebase
     private func retrieveUserInfo() {
         
         self.ref = FIRDatabase.database().reference()
         self.ref.child("users").child(userID!).observe(FIRDataEventType.value, with: { (snapshot) in
             
-            if !snapshot.exists() { return }
+            // Invalid query
+            if !snapshot.exists() {
+                print("No user record is found")
+                return
+            }
             
             if let value = snapshot.value as? NSDictionary {
                 self.Email.text = value["email"] as? String
@@ -95,6 +97,7 @@ class ProfileVC: UIViewController {
         })
     }
     
+    // Facebook graph API call to retrieve user's FB profile picture
     private func getProfilePicture(fid: String?) -> UIImage? {
         
         if let uid = fid {
@@ -107,19 +110,20 @@ class ProfileVC: UIViewController {
                 return image
             } catch {
                 return nil
-            }
+            } // End catch
         }
         
         return nil
     }
     
+    // Exits profile page
     @IBAction func closePopup(_ Sender: AnyObject) {
         self.removeAnimate()
         
     }
     
-    func showAnimate()
-    {
+    // Fade in zoom animation
+    func showAnimate() {
         self.view.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
         self.view.alpha = 0.0;
         UIView.animate(withDuration: 0.25, animations: {
@@ -128,8 +132,8 @@ class ProfileVC: UIViewController {
         });
     }
     
-    func removeAnimate()
-    {
+    // Fade out zoom animation
+    func removeAnimate() {
         UIView.animate(withDuration: 0.25, animations: {
             self.view.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
             self.view.alpha = 0.0;
@@ -155,15 +159,10 @@ class ProfileVC: UIViewController {
         }
     }
     
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Ignore this
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
-    */
 
 }
