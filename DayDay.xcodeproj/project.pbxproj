@@ -209,11 +209,11 @@
 				E1D7F0BC1E7C5BC10022777F /* ViewControllers */,
 				E1D7F0BB1E7C5BBA0022777F /* Models */,
 				E1D7F0C11E7C5D1B0022777F /* Resources */,
-				E10EAEB31E7C665500D1918E /* LaunchScreen.storyboard */,
 				49ABBEA91E90D1F300F48E8D /* Assets.xcassets */,
 				E10EAEA61E7C659500D1918E /* Bridging.h */,
 				490528A91E8864FD004195FB /* GoogleService-Info.plist */,
 				E10EAE881E7C60BD00D1918E /* Info.plist */,
+				E10EAEB31E7C665500D1918E /* LaunchScreen.storyboard */,
 			);
 			name = DayDay;
 			path = WePlay;
@@ -252,14 +252,14 @@
 		E1D7F0BC1E7C5BC10022777F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				49A43FA91E89F73A00C152AF /* GroupProfile */,
-				49D2564D1E88A069008B7270 /* SideMenu */,
 				E1D7F0C01E7C5CF90022777F /* Login */,
 				E15FA8A41E88B92B00B7C358 /* OnboardingVC.swift */,
 				E1D7F0BF1E7C5CCD0022777F /* LandingPage */,
 				E1D7F0BD1E7C5C540022777F /* RadialMenu */,
-				E10EAE981E7C654800D1918E /* MagicVC.swift */,
+				49A43FA91E89F73A00C152AF /* GroupProfile */,
 				E14B0CEC1E91C79C0062572C /* Chat */,
+				49D2564D1E88A069008B7270 /* SideMenu */,
+				E10EAE981E7C654800D1918E /* MagicVC.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -686,7 +686,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DayDay.App;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = /Users/B1ackK3yz/Documents/iOSApps/DayDay/DayDay/Bridging.h;
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/nishat/DayDay/DayDay/Bridging.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -705,7 +705,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DayDay.App;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = /Users/B1ackK3yz/Documents/iOSApps/DayDay/DayDay/Bridging.h;
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/nishat/DayDay/DayDay/Bridging.h;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
