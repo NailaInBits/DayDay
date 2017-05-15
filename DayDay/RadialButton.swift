@@ -33,6 +33,9 @@ class RadialButton: UIButton {
                 self.center = self.centerPoint
             })
         }
+        
+        self.imageView?.layer.cornerRadius = self.imageView!.frame.width / 2
+        self.imageView?.clipsToBounds = true
     }
     
     func willDisappear () {

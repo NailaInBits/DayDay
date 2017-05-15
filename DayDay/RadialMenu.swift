@@ -73,13 +73,15 @@ class RadialMenu: UIView,RadialButtonDelegate{
         
         var  angle:CGFloat = 0
         
+        //Dictates how far away the buttons are from each other.
         if arc>=360 {
-            angle         = CGFloat(-180)/CGFloat(itemCount)
+            angle         = CGFloat(-180)/CGFloat(3)
         } else if itemCount>1 {
-            angle         = CGFloat(arc)/CGFloat((itemCount-1))
+            angle         = CGFloat(arc)/CGFloat((3-1))
         }
         
-        let centerX       = frame.origin.x + (frame.size.height/1.6);
+        //Controls where the buttons show up.
+        let centerX       = frame.origin.x + (frame.size.height/2);
         let centerY       = frame.origin.y + (frame.size.width/2);
         let origin        = CGPoint(x: centerX, y: centerY);
         
@@ -94,12 +96,14 @@ class RadialMenu: UIView,RadialButtonDelegate{
         
         while currentItem <= itemCount {
             
-            let radians = (angle * (CGFloat(currentItem) - 2.0) + CGFloat(start)) * (CGFloat(Double.pi)/CGFloat(180))
+            let radians = (angle * (CGFloat(currentItem) - 1.0) + CGFloat(start)) * (CGFloat(Double.pi)/CGFloat(180))
             
-            let x      = round (centerX + CGFloat(radius) * cos(CGFloat(radians)));
-            let y      = round (centerY + CGFloat(radius) * sin(CGFloat(radians)));
-            let extraX = round (centerX + (CGFloat(radius)*1.07) * cos(CGFloat(radians)));
-            let extraY = round (centerY + (CGFloat(radius)*1.07) * sin(CGFloat(radians)));
+            let x      = round (centerX + (CGFloat(radius)*1.1) * cos(CGFloat(radians)));
+            let y      = round (centerY + (CGFloat(radius)*1.1) * sin(CGFloat(radians)));
+            
+            //How much bounce:
+            let extraX = round (centerX + (CGFloat(radius)*1.2) * cos(CGFloat(radians)));
+            let extraY = round (centerY + (CGFloat(radius)*1.2) * sin(CGFloat(radians)));
             
             let popupButtonframe = CGRect(x: centerX-buttonSize*0.5, y: centerY-buttonSize*0.5, width: buttonSize, height: buttonSize);
             let final   = CGPoint(x: x, y: y);
@@ -157,46 +161,47 @@ class RadialMenu: UIView,RadialButtonDelegate{
         }
     }
     
+    //Animation for pressing the button.
     func shouldRotateButton(_ button:UIButton,forDuration:CGFloat, forwardDirection:Bool) {
         
-       /* let spinAnimation            = CABasicAnimation(keyPath: "transform.rotation")
-        spinAnimation.duration       = Double(forDuration)
-        spinAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        var totalDuration            = 1.5 * CGFloat(self.items.count)
-        
-        if forwardDirection {
-            
-            totalDuration = totalDuration * -1
-        }
-        spinAnimation.toValue = NSNumber(value: Float(totalDuration) as Float)
-        button.layer.add(spinAnimation, forKey: "spinAnimation")*/
-        //Lol message here
-        
-         
-         let spinAnimation            = CABasicAnimation(keyPath: "transform.scale")
-         //spinAnimation.fromValue = Int(1.5)
-         //spinAnimation.toValue = Int(1.0)
-         spinAnimation.duration       = 0.5 //Double(forDuration)
+        /* let spinAnimation            = CABasicAnimation(keyPath: "transform.rotation")
+         spinAnimation.duration       = Double(forDuration)
          spinAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-         var totalDuration            = 0.5 * CGFloat(self.items.count) //CGFloat(M_PI)
+         var totalDuration            = 1.5 * CGFloat(self.items.count)
          
          if forwardDirection {
          
          totalDuration = totalDuration * -1
          }
          spinAnimation.toValue = NSNumber(value: Float(totalDuration) as Float)
-         button.layer.add(spinAnimation, forKey: "spinAnimation")
- 
-     /*   let popAnimation            = CABasicAnimation(keyPath: "transform.scale")
-        popAnimation.fromValue = Int(1.5)
-        popAnimation.toValue = Int(1.0)
+         button.layer.add(spinAnimation, forKey: "spinAnimation")*/
+        //Lol message here
         
-        popAnimation.duration = 0.5
-        popAnimation.isRemovedOnCompletion = false
-        popAnimation.fillMode = kCAFillModeForwards
-        popAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        //popAnimation.toValue = NSNumber(value: Float(forDuration) as Float)
-        button.layer.add(popAnimation, forKey: "scale") */
+        
+        let spinAnimation            = CABasicAnimation(keyPath: "transform.scale")
+        //spinAnimation.fromValue = Int(1.5)
+        //spinAnimation.toValue = Int(1.0)
+        spinAnimation.duration       = 0.5 //Double(forDuration)
+        spinAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        var totalDuration            = 0.5 * CGFloat(3) //CGFloat(M_PI)
+        
+        if forwardDirection {
+            
+            totalDuration = totalDuration * -1
+        }
+        spinAnimation.toValue = NSNumber(value: Float(totalDuration) as Float)
+        button.layer.add(spinAnimation, forKey: "spinAnimation")
+        
+        /*   let popAnimation            = CABasicAnimation(keyPath: "transform.scale")
+         popAnimation.fromValue = Int(1.5)
+         popAnimation.toValue = Int(1.0)
+         
+         popAnimation.duration = 0.5
+         popAnimation.isRemovedOnCompletion = false
+         popAnimation.fillMode = kCAFillModeForwards
+         popAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+         //popAnimation.toValue = NSNumber(value: Float(forDuration) as Float)
+         button.layer.add(popAnimation, forKey: "scale") */
         
     }
     
@@ -243,5 +248,3 @@ class RadialMenu: UIView,RadialButtonDelegate{
     }
     
 }
-
-

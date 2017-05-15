@@ -18,13 +18,11 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
     var gradientLayer: CAGradientLayer!
     
     private var groupId: String?
-    
+    private var groupImage: UIImage?
     private var ref: FIRDatabaseReference!
     private var userID = FIRAuth.auth()?.currentUser?.uid
     private var fid: String?
     private var userName: String?
-    
-    private var numOfUserGroups: NSInteger!
     
     private lazy var channelRef: FIRDatabaseReference = FIRDatabase.database().reference().child("channels")
     
@@ -59,20 +57,21 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
         
         self.ref.child("users").child(userID!).observe(FIRDataEventType.value, with: { (snapshot) in
             
-            if !snapshot.exists() { return }
+            // Invalid query
+            if !snapshot.exists() {
+                print("No user record is found")
+                return
+            }
             
             if let value = snapshot.value as? NSDictionary {
                 self.fid = value["id"] as? String
                 self.userName = value["name"] as? String
-                if let nums = value["kpopGroups"] as? NSDictionary {
-                    self.numOfUserGroups = nums.count
-                }
                 
-                //self.button.setImage(self.getProfilePicture(fid: self.fid), for: UIControlState.normal)
+                // Tints the radial menu image
                 let tint = UIColor(red:0.23, green:0.38, blue:0.53, alpha:0.2)
                 self.button.setBackgroundImage(self.getProfilePicture(fid: self.fid)?.tintedImage(with: tint), for: UIControlState.normal)
             }
-        })
+        }) // end query
     }
     
     private func getProfilePicture(fid: String?) -> UIImage? {
@@ -150,8 +149,10 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
     }
     
     func numberOfItemsInRadialMenu (_ radialMenu:RadialMenu)->NSInteger {
-        return self.numOfUserGroups
+        //return self.numOfUserGroups
         //get number of user's kpop groups from firebase --> total # of vals in dict?
+        
+        return 6
     }
     
     func arcSizeInRadialMenu (_ radialMenu:RadialMenu)->NSInteger {
@@ -164,7 +165,7 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
     
     func radialMenubuttonForIndex(_ radialMenu:RadialMenu,index:NSInteger)->RadialButton {
         
-        let button:RadialButton = RadialButton()
+        /*let button:RadialButton = RadialButton()
         
         self.button.layer.cornerRadius = self.button.frame.size.width / 2;
         self.button.clipsToBounds = true;
@@ -191,6 +192,25 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
          button.setImage(UIImage(named: "currentEvent"), for:UIControlState())
          self.groupId = "-KgH9qbONq9hzFQcagPJ"
          } */
+        
+        return button */
+        
+        let button:RadialButton = RadialButton()
+        
+        //Add in child image url
+        if index == 1 {
+            button.setImage(UIImage(named: "g1"), for:UIControlState())
+        } else if index == 2 {
+            button.setImage(UIImage(named: "g2"), for:UIControlState())
+        } else if index == 3 {
+            button.setImage(UIImage(named: "g3"), for:UIControlState())
+        } else if index == 4 {
+            button.setImage(UIImage(named: "g4"), for:UIControlState())
+        } else if index == 5 {
+            button.setImage(UIImage(named: "g5"), for:UIControlState())
+        } else if index == 6 {
+            button.setImage(UIImage(named: "g6"), for:UIControlState())
+        }
         
         return button
     }
@@ -225,19 +245,45 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
          
          progressLine.add(animateStrokeEnd, forKey: "animate stroke end animation") */
         
-        if index == 1 {
+        /*if index == 1 {
             performSegue(withIdentifier: "showChat", sender: self)
         } else if index == 2 {
             performSegue(withIdentifier: "showChat", sender: self)
         } else if index == 3 {
             performSegue(withIdentifier: "showChat", sender: self)
-        } /*else if index == 4 {
+        } else if index == 4 {
          performSegue(withIdentifier: "showChat", sender: self)
          } else if index == 5 {
          performSegue(withIdentifier: "showChat", sender: self)
          } else if index == 6 {
          performSegue(withIdentifier: "showChat", sender: self)
          } */
+        
+        if index == 1 {
+            self.groupId = "-KgCx7qeem3u2dlMDr0i"
+            self.groupImage = UIImage(named: "g1")
+            performSegue(withIdentifier: "showChat", sender: self)
+        } else if index == 2 {
+            self.groupId = "-KgCx8cRgj4qca_K4aBR"
+            self.groupImage = UIImage(named: "g2")
+            performSegue(withIdentifier: "showChat", sender: self)
+        } else if index == 3 {
+            self.groupId = "-KgCx9jdmLA78msqYnV-"
+            self.groupImage = UIImage(named: "g3")
+            performSegue(withIdentifier: "showChat", sender: self)
+        } else if index == 4 {
+            self.groupId = "-KgH9pgaNoBpu_wYqV8o"
+            self.groupImage = UIImage(named: "g4")
+            performSegue(withIdentifier: "showChat", sender: self)
+        } else if index == 5 {
+            self.groupId = "-KgH9qIca2Wgw-Dhs4JS"
+            self.groupImage = UIImage(named: "g5")
+            performSegue(withIdentifier: "showChat", sender: self)
+        } else if index == 6 {
+            self.groupId = "-KgH9qbONq9hzFQcagPJ"
+            self.groupImage = UIImage(named: "g6")
+            performSegue(withIdentifier: "showChat", sender: self)
+        }
     }
     
     /*@IBAction func toMagic(_ sender: Any) {
