@@ -11,7 +11,7 @@ import FirebaseAuth
 import FirebaseDatabase
 
 class LandingPgVC: UIViewController, RadialMenuDelegate {
-
+    
     let interactor = Interactor()
     
     var radialMenu:RadialMenu!
@@ -27,7 +27,7 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
     private var numOfUserGroups: NSInteger!
     
     private lazy var channelRef: FIRDatabaseReference = FIRDatabase.database().reference().child("channels")
-
+    
     @IBOutlet weak var button: UIButton!
     
     @IBOutlet var sideMenuEdgePan: UIScreenEdgePanGestureRecognizer!
@@ -69,7 +69,6 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
                 }
                 
                 //self.button.setImage(self.getProfilePicture(fid: self.fid), for: UIControlState.normal)
-
                 let tint = UIColor(red:0.23, green:0.38, blue:0.53, alpha:0.2)
                 self.button.setBackgroundImage(self.getProfilePicture(fid: self.fid)?.tintedImage(with: tint), for: UIControlState.normal)
             }
@@ -169,7 +168,7 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
         
         self.button.layer.cornerRadius = self.button.frame.size.width / 2;
         self.button.clipsToBounds = true;
-
+        
         //Add in child image url
         if index == 1 {
             //get kpop group's id and image from firebase dict[1]
@@ -183,15 +182,15 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
             button.setImage(UIImage(named: "currentEvent"), for:UIControlState())
             self.groupId = "-KgCx9jdmLA78msqYnV-"
         } /*else if index == 4 {
-            button.setImage(UIImage(named: "nearMe"), for:UIControlState())
-            self.groupId = "-KgH9pgaNoBpu_wYqV8o"
-        } else if index == 5 {
-            button.setImage(UIImage(named: "pastEvents"), for:UIControlState())
-            self.groupId = "-KgH9qIca2Wgw-Dhs4JS"
-        } else if index == 2 {
-            button.setImage(UIImage(named: "currentEvent"), for:UIControlState())
-            self.groupId = "-KgH9qbONq9hzFQcagPJ"
-        } */
+         button.setImage(UIImage(named: "nearMe"), for:UIControlState())
+         self.groupId = "-KgH9pgaNoBpu_wYqV8o"
+         } else if index == 5 {
+         button.setImage(UIImage(named: "pastEvents"), for:UIControlState())
+         self.groupId = "-KgH9qIca2Wgw-Dhs4JS"
+         } else if index == 2 {
+         button.setImage(UIImage(named: "currentEvent"), for:UIControlState())
+         self.groupId = "-KgH9qbONq9hzFQcagPJ"
+         } */
         
         return button
     }
@@ -200,51 +199,50 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
         
         /************ SEGUES NEED TO BE UPDATED AS MORE VCs ARE ADDED **************/
         /*
-        let ovalStartAngle = CGFloat(90.01 * M_PI/180)
-        let ovalEndAngle = CGFloat(90 * M_PI/180)
-        let ovalRect = CGRect(x: 97.5, y: 58.5, width: 125, height: 125)
-        
-        let ovalPath = UIBezierPath()
-        
-        ovalPath.addArc(withCenter: CGPoint(x: ovalRect.midX, y: ovalRect.midY),
-                        radius: ovalRect.width / 2,
-                        startAngle: ovalStartAngle,
-                        endAngle: ovalEndAngle, clockwise: true)
-        
-
-        let progressLine = CAShapeLayer()
-        progressLine.path = ovalPath.cgPath
-        progressLine.strokeColor = UIColor.blue.cgColor
-        progressLine.fillColor = UIColor.clear.cgColor
-        progressLine.lineWidth = 10.0
-        progressLine.lineCap = kCALineCapRound
-        
-        self.view.layer.addSublayer(progressLine)
-        let animateStrokeEnd = CABasicAnimation(keyPath: "strokeEnd")
-        animateStrokeEnd.duration = 3.0
-        animateStrokeEnd.fromValue = 0.0
-        animateStrokeEnd.toValue = 1.0
-        
-        progressLine.add(animateStrokeEnd, forKey: "animate stroke end animation") */
+         let ovalStartAngle = CGFloat(90.01 * M_PI/180)
+         let ovalEndAngle = CGFloat(90 * M_PI/180)
+         let ovalRect = CGRect(x: 97.5, y: 58.5, width: 125, height: 125)
+         
+         let ovalPath = UIBezierPath()
+         
+         ovalPath.addArc(withCenter: CGPoint(x: ovalRect.midX, y: ovalRect.midY),
+         radius: ovalRect.width / 2,
+         startAngle: ovalStartAngle,
+         endAngle: ovalEndAngle, clockwise: true)
+         
+         let progressLine = CAShapeLayer()
+         progressLine.path = ovalPath.cgPath
+         progressLine.strokeColor = UIColor.blue.cgColor
+         progressLine.fillColor = UIColor.clear.cgColor
+         progressLine.lineWidth = 10.0
+         progressLine.lineCap = kCALineCapRound
+         
+         self.view.layer.addSublayer(progressLine)
+         let animateStrokeEnd = CABasicAnimation(keyPath: "strokeEnd")
+         animateStrokeEnd.duration = 3.0
+         animateStrokeEnd.fromValue = 0.0
+         animateStrokeEnd.toValue = 1.0
+         
+         progressLine.add(animateStrokeEnd, forKey: "animate stroke end animation") */
         
         if index == 1 {
             performSegue(withIdentifier: "showChat", sender: self)
         } else if index == 2 {
             performSegue(withIdentifier: "showChat", sender: self)
         } else if index == 3 {
-           performSegue(withIdentifier: "showChat", sender: self)
+            performSegue(withIdentifier: "showChat", sender: self)
         } /*else if index == 4 {
-            performSegue(withIdentifier: "showChat", sender: self)
-        } else if index == 5 {
-            performSegue(withIdentifier: "showChat", sender: self)
-        } else if index == 6 {
-            performSegue(withIdentifier: "showChat", sender: self)
-        } */
+         performSegue(withIdentifier: "showChat", sender: self)
+         } else if index == 5 {
+         performSegue(withIdentifier: "showChat", sender: self)
+         } else if index == 6 {
+         performSegue(withIdentifier: "showChat", sender: self)
+         } */
     }
     
     /*@IBAction func toMagic(_ sender: Any) {
-        performSegue(withIdentifier: "home2magic", sender: nil)
-    } */
+     performSegue(withIdentifier: "home2magic", sender: nil)
+     } */
     
     func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue is CustomSegue {
@@ -323,4 +321,3 @@ extension UIImage {
         return coloredImage!
     }
 }
-
