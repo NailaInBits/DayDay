@@ -39,6 +39,7 @@
 		E1AFFFC61ECA5DBE00F26BAB /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AFFFC51ECA5DBE00F26BAB /* Channel.swift */; };
 		E1AFFFC81ECA5DC800F26BAB /* ImageSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AFFFC71ECA5DC800F26BAB /* ImageSupport.swift */; };
 		E1DAE8061E65E6BA0076E69A /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1DAE8051E65E6BA0076E69A /* AdSupport.framework */; };
+		E1DEB25E1ECAA4CD0088E280 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DEB25D1ECAA4CD0088E280 /* ImageCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		E1B924AC1E576BF100B4F272 /* DayDayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DayDayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1B924B71E576BF100B4F272 /* DayDayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DayDayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1DAE8051E65E6BA0076E69A /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		E1DEB25D1ECAA4CD0088E280 /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageCache.swift; path = DayDay/ImageCache.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +215,7 @@
 				E10EAEA61E7C659500D1918E /* Bridging.h */,
 				490528A91E8864FD004195FB /* GoogleService-Info.plist */,
 				E10EAE881E7C60BD00D1918E /* Info.plist */,
+				E1DEB25D1ECAA4CD0088E280 /* ImageCache.swift */,
 			);
 			name = DayDay;
 			path = WePlay;
@@ -251,12 +254,12 @@
 		E1D7F0BC1E7C5BC10022777F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				49D2564D1E88A069008B7270 /* SideMenu */,
 				E1D7F0C01E7C5CF90022777F /* Login */,
 				E15FA8A41E88B92B00B7C358 /* OnboardingVC.swift */,
 				E1D7F0BF1E7C5CCD0022777F /* LandingPage */,
 				E1D7F0BD1E7C5C540022777F /* RadialMenu */,
 				E10EAE981E7C654800D1918E /* MagicVC.swift */,
+				49D2564D1E88A069008B7270 /* SideMenu */,
 				49A43FA91E89F73A00C152AF /* GroupProfile */,
 				E14B0CEC1E91C79C0062572C /* Chat */,
 			);
@@ -511,6 +514,7 @@
 				E1AFFFC41ECA5DB100F26BAB /* ChatVC.swift in Sources */,
 				49A43FAB1E89F76A00C152AF /* GroupProfileVC.swift in Sources */,
 				49D256611E88DC94008B7270 /* SideMenuBg.swift in Sources */,
+				E1DEB25E1ECAA4CD0088E280 /* ImageCache.swift in Sources */,
 				E10EAE9D1E7C655F00D1918E /* ProfileVC.swift in Sources */,
 				E10EAE9B1E7C655700D1918E /* ProfileBg.swift in Sources */,
 				E10EAEA31E7C657D00D1918E /* SegueFromLeft.swift in Sources */,
