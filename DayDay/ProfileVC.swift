@@ -44,15 +44,17 @@ class ProfileVC: UIViewController {
         super.viewDidLoad()
         
         self.retrieveUserInfo()
-        
         fieldLayout()
-        
         showAnimate()
         
         // Creates white opacity
         self.view.backgroundColor = UIColor.white.withAlphaComponent(0.5)
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> master
     // Layout of the text fields and image
     func fieldLayout() {
         ProfilePic.layer.cornerRadius = ProfilePic.frame.width / 2
@@ -84,7 +86,14 @@ class ProfileVC: UIViewController {
         self.ref.child("users").child(userID!).observe(FIRDataEventType.value, with: { (snapshot) in
             
             // Invalid query
+<<<<<<< HEAD
             if !snapshot.exists() { return }
+=======
+            if !snapshot.exists() {
+                print("No user record is found")
+                return
+            }
+>>>>>>> master
             
             if let value = snapshot.value as? NSDictionary {
                 self.Email.text = value["email"] as? String
@@ -122,8 +131,12 @@ class ProfileVC: UIViewController {
     }
     
     // Fade in zoom animation
+<<<<<<< HEAD
     func showAnimate()
     {
+=======
+    func showAnimate() {
+>>>>>>> master
         self.view.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
         self.view.alpha = 0.0;
         UIView.animate(withDuration: 0.25, animations: {
@@ -133,8 +146,12 @@ class ProfileVC: UIViewController {
     }
     
     // Fade out zoom animation
+<<<<<<< HEAD
     func removeAnimate()
     {
+=======
+    func removeAnimate() {
+>>>>>>> master
         UIView.animate(withDuration: 0.25, animations: {
             self.view.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
             self.view.alpha = 0.0;

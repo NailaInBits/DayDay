@@ -196,12 +196,39 @@ class RadialMenu: UIView,RadialButtonDelegate{
          popAnimation.fromValue = Int(1.5)
          popAnimation.toValue = Int(1.0)
          
+<<<<<<< HEAD
          popAnimation.duration = 0.5
          popAnimation.isRemovedOnCompletion = false
          popAnimation.fillMode = kCAFillModeForwards
          popAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
          //popAnimation.toValue = NSNumber(value: Float(forDuration) as Float)
          button.layer.add(popAnimation, forKey: "scale") */
+=======
+         let spinAnimation            = CABasicAnimation(keyPath: "transform.scale")
+         //spinAnimation.fromValue = Int(1.5)
+         //spinAnimation.toValue = Int(1.0)
+         spinAnimation.duration       = 0.5 //Double(forDuration)
+         spinAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+         var totalDuration            = 0.5 * CGFloat(3) //CGFloat(M_PI)
+         
+         if forwardDirection {
+         
+         totalDuration = totalDuration * -1
+         }
+         spinAnimation.toValue = NSNumber(value: Float(totalDuration) as Float)
+         button.layer.add(spinAnimation, forKey: "spinAnimation")
+ 
+     /*   let popAnimation            = CABasicAnimation(keyPath: "transform.scale")
+        popAnimation.fromValue = Int(1.5)
+        popAnimation.toValue = Int(1.0)
+        
+        popAnimation.duration = 0.5
+        popAnimation.isRemovedOnCompletion = false
+        popAnimation.fillMode = kCAFillModeForwards
+        popAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        //popAnimation.toValue = NSNumber(value: Float(forDuration) as Float)
+        button.layer.add(popAnimation, forKey: "scale") */
+>>>>>>> master
         
     }
     

@@ -11,10 +11,18 @@ import FirebaseAuth
 import FirebaseDatabase
 
 class LandingPgVC: UIViewController, RadialMenuDelegate {
+<<<<<<< HEAD
     
     // SIDE MENU
     let interactor = Interactor()
     @IBOutlet var sideMenuEdgePan: UIScreenEdgePanGestureRecognizer!
+=======
+
+    // SIDE MENU STUFF T.T
+    
+    //let interactor = Interactor()
+    //@IBOutlet var sideMenuEdgePan: UIScreenEdgePanGestureRecognizer!
+>>>>>>> master
     
     var radialMenu:RadialMenu!
     var gradientLayer: CAGradientLayer!
@@ -29,8 +37,11 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
     
     private lazy var channelRef: FIRDatabaseReference = FIRDatabase.database().reference().child("channels")
     
+<<<<<<< HEAD
     @IBOutlet weak var button: UIButton!
     
+=======
+>>>>>>> master
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,9 +54,16 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
         
         self.retrieveUserInfo()
         
+<<<<<<< HEAD
         // SIDE MENU
         sideMenuEdgePan.edges = .left
         view.addGestureRecognizer(sideMenuEdgePan)
+=======
+        // SIDE MENU STUFF T.T
+        
+        //sideMenuEdgePan.edges = .left
+        //view.addGestureRecognizer(sideMenuEdgePan)
+>>>>>>> master
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -97,8 +115,10 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
         return nil
     }
     
+    // SIDE MENU STUFF T.T
+    
     // Side Menu button
-    @IBAction func openSideMenu(_ sender: AnyObject) {
+    /* @IBAction func openSideMenu(_ sender: AnyObject) {
         performSegue(withIdentifier: "SideMenu", sender: nil)
     }
     
@@ -118,21 +138,35 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
             interactor: interactor){
                 performSegue(withIdentifier: "SideMenu", sender: nil)
         }
-    }
+    } */
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "SideMenu" {
+        // SIDE MENU STUFF T.T
+        
+        /* if segue.identifier == "SideMenu" {
             if let destinationViewController = segue.destination as? SideMenuVC {
                 destinationViewController.transitioningDelegate = self
                 destinationViewController.interactor = interactor
             }
-        }
+        } */
         
-        if segue.identifier == "showChat" {
+        /* if segue.identifier == "showChat" {
             if let navController = segue.destination as? UINavigationController {
                 if let childVC = navController.topViewController as? ChatVC {
                     childVC.groupId = self.groupId!
                     childVC.senderDisplayName = self.userName!
+                    self.prepareForSegue(segue: segue, sender: self)
+                }
+            }
+        } */
+        
+        if segue.identifier == "showGroup" {
+            if let navController = segue.destination as? UINavigationController {
+                if let childVC = navController.topViewController as? GroupProfileVC {
+                    // Provides group ID and group image to the GroupProfileVC
+                    childVC.groupId = self.groupId!
+                    childVC.image = self.groupImage!
+                    
                     self.prepareForSegue(segue: segue, sender: self)
                 }
             }
@@ -148,7 +182,7 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
         popOverVC.didMove(toParentViewController: self)
     }
     
-    //Radial Menu Buttons
+    // Radial Menu Buttons
     @IBAction func buttonPressed(_ sender: AnyObject) {
         self.radialMenu.buttonsWillAnimateFromButton(sender as! UIButton, frame: self.button.frame, view: self.view)
     }
@@ -167,7 +201,11 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
     
     func radialMenubuttonForIndex(_ radialMenu:RadialMenu,index:NSInteger)->RadialButton {
         let button:RadialButton = RadialButton()
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> master
         //Add in child image url
         if index == 1 {
             button.setImage(UIImage(named: "g1"), for:UIControlState())
@@ -186,6 +224,7 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
         return button
     }
     
+    // When radial button is selected, prepares group ID and image for segue
     func radialMenudidSelectItemAtIndex(_ radialMenu:RadialMenu,index:NSInteger) {
         
         /************ SEGUES NEED TO BE UPDATED AS MORE VCs ARE ADDED **************/
@@ -233,6 +272,7 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
         if index == 1 {
             self.groupId = "-KgCx7qeem3u2dlMDr0i"
             self.groupImage = UIImage(named: "g1")
+<<<<<<< HEAD
             performSegue(withIdentifier: "showChat", sender: self)
         } else if index == 2 {
             self.groupId = "-KgCx8cRgj4qca_K4aBR"
@@ -254,6 +294,29 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
             self.groupId = "-KgH9qbONq9hzFQcagPJ"
             self.groupImage = UIImage(named: "g6")
             performSegue(withIdentifier: "showChat", sender: self)
+=======
+            performSegue(withIdentifier: "showGroup", sender: self)
+        } else if index == 2 {
+            self.groupId = "-KgCx8cRgj4qca_K4aBR"
+            self.groupImage = UIImage(named: "g2")
+            performSegue(withIdentifier: "showGroup", sender: self)
+        } else if index == 3 {
+            self.groupId = "-KgCx9jdmLA78msqYnV-"
+            self.groupImage = UIImage(named: "g3")
+            performSegue(withIdentifier: "showGroup", sender: self)
+        } else if index == 4 {
+            self.groupId = "-KgH9pgaNoBpu_wYqV8o"
+            self.groupImage = UIImage(named: "g4")
+            performSegue(withIdentifier: "showGroup", sender: self)
+        } else if index == 5 {
+            self.groupId = "-KgH9qIca2Wgw-Dhs4JS"
+            self.groupImage = UIImage(named: "g5")
+            performSegue(withIdentifier: "showGroup", sender: self)
+        } else if index == 6 {
+            self.groupId = "-KgH9qbONq9hzFQcagPJ"
+            self.groupImage = UIImage(named: "g6")
+            performSegue(withIdentifier: "showGroup", sender: self)
+>>>>>>> master
         }
     }
     
@@ -261,29 +324,39 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
      performSegue(withIdentifier: "home2magic", sender: nil)
      } */
     
+    // Custom segue animation
     func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue is CustomSegue {
             (segue as! CustomSegue).animationType = .GrowScale
         }
     }
     
+    // Custom segue unwind animation
     func segueForUnwinding(to toViewController: UIViewController, from fromViewController: UINavigationController, identifier: String?) -> UIStoryboardSegue {
         let segue = CustomUnwindSegue(identifier: identifier, source: fromViewController, destination: toViewController)
         segue.animationType = .GrowScale
         return segue
     }
     
-    //Gradient Background
+    // Gradient Background
     func createGradientLayer() {
         gradientLayer = CAGradientLayer()
         gradientLayer.frame = self.view.bounds
         gradientLayer.colors = [UIColor(red:0.67, green:0.43, blue:1.00, alpha:1.0).cgColor, UIColor(red:0.46, green:0.73, blue:0.96, alpha:1.0).cgColor]
         self.view.layer.insertSublayer(gradientLayer, at: 0)
     }
+    
+    // Ignore this
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
 }
 
+// SIDE MENU STUFF T.T
+
 // Adds the presentation animation to Transitioning delegate
-extension LandingPgVC: UIViewControllerTransitioningDelegate {
+/* extension LandingPgVC: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return PresentMenuAnimator()
     }
@@ -299,7 +372,7 @@ extension LandingPgVC: UIViewControllerTransitioningDelegate {
     func interactionControllerForPresentation(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
         return interactor.hasStarted ? interactor : nil
     }
-}
+} */
 
 extension UIImage {
     // Tint an image with specified color

@@ -48,14 +48,6 @@
                                     <action selector="buttonPressed:" destination="jRt-nd-Tt0" eventType="touchUpInside" id="08r-tb-HX7"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ut8-Uf-jrh">
-                                <rect key="frame" x="16" y="28" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="pastEvents"/>
-                                <connections>
-                                    <action selector="openSideMenu:" destination="jRt-nd-Tt0" eventType="touchUpInside" id="RmH-zD-Cnu"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -66,17 +58,11 @@
                     </view>
                     <connections>
                         <outlet property="button" destination="KEL-1k-Tsf" id="3Mt-7p-w4Y"/>
-                        <outlet property="sideMenuEdgePan" destination="ovo-Fb-Arm" id="TxW-BH-e9h"/>
-                        <segue destination="4GE-2Q-p6W" kind="presentation" identifier="SideMenu" id="cmq-bt-81Q"/>
                         <segue destination="2SN-qS-kcD" kind="show" identifier="showChat" customClass="CustomSegue" customModule="DayDay" customModuleProvider="target" id="3mB-vt-e2L"/>
+                        <segue destination="qvl-Cp-Hyj" kind="custom" identifier="showGroup" customClass="CustomSegue" customModule="DayDay" customModuleProvider="target" id="Hbf-Dk-zql"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v59-WW-wJr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="ovo-Fb-Arm">
-                    <connections>
-                        <action selector="edgePanGestureWithSender:" destination="jRt-nd-Tt0" id="FlL-Qw-BLg"/>
-                    </connections>
-                </screenEdgePanGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="951.20000000000005" y="-1658.3208395802101"/>
         </scene>
@@ -209,7 +195,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zAA-hT-27d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3687.1999999999998" y="-1658.3208395802101"/>
+            <point key="canvasLocation" x="-2122" y="-1658"/>
         </scene>
         <!--Group Details-->
         <scene sceneID="i9W-xe-WHx">
@@ -220,24 +206,29 @@
                         <viewControllerLayoutGuide type="bottom" id="r00-ND-xg9"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="JVG-Gy-16v" customClass="GroupProfileBg" customModule="DayDay" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gbM-xN-RL9">
-                                <rect key="frame" x="35" y="115" width="305" height="163"/>
+                                <rect key="frame" x="35" y="51" width="305" height="163"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nzq-GW-rtE">
+                                        <rect key="frame" x="0.0" y="0.0" width="305" height="163"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                        </accessibility>
+                                    </imageView>
+                                </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="N0i-Gy-bmp">
-                                <rect key="frame" x="43" y="325" width="288" height="132"/>
+                                <rect key="frame" x="43" y="261" width="288" height="185"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mhx-6g-cbl">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="132"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="185"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                         </accessibility>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="Mhx-6g-cbl" secondAttribute="height" multiplier="24:11" id="1AN-9z-ORu"/>
-                                        </constraints>
                                         <attributedString key="attributedText">
                                             <fragment>
                                                 <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -250,18 +241,21 @@
                                     </textView>
                                 </subviews>
                             </stackView>
+<<<<<<< HEAD
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nzq-GW-rtE">
                                 <rect key="frame" x="0.0" y="64" width="375" height="202"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
                                 </accessibility>
                             </imageView>
+=======
+>>>>>>> master
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TUu-lw-02I">
-                                <rect key="frame" x="0.0" y="605" width="375" height="65"/>
+                                <rect key="frame" x="0.0" y="541" width="375" height="65"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yv-K7-dpt">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
-                                        <color key="backgroundColor" red="0.36470588235294116" green="0.32156862745098042" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.47843137250000001" green="0.6588235294" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="65" id="2fZ-03-D1u"/>
                                             <constraint firstAttribute="width" constant="375" id="f9h-ct-au6"/>
@@ -279,21 +273,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="N0i-Gy-bmp" firstAttribute="top" secondItem="JVG-Gy-16v" secondAttribute="top" constant="325" id="Euk-Ds-QAq"/>
-                            <constraint firstItem="nzq-GW-rtE" firstAttribute="top" secondItem="hAI-Cu-Fhf" secondAttribute="bottom" id="Ft9-Sm-83y"/>
-                            <constraint firstItem="N0i-Gy-bmp" firstAttribute="top" secondItem="gbM-xN-RL9" secondAttribute="bottom" constant="47" id="I9P-Vc-3pN"/>
+                            <constraint firstItem="N0i-Gy-bmp" firstAttribute="top" secondItem="gbM-xN-RL9" secondAttribute="bottom" constant="47" id="Cjw-DR-zWK"/>
                             <constraint firstItem="gbM-xN-RL9" firstAttribute="leading" secondItem="JVG-Gy-16v" secondAttribute="leadingMargin" constant="19" id="Vuf-BF-Wbz"/>
                             <constraint firstAttribute="bottomMargin" secondItem="TUu-lw-02I" secondAttribute="bottom" constant="-3" id="W1f-JS-AB9"/>
                             <constraint firstItem="gbM-xN-RL9" firstAttribute="centerX" secondItem="JVG-Gy-16v" secondAttribute="centerX" id="YQ1-CL-M2v"/>
-                            <constraint firstItem="N0i-Gy-bmp" firstAttribute="top" secondItem="nzq-GW-rtE" secondAttribute="bottom" constant="59" id="a9W-BJ-Ir4"/>
                             <constraint firstItem="N0i-Gy-bmp" firstAttribute="centerX" secondItem="TUu-lw-02I" secondAttribute="centerX" id="dWN-eP-qo9"/>
                             <constraint firstItem="gbM-xN-RL9" firstAttribute="top" secondItem="hAI-Cu-Fhf" secondAttribute="bottom" constant="51" id="iGq-hf-fvb"/>
                             <constraint firstAttribute="bottom" secondItem="gbM-xN-RL9" secondAttribute="bottom" constant="389" id="qF6-3T-AXb"/>
-                            <constraint firstAttribute="bottom" secondItem="N0i-Gy-bmp" secondAttribute="bottom" constant="210" id="r7i-Ck-Kpl"/>
+                            <constraint firstItem="TUu-lw-02I" firstAttribute="top" secondItem="N0i-Gy-bmp" secondAttribute="bottom" constant="95" id="tXT-sg-a1P"/>
                             <constraint firstItem="N0i-Gy-bmp" firstAttribute="leading" secondItem="JVG-Gy-16v" secondAttribute="leadingMargin" constant="27" id="veo-UD-4SZ"/>
-                            <constraint firstItem="nzq-GW-rtE" firstAttribute="leading" secondItem="TUu-lw-02I" secondAttribute="leading" id="xJz-jx-o8R"/>
                             <constraint firstItem="N0i-Gy-bmp" firstAttribute="centerX" secondItem="gbM-xN-RL9" secondAttribute="centerX" id="yTi-CB-Se8"/>
-                            <constraint firstItem="nzq-GW-rtE" firstAttribute="trailing" secondItem="TUu-lw-02I" secondAttribute="trailing" id="zyy-Qc-bJS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Group Details" id="LI8-JG-wiw">
@@ -307,11 +296,12 @@
                     <connections>
                         <outlet property="groupDescription" destination="Mhx-6g-cbl" id="gqT-ro-ohN"/>
                         <outlet property="groupImage" destination="nzq-GW-rtE" id="90R-RK-koi"/>
+                        <outlet property="navBar" destination="LI8-JG-wiw" id="2hY-2p-Ybi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p8d-vi-me2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2434.4000000000001" y="-1658.3208395802101"/>
+            <point key="canvasLocation" x="-1015.2" y="-1658.3208395802101"/>
         </scene>
         <!--Side MenuVC-->
         <scene sceneID="blv-rf-YYw">
@@ -351,9 +341,6 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="300" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
-                                                <connections>
-                                                    <segue destination="qvl-Cp-Hyj" kind="presentation" identifier="ShowGroupDetail" modalTransitionStyle="crossDissolve" id="FLN-q8-sXt"/>
-                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                         <connections>
@@ -386,7 +373,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-122.40000000000001" y="-1658.3208395802101"/>
+            <point key="canvasLocation" x="2377" y="-485"/>
         </scene>
         <!--OnboardingVC-->
         <scene sceneID="u3e-od-Fxe">
@@ -725,11 +712,10 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qvl-Cp-Hyj" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1qa-Ue-lDg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="1qa-Ue-lDg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.36470588240000001" green="0.32156862749999998" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" red="0.36470588240000001" green="0.32156862749999998" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.47843137250000001" green="0.6588235294" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <color key="textShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -742,7 +728,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g58-Ki-Ixy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1167" y="-1658"/>
+            <point key="canvasLocation" x="-4" y="-1658"/>
         </scene>
         <!--Chat-->
         <scene sceneID="o9v-Xa-9gK">
@@ -807,6 +793,5 @@
         <image name="g6" width="311" height="241"/>
         <image name="loginLogo" width="284" height="277"/>
         <image name="magicBG" width="640" height="640"/>
-        <image name="pastEvents" width="64" height="64"/>
     </resources>
 </document>

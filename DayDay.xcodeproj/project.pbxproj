@@ -10,7 +10,6 @@
 		490528AA1E8864FD004195FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 490528A91E8864FD004195FB /* GoogleService-Info.plist */; };
 		499DABF01E8AC71E0053370E /* GroupDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499DABEF1E8AC71E0053370E /* GroupDetails.swift */; };
 		49A43FAB1E89F76A00C152AF /* GroupProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A43FAA1E89F76A00C152AF /* GroupProfileVC.swift */; };
-		49A43FAD1E89F8CC00C152AF /* GroupProfileBg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A43FAC1E89F8CC00C152AF /* GroupProfileBg.swift */; };
 		49ABBEAA1E90D1F300F48E8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49ABBEA91E90D1F300F48E8D /* Assets.xcassets */; };
 		49D2564F1E88A0A7008B7270 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D2564E1E88A0A7008B7270 /* Interactor.swift */; };
 		49D256511E88A1F8008B7270 /* MenuHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D256501E88A1F8008B7270 /* MenuHelper.swift */; };
@@ -33,6 +32,12 @@
 		E10EAEAC1E7C660400D1918E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E10EAEAB1E7C660400D1918E /* Info.plist */; };
 		E10EAEB21E7C665100D1918E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E10EAEB01E7C665100D1918E /* Main.storyboard */; };
 		E10EAEB51E7C665500D1918E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E10EAEB31E7C665500D1918E /* LaunchScreen.storyboard */; };
+<<<<<<< HEAD
+=======
+		E15110A71EC8B714000BCFE8 /* ImageSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15110A61EC8B714000BCFE8 /* ImageSupport.swift */; };
+		E15110A91EC8B72A000BCFE8 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15110A81EC8B72A000BCFE8 /* Channel.swift */; };
+		E15110AB1EC8B739000BCFE8 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15110AA1EC8B739000BCFE8 /* ChatVC.swift */; };
+>>>>>>> master
 		E15FA8A31E88B92000B7C358 /* KpopGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15FA8A21E88B92000B7C358 /* KpopGroup.swift */; };
 		E15FA8A51E88B92B00B7C358 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15FA8A41E88B92B00B7C358 /* OnboardingVC.swift */; };
 		E1AFFFC41ECA5DB100F26BAB /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AFFFC31ECA5DB100F26BAB /* ChatVC.swift */; };
@@ -64,7 +69,6 @@
 		490528A91E8864FD004195FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "DayDay/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		499DABEF1E8AC71E0053370E /* GroupDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupDetails.swift; path = DayDay/GroupDetails.swift; sourceTree = SOURCE_ROOT; };
 		49A43FAA1E89F76A00C152AF /* GroupProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupProfileVC.swift; path = DayDay/GroupProfileVC.swift; sourceTree = SOURCE_ROOT; };
-		49A43FAC1E89F8CC00C152AF /* GroupProfileBg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupProfileBg.swift; path = DayDay/GroupProfileBg.swift; sourceTree = SOURCE_ROOT; };
 		49ABBEA91E90D1F300F48E8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = DayDay/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		49D2564E1E88A0A7008B7270 /* Interactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Interactor.swift; path = DayDay/Interactor.swift; sourceTree = SOURCE_ROOT; };
 		49D256501E88A1F8008B7270 /* MenuHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuHelper.swift; path = DayDay/MenuHelper.swift; sourceTree = SOURCE_ROOT; };
@@ -92,6 +96,13 @@
 		E10EAEAD1E7C660B00D1918E /* DayDayUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DayDayUITests.swift; path = DayDayUITests/DayDayUITests.swift; sourceTree = SOURCE_ROOT; };
 		E10EAEB11E7C665100D1918E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DayDay/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		E10EAEB41E7C665500D1918E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DayDay/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+<<<<<<< HEAD
+=======
+		E15110A61EC8B714000BCFE8 /* ImageSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageSupport.swift; path = DayDay/ImageSupport.swift; sourceTree = SOURCE_ROOT; };
+		E15110A81EC8B72A000BCFE8 /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Channel.swift; path = DayDay/Channel.swift; sourceTree = SOURCE_ROOT; };
+		E15110AA1EC8B739000BCFE8 /* ChatVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatVC.swift; path = DayDay/ChatVC.swift; sourceTree = SOURCE_ROOT; };
+		E15110AC1EC8B744000BCFE8 /* bg.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = bg.mp4; path = DayDay/bg.mp4; sourceTree = SOURCE_ROOT; };
+>>>>>>> master
 		E15FA8A21E88B92000B7C358 /* KpopGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KpopGroup.swift; path = DayDay/KpopGroup.swift; sourceTree = SOURCE_ROOT; };
 		E15FA8A41E88B92B00B7C358 /* OnboardingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardingVC.swift; path = DayDay/OnboardingVC.swift; sourceTree = SOURCE_ROOT; };
 		E1AFFFC21ECA5DA100F26BAB /* bg.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = bg.mp4; path = DayDay/bg.mp4; sourceTree = SOURCE_ROOT; };
@@ -136,9 +147,16 @@
 			isa = PBXGroup;
 			children = (
 				49A43FAA1E89F76A00C152AF /* GroupProfileVC.swift */,
-				49A43FAC1E89F8CC00C152AF /* GroupProfileBg.swift */,
 			);
 			name = GroupProfile;
+			sourceTree = "<group>";
+		};
+		49B697BF1EC662020041E9AF /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				E15FA8A41E88B92B00B7C358 /* OnboardingVC.swift */,
+			);
+			name = Onboarding;
 			sourceTree = "<group>";
 		};
 		49D2564D1E88A069008B7270 /* SideMenu */ = {
@@ -175,7 +193,11 @@
 		E14B0CEC1E91C79C0062572C /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				E1AFFFC31ECA5DB100F26BAB /* ChatVC.swift */,
+=======
+				E15110AA1EC8B739000BCFE8 /* ChatVC.swift */,
+>>>>>>> master
 			);
 			name = Chat;
 			sourceTree = "<group>";
@@ -210,11 +232,11 @@
 				E1D7F0BC1E7C5BC10022777F /* ViewControllers */,
 				E1D7F0BB1E7C5BBA0022777F /* Models */,
 				E1D7F0C11E7C5D1B0022777F /* Resources */,
-				E10EAEB31E7C665500D1918E /* LaunchScreen.storyboard */,
 				49ABBEA91E90D1F300F48E8D /* Assets.xcassets */,
 				E10EAEA61E7C659500D1918E /* Bridging.h */,
 				490528A91E8864FD004195FB /* GoogleService-Info.plist */,
 				E10EAE881E7C60BD00D1918E /* Info.plist */,
+				E10EAEB31E7C665500D1918E /* LaunchScreen.storyboard */,
 			);
 			name = DayDay;
 			path = WePlay;
@@ -243,7 +265,11 @@
 		E1D7F0BB1E7C5BBA0022777F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				E1AFFFC51ECA5DBE00F26BAB /* Channel.swift */,
+=======
+				E15110A81EC8B72A000BCFE8 /* Channel.swift */,
+>>>>>>> master
 				499DABEF1E8AC71E0053370E /* GroupDetails.swift */,
 				E15FA8A21E88B92000B7C358 /* KpopGroup.swift */,
 			);
@@ -253,14 +279,22 @@
 		E1D7F0BC1E7C5BC10022777F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
+=======
+				49B697BF1EC662020041E9AF /* Onboarding */,
+>>>>>>> master
 				E1D7F0C01E7C5CF90022777F /* Login */,
-				E15FA8A41E88B92B00B7C358 /* OnboardingVC.swift */,
 				E1D7F0BF1E7C5CCD0022777F /* LandingPage */,
 				E1D7F0BD1E7C5C540022777F /* RadialMenu */,
+<<<<<<< HEAD
 				E10EAE981E7C654800D1918E /* MagicVC.swift */,
 				49D2564D1E88A069008B7270 /* SideMenu */,
+=======
+>>>>>>> master
 				49A43FA91E89F73A00C152AF /* GroupProfile */,
 				E14B0CEC1E91C79C0062572C /* Chat */,
+				49D2564D1E88A069008B7270 /* SideMenu */,
+				E10EAE981E7C654800D1918E /* MagicVC.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -295,7 +329,11 @@
 			isa = PBXGroup;
 			children = (
 				E10EAE961E7C653900D1918E /* LoginVC.swift */,
+<<<<<<< HEAD
 				E1AFFFC21ECA5DA100F26BAB /* bg.mp4 */,
+=======
+				E15110AC1EC8B744000BCFE8 /* bg.mp4 */,
+>>>>>>> master
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -303,8 +341,12 @@
 		E1D7F0C11E7C5D1B0022777F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				E1DEB25D1ECAA4CD0088E280 /* ImageCache.swift */,
 				E1AFFFC71ECA5DC800F26BAB /* ImageSupport.swift */,
+=======
+				E15110A61EC8B714000BCFE8 /* ImageSupport.swift */,
+>>>>>>> master
 				E10EAE921E7C613800D1918E /* CustomSegue.swift */,
 				E10EAE9E1E7C656C00D1918E /* RadialButton.swift */,
 				E10EAEA21E7C657D00D1918E /* SegueFromLeft.swift */,
@@ -504,10 +546,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E15110AB1EC8B739000BCFE8 /* ChatVC.swift in Sources */,
 				499DABF01E8AC71E0053370E /* GroupDetails.swift in Sources */,
+<<<<<<< HEAD
+=======
+				E15110A91EC8B72A000BCFE8 /* Channel.swift in Sources */,
+>>>>>>> master
 				E10EAE931E7C613800D1918E /* CustomSegue.swift in Sources */,
-				49A43FAD1E89F8CC00C152AF /* GroupProfileBg.swift in Sources */,
 				E15FA8A51E88B92B00B7C358 /* OnboardingVC.swift in Sources */,
+<<<<<<< HEAD
+=======
+				E15110A71EC8B714000BCFE8 /* ImageSupport.swift in Sources */,
+>>>>>>> master
 				E15FA8A31E88B92000B7C358 /* KpopGroup.swift in Sources */,
 				49D2564F1E88A0A7008B7270 /* Interactor.swift in Sources */,
 				E10EAE991E7C654800D1918E /* MagicVC.swift in Sources */,

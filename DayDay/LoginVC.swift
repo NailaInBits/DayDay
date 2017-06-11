@@ -28,10 +28,17 @@ class LoginVC: UIViewController, UIScrollViewDelegate {
         createGradientLayer()
         
         self.scrollView.frame = CGRect(x:0, y:0, width:self.view.frame.width, height:self.view.frame.height)
+<<<<<<< HEAD
         
         textView.textAlignment = .center
         textView.text = "Rain drop, drop top, get on DayDay kpop."
         
+=======
+
+        textView.textAlignment = .center
+        textView.text = "Rain drop, drop top, get on DayDay kpop."
+
+>>>>>>> master
         // Size (in width) for the Scroll View
         self.scrollView.contentSize = CGSize(width:self.scrollView.frame.width * 4, height:self.scrollView.frame.height)
         
@@ -69,7 +76,11 @@ class LoginVC: UIViewController, UIScrollViewDelegate {
         })*/
         
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> master
     //Gradient Background:
     func createGradientLayer() {
         gradientLayer = CAGradientLayer()
@@ -98,6 +109,7 @@ class LoginVC: UIViewController, UIScrollViewDelegate {
                         print("fetched user: \(String(describing: result))")
                         
                         let values: [String:AnyObject] = result as! [String : AnyObject]
+<<<<<<< HEAD
                         
                         // Update our database
                         usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
@@ -108,6 +120,18 @@ class LoginVC: UIViewController, UIScrollViewDelegate {
                             }
                             // No error
                             print("Save the user successfully into Firebase database")
+=======
+        
+                        // Update our database
+                        usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
+                        // If there's an error in saving to our firebase database
+                        if err != nil {
+                            print(err!)
+                            return
+                        }
+                        // No error
+                        print("Save the user successfully into Firebase database")
+>>>>>>> master
                         })
                         
                         // Present the onboarding view
