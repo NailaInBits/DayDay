@@ -20,23 +20,23 @@ class OnboardingVC: UIViewController {
     let userID = FIRAuth.auth()?.currentUser?.uid
     
     private var buttonSelected: [String: Bool] = [
-                                         "bts": false,
-                                         "blackPink": false,
-                                         "exo": false,
-                                         "twice": false,
-                                         "bigBang": false,
-                                         "got7": false
-                                         ]
+        "bts": false,
+        "blackPink": false,
+        "exo": false,
+        "twice": false,
+        "bigBang": false,
+        "got7": false
+    ]
     
     private var groupIDs: [String: String] = [
-                          "bts": "-KgCx7qeem3u2dlMDr0i",
-                          "blackPink": "-KgCx8cRgj4qca_K4aBR",
-                          "exo": "-KgCx9jdmLA78msqYnV-",
-                          "twice": "-KgH9pgaNoBpu_wYqV8o",
-                          "bigBang": "-KgH9qIca2Wgw-Dhs4JS",
-                          "got7": "-KgH9qbONq9hzFQcagPJ"
-                          ]
-
+        "bts": "-KgCx7qeem3u2dlMDr0i",
+        "blackPink": "-KgCx8cRgj4qca_K4aBR",
+        "exo": "-KgCx9jdmLA78msqYnV-",
+        "twice": "-KgH9pgaNoBpu_wYqV8o",
+        "bigBang": "-KgH9qIca2Wgw-Dhs4JS",
+        "got7": "-KgH9qbONq9hzFQcagPJ"
+    ]
+    
     @IBOutlet var instructionsLabel: UILabel!
     @IBOutlet var firstButton: UIButton!
     @IBOutlet var secondButton: UIButton!
@@ -173,7 +173,7 @@ class OnboardingVC: UIViewController {
     @IBAction func skipGroups(_ sender: Any) {
         self.performSegue(withIdentifier: "showLanding", sender: UIButton.self)
     }
- 
+    
     // Gradient background
     func createGradientLayer() {
         gradientLayer = CAGradientLayer()

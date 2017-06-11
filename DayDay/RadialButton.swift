@@ -33,11 +33,7 @@ class RadialButton: UIButton {
                 self.center = self.centerPoint
             })
         }
-<<<<<<< HEAD
         
-=======
-
->>>>>>> master
         self.imageView?.layer.cornerRadius = self.imageView!.frame.width / 2
         self.imageView?.clipsToBounds = true
     }

@@ -6,7 +6,7 @@
 //  Copyright © 2017 WePlay. All rights reserved.
 //
 
-/* import UIKit
+import UIKit
 import FirebaseDatabase
 
 class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -130,4 +130,4 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     */
 
-} */
+}

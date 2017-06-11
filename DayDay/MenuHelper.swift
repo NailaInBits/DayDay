@@ -6,7 +6,7 @@
 //  Copyright © 2017 DayDay. All rights reserved.
 //
 
-/* import Foundation
+import Foundation
 import UIKit
 
 enum Direction {
@@ -70,4 +70,4 @@ struct MenuHelper {
         }
     }
     
-} */
+}

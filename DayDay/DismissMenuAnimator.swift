@@ -6,7 +6,7 @@
 //  Copyright © 2017 DayDay. All rights reserved.
 //
 
-/* import UIKit
+import UIKit
 
 class DismissMenuAnimator : NSObject {
 }
@@ -44,4 +44,4 @@ extension DismissMenuAnimator : UIViewControllerAnimatedTransitioning {
         }
         )
     }
-} */
+}
