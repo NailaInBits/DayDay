@@ -28,16 +28,17 @@ class LoginVC: UIViewController, UIScrollViewDelegate {
         createGradientLayer()
         
         self.scrollView.frame = CGRect(x:0, y:0, width:self.view.frame.width, height:self.view.frame.height)
-        let scrollViewWidth:CGFloat = self.scrollView.frame.width
-        let scrollViewHeight:CGFloat = self.scrollView.frame.height
-
+        
         textView.textAlignment = .center
         textView.text = "Rain drop, drop top, get on DayDay kpop."
-
+        
+        // Size (in width) for the Scroll View
         self.scrollView.contentSize = CGSize(width:self.scrollView.frame.width * 4, height:self.scrollView.frame.height)
+        
         self.scrollView.delegate = self
         self.pageControl.currentPage = 0
         
+        // Timer for page slide
         Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(moveToNextPage), userInfo: nil, repeats: true)
         
         //Background Video (make sure always under 5mb)
@@ -69,10 +70,6 @@ class LoginVC: UIViewController, UIScrollViewDelegate {
         
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
     //Gradient Background:
     func createGradientLayer() {
         gradientLayer = CAGradientLayer()
@@ -82,6 +79,7 @@ class LoginVC: UIViewController, UIScrollViewDelegate {
         self.view.layer.insertSublayer(gradientLayer, at: 0)
     }
     
+    // First time user registration process
     func checkForFirstTime() {
         let ref = FIRDatabase.database().reference(fromURL: "https://dayday-39e15.firebaseio.com/users")
         guard let uid = FIRAuth.auth()?.currentUser?.uid else {
@@ -90,26 +88,26 @@ class LoginVC: UIViewController, UIScrollViewDelegate {
         ref.queryOrderedByKey().queryEqual(toValue: uid).observeSingleEvent(of: .value, with: { (snapshot) in
             if (snapshot.value == nil || snapshot.value is NSNull) {
                 let usersReference = ref.child(uid)
-        
+                
                 _ = FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, email, name"]).start{
                     (connection, result, err) in
-        
+                    
                     if ((err) != nil) {
                         print("Error: \(String(describing: err))")
                     } else {
                         print("fetched user: \(String(describing: result))")
-        
+                        
                         let values: [String:AnyObject] = result as! [String : AnyObject]
-        
-                        // update our database
+                        
+                        // Update our database
                         usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
-                        // if there's an error in saving to our firebase database
-                        if err != nil {
-                            print(err!)
-                            return
-                        }
-                        // no error
-                        print("Save the user successfully into Firebase database")
+                            // If there's an error in saving to our firebase database
+                            if err != nil {
+                                print(err!)
+                                return
+                            }
+                            // No error
+                            print("Save the user successfully into Firebase database")
                         })
                         
                         // Present the onboarding view
@@ -119,17 +117,18 @@ class LoginVC: UIViewController, UIScrollViewDelegate {
                             self.dismiss(animated: true, completion: nil)
                         }
                     }
-                }
+                } // end Facebook public data retrieval
             } else {
                 return
             }
-        })
+        }) // end Firebase query
     }
     
     // Facebook Login
     @IBAction func facebookLogin(sender: UIButton) {
         let fbLoginManager = FBSDKLoginManager()
         
+        // Necessary logout to avoid conflict
         fbLoginManager.logOut()
         
         fbLoginManager.logIn(withReadPermissions: ["public_profile", "email"], from: self) { (result, error) in
@@ -170,7 +169,7 @@ class LoginVC: UIViewController, UIScrollViewDelegate {
                 
             })
             
-        }   
+        }
     }
     
     func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
@@ -191,8 +190,8 @@ class LoginVC: UIViewController, UIScrollViewDelegate {
         }
     }
     
-    func moveToNextPage (){
-        
+    
+    func moveToNextPage () {
         let pageWidth:CGFloat = self.scrollView.frame.width
         let maxWidth:CGFloat = pageWidth * 4
         let contentOffset:CGFloat = self.scrollView.contentOffset.x
@@ -204,6 +203,10 @@ class LoginVC: UIViewController, UIScrollViewDelegate {
         }
         self.scrollView.scrollRectToVisible(CGRect(x:slideToX, y:0, width:pageWidth, height:self.scrollView.frame.height), animated: true)
     }
-
+    
+    // Ignore this
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
     
 }

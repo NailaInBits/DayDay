@@ -12,37 +12,40 @@ import FirebaseDatabase
 
 class LandingPgVC: UIViewController, RadialMenuDelegate {
     
+    // SIDE MENU
     let interactor = Interactor()
+    @IBOutlet var sideMenuEdgePan: UIScreenEdgePanGestureRecognizer!
     
     var radialMenu:RadialMenu!
     var gradientLayer: CAGradientLayer!
     
     private var groupId: String?
     private var groupImage: UIImage?
+    
     private var ref: FIRDatabaseReference!
     private var userID = FIRAuth.auth()?.currentUser?.uid
-    private var fid: String?
+    private var fid: String? // Facebook ID
     private var userName: String?
     
     private lazy var channelRef: FIRDatabaseReference = FIRDatabase.database().reference().child("channels")
     
     @IBOutlet weak var button: UIButton!
     
-    @IBOutlet var sideMenuEdgePan: UIScreenEdgePanGestureRecognizer!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Radial menu button properties
         self.button.layer.cornerRadius = self.button.frame.size.width / 2
         self.button.clipsToBounds = true
+        
         self.radialMenu = RadialMenu()
         self.radialMenu.delegate = self
+        
         self.retrieveUserInfo()
+        
+        // SIDE MENU
         sideMenuEdgePan.edges = .left
         view.addGestureRecognizer(sideMenuEdgePan)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,6 +54,7 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
         createGradientLayer()
     }
     
+    // Performs query to retrieve user record in Firebase
     private func retrieveUserInfo() {
         
         self.ref = FIRDatabase.database().reference()
@@ -74,6 +78,7 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
         }) // end query
     }
     
+    // Facebook graph API call to retrieve user's FB Profile Picture
     private func getProfilePicture(fid: String?) -> UIImage? {
         
         if let uid = fid {
@@ -149,9 +154,6 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
     }
     
     func numberOfItemsInRadialMenu (_ radialMenu:RadialMenu)->NSInteger {
-        //return self.numOfUserGroups
-        //get number of user's kpop groups from firebase --> total # of vals in dict?
-        
         return 6
     }
     
@@ -164,37 +166,6 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
     }
     
     func radialMenubuttonForIndex(_ radialMenu:RadialMenu,index:NSInteger)->RadialButton {
-        
-        /*let button:RadialButton = RadialButton()
-        
-        self.button.layer.cornerRadius = self.button.frame.size.width / 2;
-        self.button.clipsToBounds = true;
-        
-        //Add in child image url
-        if index == 1 {
-            //get kpop group's id and image from firebase dict[1]
-            button.setImage(UIImage(named: "nearMe"), for:UIControlState())
-            self.groupId = "-KgCx7qeem3u2dlMDr0i"
-        } else if index == 2 {
-            button.setImage(UIImage(named: "pastEvents"), for:UIControlState())
-            self.groupId = "-KgCx8cRgj4qca_K4aBR"
-        }
-        if index == 3 {
-            button.setImage(UIImage(named: "currentEvent"), for:UIControlState())
-            self.groupId = "-KgCx9jdmLA78msqYnV-"
-        } /*else if index == 4 {
-         button.setImage(UIImage(named: "nearMe"), for:UIControlState())
-         self.groupId = "-KgH9pgaNoBpu_wYqV8o"
-         } else if index == 5 {
-         button.setImage(UIImage(named: "pastEvents"), for:UIControlState())
-         self.groupId = "-KgH9qIca2Wgw-Dhs4JS"
-         } else if index == 2 {
-         button.setImage(UIImage(named: "currentEvent"), for:UIControlState())
-         self.groupId = "-KgH9qbONq9hzFQcagPJ"
-         } */
-        
-        return button */
-        
         let button:RadialButton = RadialButton()
         
         //Add in child image url

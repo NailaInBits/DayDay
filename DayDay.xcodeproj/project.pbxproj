@@ -215,7 +215,6 @@
 				E10EAEA61E7C659500D1918E /* Bridging.h */,
 				490528A91E8864FD004195FB /* GoogleService-Info.plist */,
 				E10EAE881E7C60BD00D1918E /* Info.plist */,
-				E1DEB25D1ECAA4CD0088E280 /* ImageCache.swift */,
 			);
 			name = DayDay;
 			path = WePlay;
@@ -304,6 +303,7 @@
 		E1D7F0C11E7C5D1B0022777F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E1DEB25D1ECAA4CD0088E280 /* ImageCache.swift */,
 				E1AFFFC71ECA5DC800F26BAB /* ImageSupport.swift */,
 				E10EAE921E7C613800D1918E /* CustomSegue.swift */,
 				E10EAE9E1E7C656C00D1918E /* RadialButton.swift */,
@@ -691,7 +691,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = /Users/nishat/DayDay/DayDay/Bridging.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -709,7 +709,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = /Users/nishat/DayDay/DayDay/Bridging.h;
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
