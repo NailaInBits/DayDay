@@ -241,6 +241,15 @@
                                     </textView>
                                 </subviews>
                             </stackView>
+<<<<<<< HEAD
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nzq-GW-rtE">
+                                <rect key="frame" x="0.0" y="64" width="375" height="202"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                            </imageView>
+=======
+>>>>>>> master
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TUu-lw-02I">
                                 <rect key="frame" x="0.0" y="541" width="375" height="65"/>
                                 <subviews>

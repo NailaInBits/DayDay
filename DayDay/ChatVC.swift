@@ -31,6 +31,9 @@ class ChatVC: JSQMessagesViewController {
     private var messages: [JSQMessage] = []
     private var photoMessageMap = [String: JSQPhotoMediaItem]()
     
+    var avatarDict = [String: JSQMessagesAvatarImage]()
+    let photoCache = NSCache<AnyObject, AnyObject>()
+    
     private var localTyping = false
     var channel: Channel? {
         didSet {
@@ -54,11 +57,41 @@ class ChatVC: JSQMessagesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.channelRef = FIRDatabase.database().reference().child("KpopGroups").child(self.groupId)
+        let currentUser = FIRAuth.auth()?.currentUser
         self.senderId = FIRAuth.auth()?.currentUser?.uid
+        self.senderDisplayName = "\(currentUser?.displayName!)"
+        
         observeMessages()
         
-        collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
-        collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
+        //collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
+        //collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
+    }
+    
+    func observeUser(id: String){
+        
+        FIRDatabase.database().reference().child("user").child(id).observe(.value, with: { snapshot in
+            if let dict = snapshot.value as? [String: AnyObject]
+            {
+                //print(dict)
+                let avatarUrl = dict["profileUrl"] as! String
+                self.setupAvatar(url: avatarUrl, messageId: id)
+            }
+        })
+    }
+    
+    func setupAvatar(url: String, messageId: String){
+        if url != ""{
+            let fileUrl = NSURL(string: url)
+            let data = NSData(contentsOf: fileUrl! as URL)
+            let image = UIImage(data: data! as Data)
+            let userImage = JSQMessagesAvatarImageFactory.avatarImage(with: image, diameter: 30)
+            avatarDict[messageId] = userImage
+            
+        } else {
+            avatarDict[messageId] = JSQMessagesAvatarImageFactory.avatarImage(with: UIImage(named: "deadPool"), diameter: 30)
+            
+        }
+        collectionView.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -111,7 +144,8 @@ class ChatVC: JSQMessagesViewController {
     }
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAt indexPath: IndexPath!) -> JSQMessageAvatarImageDataSource! {
-        return nil
+        let message = messages[indexPath.item]
+        return avatarDict[message.senderId]
     }
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, layout collectionViewLayout: JSQMessagesCollectionViewFlowLayout!, heightForMessageBubbleTopLabelAt indexPath: IndexPath!) -> CGFloat {
@@ -257,12 +291,12 @@ class ChatVC: JSQMessagesViewController {
     
     private func setupOutgoingBubble() -> JSQMessagesBubbleImage {
         let bubbleImageFactory = JSQMessagesBubbleImageFactory()
-        return bubbleImageFactory!.outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleLightGray())
+        return bubbleImageFactory!.outgoingMessagesBubbleImage(with: UIColor(red:0.66, green:0.90, blue:0.83, alpha:1.0))
     }
-
+    
     private func setupIncomingBubble() -> JSQMessagesBubbleImage {
         let bubbleImageFactory = JSQMessagesBubbleImageFactory()
-        return bubbleImageFactory!.incomingMessagesBubbleImage(with: UIColor(red:0.66, green:0.44, blue:1.00, alpha:1.0))
+        return bubbleImageFactory!.incomingMessagesBubbleImage(with: UIColor(red:0.60, green:0.69, blue:0.98, alpha:1.0))
     }
     
     override func didPressAccessoryButton(_ sender: UIButton) {

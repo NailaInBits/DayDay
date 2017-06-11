@@ -11,11 +11,18 @@ import FirebaseAuth
 import FirebaseDatabase
 
 class LandingPgVC: UIViewController, RadialMenuDelegate {
+<<<<<<< HEAD
+    
+    // SIDE MENU
+    let interactor = Interactor()
+    @IBOutlet var sideMenuEdgePan: UIScreenEdgePanGestureRecognizer!
+=======
 
     // SIDE MENU STUFF T.T
     
     //let interactor = Interactor()
     //@IBOutlet var sideMenuEdgePan: UIScreenEdgePanGestureRecognizer!
+>>>>>>> master
     
     var radialMenu:RadialMenu!
     var gradientLayer: CAGradientLayer!
@@ -29,9 +36,12 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
     private var userName: String?
     
     private lazy var channelRef: FIRDatabaseReference = FIRDatabase.database().reference().child("channels")
-
+    
+<<<<<<< HEAD
     @IBOutlet weak var button: UIButton!
     
+=======
+>>>>>>> master
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,10 +54,16 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
         
         self.retrieveUserInfo()
         
+<<<<<<< HEAD
+        // SIDE MENU
+        sideMenuEdgePan.edges = .left
+        view.addGestureRecognizer(sideMenuEdgePan)
+=======
         // SIDE MENU STUFF T.T
         
         //sideMenuEdgePan.edges = .left
         //view.addGestureRecognizer(sideMenuEdgePan)
+>>>>>>> master
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -184,9 +200,12 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
     }
     
     func radialMenubuttonForIndex(_ radialMenu:RadialMenu,index:NSInteger)->RadialButton {
-        
         let button:RadialButton = RadialButton()
+<<<<<<< HEAD
+        
+=======
 
+>>>>>>> master
         //Add in child image url
         if index == 1 {
             button.setImage(UIImage(named: "g1"), for:UIControlState())
@@ -210,36 +229,72 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
         
         /************ SEGUES NEED TO BE UPDATED AS MORE VCs ARE ADDED **************/
         /*
-        let ovalStartAngle = CGFloat(90.01 * M_PI/180)
-        let ovalEndAngle = CGFloat(90 * M_PI/180)
-        let ovalRect = CGRect(x: 97.5, y: 58.5, width: 125, height: 125)
+         let ovalStartAngle = CGFloat(90.01 * M_PI/180)
+         let ovalEndAngle = CGFloat(90 * M_PI/180)
+         let ovalRect = CGRect(x: 97.5, y: 58.5, width: 125, height: 125)
+         
+         let ovalPath = UIBezierPath()
+         
+         ovalPath.addArc(withCenter: CGPoint(x: ovalRect.midX, y: ovalRect.midY),
+         radius: ovalRect.width / 2,
+         startAngle: ovalStartAngle,
+         endAngle: ovalEndAngle, clockwise: true)
+         
+         let progressLine = CAShapeLayer()
+         progressLine.path = ovalPath.cgPath
+         progressLine.strokeColor = UIColor.blue.cgColor
+         progressLine.fillColor = UIColor.clear.cgColor
+         progressLine.lineWidth = 10.0
+         progressLine.lineCap = kCALineCapRound
+         
+         self.view.layer.addSublayer(progressLine)
+         let animateStrokeEnd = CABasicAnimation(keyPath: "strokeEnd")
+         animateStrokeEnd.duration = 3.0
+         animateStrokeEnd.fromValue = 0.0
+         animateStrokeEnd.toValue = 1.0
+         
+         progressLine.add(animateStrokeEnd, forKey: "animate stroke end animation") */
         
-        let ovalPath = UIBezierPath()
-        
-        ovalPath.addArc(withCenter: CGPoint(x: ovalRect.midX, y: ovalRect.midY),
-                        radius: ovalRect.width / 2,
-                        startAngle: ovalStartAngle,
-                        endAngle: ovalEndAngle, clockwise: true)
-        
-
-        let progressLine = CAShapeLayer()
-        progressLine.path = ovalPath.cgPath
-        progressLine.strokeColor = UIColor.blue.cgColor
-        progressLine.fillColor = UIColor.clear.cgColor
-        progressLine.lineWidth = 10.0
-        progressLine.lineCap = kCALineCapRound
-        
-        self.view.layer.addSublayer(progressLine)
-        let animateStrokeEnd = CABasicAnimation(keyPath: "strokeEnd")
-        animateStrokeEnd.duration = 3.0
-        animateStrokeEnd.fromValue = 0.0
-        animateStrokeEnd.toValue = 1.0
-        
-        progressLine.add(animateStrokeEnd, forKey: "animate stroke end animation") */
+        /*if index == 1 {
+            performSegue(withIdentifier: "showChat", sender: self)
+        } else if index == 2 {
+            performSegue(withIdentifier: "showChat", sender: self)
+        } else if index == 3 {
+            performSegue(withIdentifier: "showChat", sender: self)
+        } else if index == 4 {
+         performSegue(withIdentifier: "showChat", sender: self)
+         } else if index == 5 {
+         performSegue(withIdentifier: "showChat", sender: self)
+         } else if index == 6 {
+         performSegue(withIdentifier: "showChat", sender: self)
+         } */
         
         if index == 1 {
             self.groupId = "-KgCx7qeem3u2dlMDr0i"
             self.groupImage = UIImage(named: "g1")
+<<<<<<< HEAD
+            performSegue(withIdentifier: "showChat", sender: self)
+        } else if index == 2 {
+            self.groupId = "-KgCx8cRgj4qca_K4aBR"
+            self.groupImage = UIImage(named: "g2")
+            performSegue(withIdentifier: "showChat", sender: self)
+        } else if index == 3 {
+            self.groupId = "-KgCx9jdmLA78msqYnV-"
+            self.groupImage = UIImage(named: "g3")
+            performSegue(withIdentifier: "showChat", sender: self)
+        } else if index == 4 {
+            self.groupId = "-KgH9pgaNoBpu_wYqV8o"
+            self.groupImage = UIImage(named: "g4")
+            performSegue(withIdentifier: "showChat", sender: self)
+        } else if index == 5 {
+            self.groupId = "-KgH9qIca2Wgw-Dhs4JS"
+            self.groupImage = UIImage(named: "g5")
+            performSegue(withIdentifier: "showChat", sender: self)
+        } else if index == 6 {
+            self.groupId = "-KgH9qbONq9hzFQcagPJ"
+            self.groupImage = UIImage(named: "g6")
+            performSegue(withIdentifier: "showChat", sender: self)
+=======
             performSegue(withIdentifier: "showGroup", sender: self)
         } else if index == 2 {
             self.groupId = "-KgCx8cRgj4qca_K4aBR"
@@ -261,12 +316,13 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
             self.groupId = "-KgH9qbONq9hzFQcagPJ"
             self.groupImage = UIImage(named: "g6")
             performSegue(withIdentifier: "showGroup", sender: self)
+>>>>>>> master
         }
     }
     
     /*@IBAction func toMagic(_ sender: Any) {
-        performSegue(withIdentifier: "home2magic", sender: nil)
-    } */
+     performSegue(withIdentifier: "home2magic", sender: nil)
+     } */
     
     // Custom segue animation
     func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -355,4 +411,3 @@ extension UIImage {
         return coloredImage!
     }
 }
-
