@@ -14,6 +14,7 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     private var ref: FIRDatabaseReference =
                      FIRDatabase.database().reference().child("KpopGroups")
     private var group = [String]()
+    private var groupName = [String]()
     
     var interactor:Interactor? = nil
     var groupImages: [UIImage] = [UIImage.init(imageLiteralResourceName: "1"),
@@ -44,6 +45,7 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 if let childVC = navController.topViewController as? GroupProfileVC {
                     childVC.image = self.groupImages[(groupTableView.indexPathForSelectedRow?.section)!]
                     childVC.detail = self.group[(groupTableView.indexPathForSelectedRow?.section)!]
+                    childVC.groupName = self.groupName[(groupTableView.indexPathForSelectedRow?.section)!]
                 }
             }
         }
@@ -55,6 +57,7 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             _ = snapshot.key
             if let name = groupData["name"] as! String!, name.characters.count > 0 {
                 self.group.append(groupData["description"] as! String)
+                self.groupName.append(groupData["name"] as! String)
             } else {
                 print("Error! Could not decode group data")
             }
