@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gL5-Ja-be8">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gL5-Ja-be8">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -99,7 +99,7 @@
                                 </constraints>
                             </scrollView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="E6k-FW-dBK">
-                                <rect key="frame" x="34" y="95" width="307" height="150"/>
+                                <rect key="frame" x="34.5" y="95" width="307" height="150"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginLogo" translatesAutoresizingMaskIntoConstraints="NO" id="PN9-dn-uNf">
                                         <rect key="frame" x="0.0" y="0.0" width="307" height="150"/>
@@ -111,7 +111,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="JTo-aE-rUU">
-                                <rect key="frame" x="34" y="253" width="307" height="52"/>
+                                <rect key="frame" x="34.5" y="253" width="307" height="52"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appName" translatesAutoresizingMaskIntoConstraints="NO" id="4yS-Wp-R3Y">
                                         <rect key="frame" x="0.0" y="0.0" width="307" height="52"/>
@@ -133,7 +133,7 @@
                                 </constraints>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zg4-4R-FEW">
-                                <rect key="frame" x="91" y="350" width="193" height="90"/>
+                                <rect key="frame" x="91.5" y="350" width="193" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="GZC-0t-sVd"/>
                                     <constraint firstAttribute="width" secondItem="zg4-4R-FEW" secondAttribute="height" multiplier="15:7" id="Iyh-3a-6be"/>
@@ -143,7 +143,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="dLg-gl-aRb">
-                                <rect key="frame" x="154" y="462" width="67" height="75"/>
+                                <rect key="frame" x="154.5" y="462" width="67" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="67" id="QDK-Iz-lIY"/>
                                 </constraints>
@@ -201,6 +201,7 @@
                             <constraint firstAttribute="leadingMargin" secondItem="yuC-3X-gaA" secondAttribute="leading" id="yq8-QU-aoK"/>
                         </constraints>
                     </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="834" height="1112"/>
                     <connections>
                         <outlet property="pageControl" destination="dLg-gl-aRb" id="qli-y3-SeL"/>
                         <outlet property="scrollView" destination="Fms-8P-AD3" id="Rxq-Lt-koF"/>
@@ -224,13 +225,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gbM-xN-RL9">
-                                <rect key="frame" x="35" y="115" width="305" height="163"/>
+                                <rect key="frame" x="35" y="115" width="305.5" height="163"/>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="N0i-Gy-bmp">
-                                <rect key="frame" x="43" y="325" width="288" height="132"/>
+                                <rect key="frame" x="43" y="325" width="288.5" height="132"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mhx-6g-cbl">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="132"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="288.5" height="132"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
@@ -251,13 +252,13 @@
                                 </subviews>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nzq-GW-rtE">
-                                <rect key="frame" x="0.0" y="64" width="375" height="202"/>
+                                <rect key="frame" x="-0.5" y="64" width="375" height="202"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
                                 </accessibility>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TUu-lw-02I">
-                                <rect key="frame" x="0.0" y="605" width="375" height="65"/>
+                                <rect key="frame" x="-0.5" y="605" width="375" height="65"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yv-K7-dpt">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>

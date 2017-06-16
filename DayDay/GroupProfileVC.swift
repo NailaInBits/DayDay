@@ -13,6 +13,7 @@ class GroupProfileVC: UIViewController {
     
     var image: UIImage?
     var detail: String?
+    var groupName: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,8 @@ class GroupProfileVC: UIViewController {
         groupDescription.clipsToBounds = true
         groupDescription.backgroundColor = UIColor.clear
         groupDescription.textAlignment = .justified
+        
+        self.navigationItem.title = groupName!
     }
     
     @IBAction func joinChat(_ sender: Any) {
