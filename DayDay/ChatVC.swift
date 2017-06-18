@@ -16,6 +16,7 @@ class ChatVC: JSQMessagesViewController {
     private let imageURLNotSetKey = "NOTSET"
     
     var groupId: String = ""
+    var groupName: String = ""
     
     private var channelRef: FIRDatabaseReference?
     private var messageRef: FIRDatabaseReference?
@@ -60,6 +61,7 @@ class ChatVC: JSQMessagesViewController {
         let currentUser = FIRAuth.auth()?.currentUser
         self.senderId = FIRAuth.auth()?.currentUser?.uid
         self.senderDisplayName = "\(currentUser?.displayName!)"
+        navigationItem.title = self.groupName
         
         observeMessages()
         

@@ -21,6 +21,7 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
     
     private var groupId: String?
     private var groupImage: UIImage?
+    private var groupName: String?
     
     private var ref: FIRDatabaseReference!
     private var userID = FIRAuth.auth()?.currentUser?.uid
@@ -132,6 +133,7 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
             if let navController = segue.destination as? UINavigationController {
                 if let childVC = navController.topViewController as? ChatVC {
                     childVC.groupId = self.groupId!
+                    childVC.groupName = self.groupName!
                     childVC.senderDisplayName = self.userName!
                     self.prepareForSegue(segue: segue, sender: self)
                 }
@@ -232,26 +234,32 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
         
         if index == 1 {
             self.groupId = "-KgCx7qeem3u2dlMDr0i"
+            self.groupName = "BTS NY"
             self.groupImage = UIImage(named: "g1")
             performSegue(withIdentifier: "showChat", sender: self)
         } else if index == 2 {
             self.groupId = "-KgCx8cRgj4qca_K4aBR"
+            self.groupName = "Black Pink NY"
             self.groupImage = UIImage(named: "g2")
             performSegue(withIdentifier: "showChat", sender: self)
         } else if index == 3 {
             self.groupId = "-KgCx9jdmLA78msqYnV-"
+            self.groupName = "EXO NY"
             self.groupImage = UIImage(named: "g3")
             performSegue(withIdentifier: "showChat", sender: self)
         } else if index == 4 {
             self.groupId = "-KgH9pgaNoBpu_wYqV8o"
+            self.groupName = "Twice NY"
             self.groupImage = UIImage(named: "g4")
             performSegue(withIdentifier: "showChat", sender: self)
         } else if index == 5 {
             self.groupId = "-KgH9qIca2Wgw-Dhs4JS"
+            self.groupName = "Big Bang NY"
             self.groupImage = UIImage(named: "g5")
             performSegue(withIdentifier: "showChat", sender: self)
         } else if index == 6 {
             self.groupId = "-KgH9qbONq9hzFQcagPJ"
+            self.groupName = "GOT7 NY"
             self.groupImage = UIImage(named: "g6")
             performSegue(withIdentifier: "showChat", sender: self)
         }
