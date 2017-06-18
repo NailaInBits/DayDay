@@ -65,6 +65,7 @@ class ChatVC: JSQMessagesViewController {
         
         observeMessages()
         
+        //Removes Avatar Images:
         //collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
         //collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
     }
