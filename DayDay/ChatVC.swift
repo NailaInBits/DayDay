@@ -3,7 +3,7 @@
 //  DayDay
 //
 //  Created by Nishat Anjum on 4/2/17.
-//  Copyright © 2017 WePlay. All rights reserved.
+//  Copyright © 2017 DayDay. All rights reserved.
 //
 
 import UIKit
@@ -65,6 +65,7 @@ class ChatVC: JSQMessagesViewController {
         
         observeMessages()
         
+        //Removes Avatar Images:
         //collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
         //collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
     }
