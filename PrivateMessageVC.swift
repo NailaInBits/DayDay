@@ -94,7 +94,7 @@ class PrivateMessageVC:  UICollectionViewController, UITextFieldDelegate, UIColl
         }
         
         if message.fromId == FIRAuth.auth()?.currentUser?.uid {
-            cell.bubbleView.backgroundColor = ChatMessageCell.blueColor
+            cell.bubbleView.backgroundColor = UIColor(red:0.66, green:0.90, blue:0.83, alpha:1.0)
             cell.textView.textColor = UIColor.white
             cell.profileImageView.isHidden = true
             
@@ -132,9 +132,10 @@ class PrivateMessageVC:  UICollectionViewController, UITextFieldDelegate, UIColl
         return NSString(string: text).boundingRect(with: size, options: options, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16)], context: nil)
     }
     
+    //CHANGED THE COLOR TO TEST
     func setupInputComponents() {
         let containerView = UIView()
-        containerView.backgroundColor = UIColor.white
+        containerView.backgroundColor = UIColor(red:0.66, green:0.90, blue:0.83, alpha:1.0)
         containerView.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(containerView)

@@ -56,10 +56,10 @@
                                     <action selector="openSideMenu:" destination="jRt-nd-Tt0" eventType="touchUpInside" id="RmH-zD-Cnu"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xvi-iA-w4U">
-                                <rect key="frame" x="198" y="637" width="177" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xvi-iA-w4U">
+                                <rect key="frame" x="299" y="587" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Button" image="dm"/>
                                 <connections>
                                     <segue destination="WqB-HQ-Dkq" kind="show" id="2gN-f2-iG4"/>
                                 </connections>
@@ -232,13 +232,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gbM-xN-RL9">
-                                <rect key="frame" x="35" y="115" width="306" height="163"/>
+                                <rect key="frame" x="35" y="71" width="305" height="207"/>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="N0i-Gy-bmp">
-                                <rect key="frame" x="43" y="325" width="289" height="132"/>
+                                <rect key="frame" x="43" y="325" width="288" height="132"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mhx-6g-cbl">
-                                        <rect key="frame" x="0.0" y="0.0" width="289" height="132"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="132"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
@@ -259,16 +259,16 @@
                                 </subviews>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nzq-GW-rtE">
-                                <rect key="frame" x="-1" y="64" width="376" height="202"/>
+                                <rect key="frame" x="-1" y="20" width="375" height="246"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
                                 </accessibility>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TUu-lw-02I">
-                                <rect key="frame" x="-1" y="605" width="376" height="65"/>
+                                <rect key="frame" x="-1" y="605" width="375" height="65"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yv-K7-dpt">
-                                        <rect key="frame" x="-1" y="0.0" width="376" height="65"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
                                         <color key="backgroundColor" red="0.36470588235294116" green="0.32156862745098042" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="65" id="2fZ-03-D1u"/>
@@ -712,10 +712,10 @@
             </objects>
             <point key="canvasLocation" x="1343" y="143"/>
         </scene>
-        <!--Root View Controller-->
+        <!--All Messages-->
         <scene sceneID="Ohz-By-Tet">
             <objects>
-                <tableViewController id="hh6-2V-mTr" customClass="CurrentMessagesVC" customModule="DayDay" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="All Messages" id="hh6-2V-mTr" customClass="CurrentMessagesVC" customModule="DayDay" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="SHd-r1-S5h">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -735,12 +735,11 @@
                             <outlet property="delegate" destination="hh6-2V-mTr" id="uKD-uM-qXV"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="Nny-Yq-neY">
+                    <navigationItem key="navigationItem" title="All Messages" id="Nny-Yq-neY">
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="9Yn-Sz-Ey3">
                             <color key="tintColor" red="0.36470588240000001" green="0.32156862749999998" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="returnHome:" destination="hh6-2V-mTr" id="tJC-qr-NZ0"/>
-                                <segue destination="jRt-nd-Tt0" kind="show" identifier="goHome" id="yI0-kG-u6G"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="q2f-8a-4VO">
@@ -755,10 +754,10 @@
             </objects>
             <point key="canvasLocation" x="1671" y="-704"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--All Messages-->
         <scene sceneID="tvF-fU-kQp">
             <objects>
-                <navigationController id="WqB-HQ-Dkq" sceneMemberID="viewController">
+                <navigationController title="All Messages" id="WqB-HQ-Dkq" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="V9D-Hw-VKy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -836,10 +835,10 @@
             </objects>
             <point key="canvasLocation" x="50" y="-769"/>
         </scene>
-        <!--Root View Controller-->
+        <!--All Users-->
         <scene sceneID="KvN-yZ-owb">
             <objects>
-                <tableViewController id="KP3-mE-9fN" customClass="NewMessageVC" customModule="DayDay" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="All Users" id="KP3-mE-9fN" customClass="NewMessageVC" customModule="DayDay" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Giz-3A-PQ1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -865,10 +864,10 @@
             </objects>
             <point key="canvasLocation" x="3215" y="-705"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--All Users-->
         <scene sceneID="8j1-ba-g40">
             <objects>
-                <navigationController id="iR7-2V-eQ2" sceneMemberID="viewController">
+                <navigationController title="All Users" id="iR7-2V-eQ2" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JB7-Cu-Nrv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -885,7 +884,7 @@
         <scene sceneID="hmg-oy-fuz">
             <objects>
                 <collectionViewController title="Private Message" id="ekj-ZL-900" customClass="PrivateMessageVC" customModule="DayDay" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="nNI-f0-ivc">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="nNI-f0-ivc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -941,6 +940,7 @@
     <resources>
         <image name="appName" width="163" height="52"/>
         <image name="close" width="16" height="16"/>
+        <image name="dm" width="256" height="256"/>
         <image name="easter-bunny" width="64" height="64"/>
         <image name="exampleprof" width="300" height="300"/>
         <image name="exit" width="256" height="256"/>
@@ -955,7 +955,4 @@
         <image name="magicBG" width="640" height="640"/>
         <image name="pastEvents" width="64" height="64"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="yI0-kG-u6G"/>
-    </inferredMetricsTieBreakers>
 </document>
