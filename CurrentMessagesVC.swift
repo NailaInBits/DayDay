@@ -131,7 +131,16 @@ class CurrentMessagesVC: UITableViewController {
     }
     
     @IBAction func returnHome(_ sender: Any) {
-        performSegue(withIdentifier: "goHome", sender: self)
+        //let homeController = self.storyboard?.instantiateViewController(withIdentifier: "LandingPg")
+       // performSegue(withIdentifier: "goHome", sender: self)
+        //OMFG I CAN'T BELIEVE YOU HAVE TO PROGRAMATICALLY CHANGE THE STACK DAFUQ IS APPLE SO SHIT AT THIS
+        
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let landingPage = mainStoryboard.instantiateViewController(withIdentifier: "LandingPg") as! LandingPgVC
+        
+        UIView.transition(with: self.view.window!, duration: 0.5, options: UIViewAnimationOptions.transitionCrossDissolve, animations: {
+            UIApplication.shared.keyWindow?.rootViewController = landingPage;
+        }, completion: nil)
     }
     
     func checkIfUserIsLoggedIn() {
