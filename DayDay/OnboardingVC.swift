@@ -50,7 +50,7 @@ class OnboardingVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+      /*  super.viewWillAppear(animated)
         
         //Button Animation:
         //This section sets the button origin outside of VC
@@ -60,7 +60,7 @@ class OnboardingVC: UIViewController {
         fifthButton.center.x -= view.bounds.width
         secondButton.center.x += view.bounds.width
         fourthButton.center.x += view.bounds.width
-        sixthButton.center.x += view.bounds.width
+        sixthButton.center.x += view.bounds.width*/
         
         //Gradient Background:
         createGradientLayer()
@@ -68,7 +68,7 @@ class OnboardingVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         //Button Animation:
-        //Animates the Instructions
+        /*Animates the Instructions
         UIView.animate(withDuration: 2.0, animations: {
             self.instructionsLabel.center.y += self.view.bounds.width
         })
@@ -84,7 +84,7 @@ class OnboardingVC: UIViewController {
                         self.secondButton.center.x -= self.view.bounds.width
                         self.fourthButton.center.x -= self.view.bounds.width
                         self.sixthButton.center.x -= self.view.bounds.width
-        }, completion: nil)
+        }, completion: nil) */
     }
     
     // Six group buttons

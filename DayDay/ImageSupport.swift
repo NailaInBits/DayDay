@@ -6,7 +6,6 @@
 //  Copyright © 2017 WePlay. All rights reserved.
 //
 
-import UIKit
 import ImageIO
 
 extension UIImage {
