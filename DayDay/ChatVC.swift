@@ -58,9 +58,9 @@ class ChatVC: JSQMessagesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.channelRef = FIRDatabase.database().reference().child("KpopGroups").child(self.groupId)
-        let currentUser = FIRAuth.auth()?.currentUser
+        //let currentUser = FIRAuth.auth()?.currentUser
         self.senderId = FIRAuth.auth()?.currentUser?.uid
-        self.senderDisplayName = "\(currentUser?.displayName!)"
+        //self.senderDisplayName = "\(String(describing: currentUser?.displayName))"
         navigationItem.title = self.groupName
         
         observeMessages()
