@@ -41,6 +41,18 @@ class LoginVC: UIViewController, UIScrollViewDelegate {
         // Timer for page slide
         Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(moveToNextPage), userInfo: nil, repeats: true)
         
+        // Checks for already signed-in user
+        FIRAuth.auth()?.addStateDidChangeListener { auth, user in
+            if user != nil {
+                // User is signed in.
+                if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "LandingPg") {
+                    UIApplication.shared.keyWindow?.rootViewController = viewController
+                    
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }
+        }
+        
         //Background Video (make sure always under 5mb)
         /*let videoURL: NSURL = Bundle.main.url(forResource: "bg", withExtension: "mp4")! as NSURL
          player = AVPlayer(url: videoURL as URL)
