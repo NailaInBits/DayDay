@@ -17,6 +17,7 @@ class ChatVC: JSQMessagesViewController {
     
     var groupId: String = ""
     var groupName: String = ""
+    let currentUser = FIRAuth.auth()?.currentUser?.uid
     
     private var channelRef: FIRDatabaseReference?
     private var messageRef: FIRDatabaseReference?
@@ -58,8 +59,8 @@ class ChatVC: JSQMessagesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.channelRef = FIRDatabase.database().reference().child("KpopGroups").child(self.groupId)
-        //let currentUser = FIRAuth.auth()?.currentUser
-        self.senderId = FIRAuth.auth()?.currentUser?.uid
+        
+        self.senderId = currentUser
         //self.senderDisplayName = "\(String(describing: currentUser?.displayName))"
         navigationItem.title = self.groupName
         
@@ -72,12 +73,13 @@ class ChatVC: JSQMessagesViewController {
     
     func observeUser(id: String){
         
-        FIRDatabase.database().reference().child("user").child(id).observe(.value, with: { snapshot in
+        FIRDatabase.database().reference().child("users").child(id).observe(.value, with: { snapshot in
             if let dict = snapshot.value as? [String: AnyObject]
             {
                 //print(dict)
-                let avatarUrl = dict["profileUrl"] as! String
+                let avatarUrl = "https://graph.facebook.com/\(dict["id"]!)/picture?type=large"
                 self.setupAvatar(url: avatarUrl, messageId: id)
+                print("hello: \(avatarUrl)")
             }
         })
     }
@@ -94,11 +96,11 @@ class ChatVC: JSQMessagesViewController {
             avatarDict[messageId] = JSQMessagesAvatarImageFactory.avatarImage(with: UIImage(named: "deadPool"), diameter: 30)
             
         }
-        collectionView.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        collectionView.reloadData()
         observeTyping()
     }
     
@@ -147,7 +149,10 @@ class ChatVC: JSQMessagesViewController {
     }
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAt indexPath: IndexPath!) -> JSQMessageAvatarImageDataSource! {
+        
         let message = messages[indexPath.item]
+        observeUser(id: message.senderId)
+        
         return avatarDict[message.senderId]
     }
     
