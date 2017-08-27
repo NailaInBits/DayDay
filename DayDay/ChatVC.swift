@@ -61,14 +61,9 @@ class ChatVC: JSQMessagesViewController {
         self.channelRef = FIRDatabase.database().reference().child("KpopGroups").child(self.groupId)
         
         self.senderId = currentUser
-        //self.senderDisplayName = "\(String(describing: currentUser?.displayName))"
         navigationItem.title = self.groupName
         
         observeMessages()
-        
-        //Removes Avatar Images:
-        //collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
-        //collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
     }
     
     func observeUser(id: String){
@@ -76,7 +71,6 @@ class ChatVC: JSQMessagesViewController {
         FIRDatabase.database().reference().child("users").child(id).observe(.value, with: { snapshot in
             if let dict = snapshot.value as? [String: AnyObject]
             {
-                //print(dict)
                 let avatarUrl = "https://graph.facebook.com/\(dict["id"]!)/picture?type=large"
                 self.setupAvatar(url: avatarUrl, messageId: id)
                 print("hello: \(avatarUrl)")
@@ -369,7 +363,6 @@ extension ChatVC: UIImagePickerControllerDelegate, UINavigationControllerDelegat
                 })
             }
         } else {
-            // Handle picking a Photo from the Camera - TODO
         }
     }
     

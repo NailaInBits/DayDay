@@ -189,49 +189,6 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
     }
     
     func radialMenudidSelectItemAtIndex(_ radialMenu:RadialMenu,index:NSInteger) {
-        
-        /************ SEGUES NEED TO BE UPDATED AS MORE VCs ARE ADDED **************/
-        /*
-         let ovalStartAngle = CGFloat(90.01 * M_PI/180)
-         let ovalEndAngle = CGFloat(90 * M_PI/180)
-         let ovalRect = CGRect(x: 97.5, y: 58.5, width: 125, height: 125)
-         
-         let ovalPath = UIBezierPath()
-         
-         ovalPath.addArc(withCenter: CGPoint(x: ovalRect.midX, y: ovalRect.midY),
-         radius: ovalRect.width / 2,
-         startAngle: ovalStartAngle,
-         endAngle: ovalEndAngle, clockwise: true)
-         
-         let progressLine = CAShapeLayer()
-         progressLine.path = ovalPath.cgPath
-         progressLine.strokeColor = UIColor.blue.cgColor
-         progressLine.fillColor = UIColor.clear.cgColor
-         progressLine.lineWidth = 10.0
-         progressLine.lineCap = kCALineCapRound
-         
-         self.view.layer.addSublayer(progressLine)
-         let animateStrokeEnd = CABasicAnimation(keyPath: "strokeEnd")
-         animateStrokeEnd.duration = 3.0
-         animateStrokeEnd.fromValue = 0.0
-         animateStrokeEnd.toValue = 1.0
-         
-         progressLine.add(animateStrokeEnd, forKey: "animate stroke end animation") */
-        
-        /*if index == 1 {
-         performSegue(withIdentifier: "showChat", sender: self)
-         } else if index == 2 {
-         performSegue(withIdentifier: "showChat", sender: self)
-         } else if index == 3 {
-         performSegue(withIdentifier: "showChat", sender: self)
-         } else if index == 4 {
-         performSegue(withIdentifier: "showChat", sender: self)
-         } else if index == 5 {
-         performSegue(withIdentifier: "showChat", sender: self)
-         } else if index == 6 {
-         performSegue(withIdentifier: "showChat", sender: self)
-         } */
-        
         if index == 1 {
             self.groupId = "-KgCx7qeem3u2dlMDr0i"
             self.groupName = "BTS NY"
@@ -264,10 +221,6 @@ class LandingPgVC: UIViewController, RadialMenuDelegate {
             performSegue(withIdentifier: "showChat", sender: self)
         }
     }
-    
-    /*@IBAction func toMagic(_ sender: Any) {
-     performSegue(withIdentifier: "home2magic", sender: nil)
-     } */
     
     func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue is CustomSegue {

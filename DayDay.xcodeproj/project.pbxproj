@@ -22,7 +22,6 @@
 		E10EAE931E7C613800D1918E /* CustomSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10EAE921E7C613800D1918E /* CustomSegue.swift */; };
 		E10EAE951E7C653300D1918E /* LandingPgVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10EAE941E7C653300D1918E /* LandingPgVC.swift */; };
 		E10EAE971E7C653900D1918E /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10EAE961E7C653900D1918E /* LoginVC.swift */; };
-		E10EAE991E7C654800D1918E /* MagicVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10EAE981E7C654800D1918E /* MagicVC.swift */; };
 		E10EAE9B1E7C655700D1918E /* ProfileBg.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10EAE9A1E7C655700D1918E /* ProfileBg.swift */; };
 		E10EAE9D1E7C655F00D1918E /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10EAE9C1E7C655F00D1918E /* ProfileVC.swift */; };
 		E10EAE9F1E7C656C00D1918E /* RadialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10EAE9E1E7C656C00D1918E /* RadialButton.swift */; };
@@ -85,7 +84,6 @@
 		E10EAE921E7C613800D1918E /* CustomSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomSegue.swift; path = DayDay/CustomSegue.swift; sourceTree = SOURCE_ROOT; };
 		E10EAE941E7C653300D1918E /* LandingPgVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LandingPgVC.swift; path = DayDay/LandingPgVC.swift; sourceTree = SOURCE_ROOT; };
 		E10EAE961E7C653900D1918E /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginVC.swift; path = DayDay/LoginVC.swift; sourceTree = SOURCE_ROOT; };
-		E10EAE981E7C654800D1918E /* MagicVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MagicVC.swift; path = DayDay/MagicVC.swift; sourceTree = SOURCE_ROOT; };
 		E10EAE9A1E7C655700D1918E /* ProfileBg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileBg.swift; path = DayDay/ProfileBg.swift; sourceTree = SOURCE_ROOT; };
 		E10EAE9C1E7C655F00D1918E /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileVC.swift; path = DayDay/ProfileVC.swift; sourceTree = SOURCE_ROOT; };
 		E10EAE9E1E7C656C00D1918E /* RadialButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RadialButton.swift; path = DayDay/RadialButton.swift; sourceTree = SOURCE_ROOT; };
@@ -297,7 +295,6 @@
 				49A43FA91E89F73A00C152AF /* GroupProfile */,
 				E14B0CEC1E91C79C0062572C /* Chat */,
 				E119AF991EF6D1EA00EDCA0A /* PrivateMessage */,
-				E10EAE981E7C654800D1918E /* MagicVC.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -420,7 +417,7 @@
 				TargetAttributes = {
 					E1B924931E576BF000B4F272 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 957XL7KD75;
+						DevelopmentTeam = X7JTK6KCA7;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -553,7 +550,6 @@
 				E1DB7FAB1EFAEC1A00F0B21E /* UserCell.swift in Sources */,
 				E15FA8A31E88B92000B7C358 /* KpopGroup.swift in Sources */,
 				49D2564F1E88A0A7008B7270 /* Interactor.swift in Sources */,
-				E10EAE991E7C654800D1918E /* MagicVC.swift in Sources */,
 				49A43FAB1E89F76A00C152AF /* GroupProfileVC.swift in Sources */,
 				E1DD48B21EECF29200A8A8CD /* ChatVC.swift in Sources */,
 				49D256611E88DC94008B7270 /* SideMenuBg.swift in Sources */,
@@ -732,13 +728,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = DayDay/DayDay.entitlements;
-				DEVELOPMENT_TEAM = 957XL7KD75;
+				DEVELOPMENT_TEAM = X7JTK6KCA7;
 				INFOPLIST_FILE = "$(SRCROOT)/DayDay/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DayDay.App;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = /Users/B1ackK3yz/Documents/iOSApps/DayDay/DayDay/Bridging.h;
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/nishat/DayDay/DayDay/Bridging.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -752,13 +748,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = DayDay/DayDay.entitlements;
-				DEVELOPMENT_TEAM = 957XL7KD75;
+				DEVELOPMENT_TEAM = X7JTK6KCA7;
 				INFOPLIST_FILE = "$(SRCROOT)/DayDay/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DayDay.App;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = /Users/B1ackK3yz/Documents/iOSApps/DayDay/DayDay/Bridging.h;
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/nishat/DayDay/DayDay/Bridging.h;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

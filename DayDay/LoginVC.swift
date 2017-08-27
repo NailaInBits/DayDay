@@ -52,34 +52,6 @@ class LoginVC: UIViewController, UIScrollViewDelegate {
                 }
             }
         }
-        
-        //Background Video (make sure always under 5mb)
-        /*let videoURL: NSURL = Bundle.main.url(forResource: "bg", withExtension: "mp4")! as NSURL
-         player = AVPlayer(url: videoURL as URL)
-         player?.actionAtItemEnd = .none
-         player?.isMuted = true
-         
-         do {
-         try audio.setCategory(AVAudioSessionCategoryAmbient)
-         try audio.setActive(true)
-         } catch let error as NSError {
-         print(error)
-         }
-         
-         
-         let playerLayer = AVPlayerLayer(player: player)
-         playerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
-         playerLayer.zPosition = -1
-         playerLayer.frame = view.frame
-         view.layer.addSublayer(playerLayer)
-         player?.play()
-         NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: self.player?.currentItem, queue: nil, using: { (_) in
-         DispatchQueue.main.async {
-         self.player?.seek(to: kCMTimeZero)
-         self.player?.play()
-         }
-         })*/
-        
     }
     
     //Gradient Background:

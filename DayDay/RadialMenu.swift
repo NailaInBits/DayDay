@@ -162,21 +162,7 @@ class RadialMenu: UIView,RadialButtonDelegate{
     
     //Animation for pressing the button.
     func shouldRotateButton(_ button:UIButton,forDuration:CGFloat, forwardDirection:Bool) {
-        
-        /* let spinAnimation            = CABasicAnimation(keyPath: "transform.rotation")
-         spinAnimation.duration       = Double(forDuration)
-         spinAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-         var totalDuration            = 1.5 * CGFloat(self.items.count)
-         
-         if forwardDirection {
-         
-         totalDuration = totalDuration * -1
-         }
-         spinAnimation.toValue = NSNumber(value: Float(totalDuration) as Float)
-         button.layer.add(spinAnimation, forKey: "spinAnimation")*/
-        //Lol message here
-        
-        
+
         let spinAnimation            = CABasicAnimation(keyPath: "transform.scale")
         //spinAnimation.fromValue = Int(1.5)
         //spinAnimation.toValue = Int(1.0)
@@ -190,18 +176,6 @@ class RadialMenu: UIView,RadialButtonDelegate{
         }
         spinAnimation.toValue = NSNumber(value: Float(totalDuration) as Float)
         button.layer.add(spinAnimation, forKey: "spinAnimation")
-        
-        /*   let popAnimation            = CABasicAnimation(keyPath: "transform.scale")
-         popAnimation.fromValue = Int(1.5)
-         popAnimation.toValue = Int(1.0)
-         
-         popAnimation.duration = 0.5
-         popAnimation.isRemovedOnCompletion = false
-         popAnimation.fillMode = kCAFillModeForwards
-         popAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-         //popAnimation.toValue = NSNumber(value: Float(forDuration) as Float)
-         button.layer.add(popAnimation, forKey: "scale") */
-        
     }
     
     @objc func willRecoilItem() {

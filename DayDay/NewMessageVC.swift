@@ -56,7 +56,6 @@ class NewMessageVC: UITableViewController {
         
         let user = users[indexPath.row]
         cell.textLabel?.text = user.name
-        //cell.detailTextLabel?.text = user.email
         
         //This where the image should show up.
         if let profileImageUrl = user.profileImageUrl {

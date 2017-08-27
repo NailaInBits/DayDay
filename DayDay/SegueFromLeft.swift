@@ -14,12 +14,6 @@ class SegueFromLeft: UIStoryboardSegue {
         let toViewController = destination
         let fromViewController = source
         
-        //let containerView = fromViewController.view.superview
-        //let originalCenter = fromViewController.view.center
-        
-        //let src = self.source
-        //let dst = self.destination
-        
         fromViewController.view.superview?.insertSubview(toViewController.view, aboveSubview: fromViewController.view)
         toViewController.view.transform = CGAffineTransform(translationX: -fromViewController.view.frame.size.width, y: 0)
         
@@ -33,7 +27,6 @@ class SegueFromLeft: UIStoryboardSegue {
                                     let fromVC = self.source
                                     let toVC = self.destination
                                     fromVC.present(toVC, animated: false, completion: nil)
-                                    //fromViewController.present(dst, animated: false, completion: nil)
         }
         )
     }
